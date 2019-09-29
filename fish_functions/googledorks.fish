@@ -37,9 +37,9 @@ function googledorks
     # FIND EMPLOYEES ON LINKEDIN:
     open "https://www.google.com/search?q=site:linkedin.com+employees+$argv" --args --incognito 2> /dev/null
     # FIND Subdomains
-    open "https://www.google.com/search?q=site:*.$argv" --args --incognito 2> /dev/null
+    open "https://www.google.com/search?q=site:*.$argv+-site:www.$argv" --args --incognito 2> /dev/null
     # FIND Sub-subdomains
-    open "https://www.google.com/search?q=site:*.*.$argv" --args --incognito 2> /dev/null
+    open "https://www.google.com/search?q=site:*.*.$argv+-site:www.$argv" --args --incognito 2> /dev/null
     # FIND PHPINFO Files
     open "https://www.google.com/search?q=inurl:'/phpinfo.php'+$argv" --args --incognito 2> /dev/null
     # FIND .htaccess & sensitive fields
