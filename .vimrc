@@ -155,7 +155,7 @@ if $VIMENV == 'prev'
 endif
 
 set noesckeys
-
+set shell=/bin/bash
 set nocompatible
 
 " set the interactive flag so bash functions are sourced from ~/.bashrc etc
