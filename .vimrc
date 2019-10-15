@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'TomNomNom/xoria256.vim'
 Plugin 'fatih/vim-go'
 Plugin 'hdima/python-syntax'
+Plugin 'powerline/powerline-fonts'
 
 call vundle#end()
 
