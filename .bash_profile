@@ -52,6 +52,10 @@ sqlmap(){
 sqlmap -u $1 
 }
 
+acstis(){
+acstis -c -vp -iic -vrl $1.log -d "$1"
+}
+
 #nmap http service check
 nmap_httpsrv_check(){
 nmap -sT -Pn -T5 -p 80,443,808,1080,3128,4180,4443,4480,5490,7443,8000-8088,8443 -iL $1 -oG $2
