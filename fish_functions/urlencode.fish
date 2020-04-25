@@ -1,16 +1,16 @@
-function urlencode $argv
+function ff.urlencode $argv
 #command /opt/w3af/tools/urlencode -s '&%' -e '$1argv'
 command hURL -U $argv
 end
 
-function urldecode $argv
+function ff.urldecode $argv
 command hURL -u $argv
 end
 
-function urlencodex2 $argv
+function ff.urlencodex2 $argv
 command hURL -D $argv
 end
 
-function urldecodex2 $argv
+function ff.urldecodex2 $argv
 command hURL -d $argv
 end
