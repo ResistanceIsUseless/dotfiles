@@ -1,4 +1,4 @@
 function knockpy --argument-names input 
-    echo "python /opt/knock/knockpy/knockpy.py $input"
-    python /opt/knock/knockpy/knockpy.py $input
+    echo "python /home/static/Tools/knock/knockpy/knockpy.py $input"
+    python /home/static/Tools/knockpy/knockpy.py $input
 end
