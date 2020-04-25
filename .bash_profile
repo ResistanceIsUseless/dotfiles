@@ -13,6 +13,7 @@ curl http://ipinfo.io/$1
 
 myip(){
 curl ifconfig.me/ip
+curl canhazipip.com
 )
 
 certspotter(){
