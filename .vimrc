@@ -165,7 +165,7 @@ syntax enable
 filetype plugin indent on
 
 " Set up :make to use fish for syntax checking.
-compiler fish
+compiler bash
 
 " Set this to have long lines wrap inside comments.
 "setlocal textwidth=79
