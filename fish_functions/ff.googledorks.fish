@@ -6,7 +6,7 @@
 # Based on Goohak(https://github.com/1N3/Goohak), however adopted for OSX & Tweaked
 # Designed for OSX
 
-function googledorks
+function ff.googledorks
     echo "Designed for OSX"
 
     open 2> /dev/null &
