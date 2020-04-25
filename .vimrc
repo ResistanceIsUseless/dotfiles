@@ -1,5 +1,4 @@
 # File borrowed from @tomnomnom
-# TODO: Update compatibility for Fish Shell functions
 
 " Vundle
 filetype off
