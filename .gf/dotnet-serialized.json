@@ -1,0 +1,8 @@
+{
+    "flags": "-HnrE",
+    "patterns": [
+        "AAEAAAD",
+        "TypeObject",
+        "$type:"
+    ]
+}
