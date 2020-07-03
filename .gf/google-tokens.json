@@ -1,0 +1,7 @@
+{
+    "flags": "-HanrE",
+    "pattern": "ya29\\.[0-9A-Za-z\\-_]+",
+    "pattern": "AIza[0-9A-Za-z\\-_]{35}",
+    "pattern": "[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com",
+    "pattern": "((\\\"|'|`)?type(\\\"|'|`)?\\\\s{0,50}(:|=>|=)\\\\s{0,50}(\\\"|'|`)?service_account(\\\"|'|`)?,?)"
+}
