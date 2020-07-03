@@ -1,0 +1,2543 @@
+#custom regex for shhgit to be used like gf and shhgit combined https://github.com/ResistanceIsUseless
+github_access_tokens:
+  - ''
+webhook: '' # URL to which the payload is POSTed
+
+# This default payload will work for Slack and MatterMost.
+# Consult your webhook API for additional configurations.
+webhook_payload: |
+  {
+    "text": "%s"
+  }
+
+blacklisted_extensions: [".exe", ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".tif", ".psd", ".xcf", ".zip", ".tar.gz", ".ttf", ".lock"]
+blacklisted_paths: ["node_modules{sep}", "vendor{sep}bundle", "vendor{sep}cache"] # use {sep} for the OS' path seperator (i.e. / or \)
+blacklisted_entropy_extensions: [".pem", "id_rsa", ".asc", ".ovpn", ".sqlite", ".sqlite3"] # additional extensions to skip entropy checks
+signatures:
+  - part:  'extension'
+    match: '.pem'
+    name: 'Potential cryptographic private key'
+  - part:  'extension'
+    match: '.log'
+    name: 'Log file'
+  - part:  'extension'
+    match: '.pkcs12'
+    name: 'Potential cryptographic key bundle'
+  - part:  'extension'
+    match: '.p12'
+    name: 'Potential cryptographic key bundle'
+  - part:  'extension'
+    match: '.pfx'
+    name: 'Potential cryptographic key bundle'
+  - part:  'extension'
+    match: '.asc'
+    name: 'Potential cryptographic key bundle'
+  - part:  'filename'
+    match: 'otr.private_key'
+    name: 'Pidgin OTR private key'
+  - part:  'extension'
+    match: '.ovpn'
+    name: 'OpenVPN client configuration file'
+  - part:  'extension'
+    match: '.cscfg'
+    name: 'Azure service configuration schema file'
+  - part:  'extension'
+    match: '.rdp'
+    name: 'Remote Desktop connection file'
+  - part:  'extension'
+    match: '.mdf'
+    name: 'Microsoft SQL database file'
+  - part:  'extension'
+    match: '.sdf'
+    name: 'Microsoft SQL server compact database file'
+  - part:  'extension'
+    match: '.sqlite'
+    name: 'SQLite database file'
+  - part:  'extension'
+    match: '.sqlite3'
+    name: 'SQLite3 database file'
+  - part:  'extension'
+    match: '.bek'
+    name: 'Microsoft BitLocker recovery key file'
+  - part:  'extension'
+    match: '.tpm'
+    name: 'Microsoft BitLocker Trusted Platform Module password file'
+  - part:  'extension'
+    match: '.fve'
+    name: 'Windows BitLocker full volume encrypted data file'
+  - part:  'extension'
+    match: '.jks'
+    name: 'Java keystore file'
+  - part:  'extension'
+    match: '.psafe3'
+    name: 'Password Safe database file'
+  - part:  'filename'
+    match: 'secret_token.rb'
+    name: 'Ruby On Rails secret token configuration file'
+  - part:  'filename'
+    match: 'carrierwave.rb'
+    name: 'Carrierwave configuration file'
+  - part:  'filename'
+    match: 'database.yml'
+    name: 'Potential Ruby On Rails database configuration file'
+  - part:  'filename'
+    match: 'omniauth.rb'
+    name: 'OmniAuth configuration file'
+  - part:  'filename'
+    match: 'settings.py'
+    name: 'Django configuration file'
+  - part:  'extension'
+    match: '.agilekeychain'
+    name: '1Password password manager database file'
+  - part:  'extension'
+    match: '.keychain'
+    name: 'Apple Keychain database file'
+  - part:  'extension'
+    match: '.pcap'
+    name: 'Network traffic capture file'
+  - part:  'extension'
+    match: '.gnucash'
+    name: 'GnuCash database file'
+  - part:  'filename'
+    match: 'jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin.xml'
+    name: 'Jenkins publish over SSH plugin file'
+  - part:  'filename'
+    match: 'credentials.xml'
+    name: 'Potential Jenkins credentials file'
+  - part:  'extension'
+    match: '.kwallet'
+    name: 'KDE Wallet Manager database file'
+  - part:  'filename'
+    match: 'LocalSettings.php'
+    name: 'Potential MediaWiki configuration file'
+  - part:  'extension'
+    match: '.tblk'
+    name: 'Tunnelblick VPN configuration file'
+  - part:  'filename'
+    match: 'Favorites.plist'
+    name: 'Sequel Pro MySQL database manager bookmark file'
+  - part:  'filename'
+    match: 'configuration.user.xpl'
+    name: 'Little Snitch firewall configuration file'
+  - part:  'extension'
+    match: '.dayone'
+    name: 'Day One journal file'
+  - part:  'filename'
+    match: 'journal.txt'
+    name: 'Potential jrnl journal file'
+  - part:  'filename'
+    match: 'knife.rb'
+    name: 'Chef Knife configuration file'
+  - part:  'filename'
+    match: 'proftpdpasswd'
+    name: 'cPanel backup ProFTPd credentials file'
+  - part:  'filename'
+    match: 'robomongo.json'
+    name: 'Robomongo MongoDB manager configuration file'
+  - part:    'filename'
+    match:   'filezilla.xml'
+    name:   'FileZilla FTP configuration file'
+  - part:    'filename'
+    match:   'recentservers.xml'
+    name:   'FileZilla FTP recent servers file'
+  - part:    'filename'
+    match:   'ventrilo_srv.ini'
+    name:   'Ventrilo server configuration file'
+  - part:    'filename'
+    match:   'terraform.tfvars'
+    name:   'Terraform variable config file'
+  - part:    'filename'
+    match:   '.exports'
+    name:   'Shell configuration file'
+  - part:    'filename'
+    match:   '.functions'
+    name:   'Shell configuration file'
+  - part:    'filename'
+    match:   '.extra'
+    name:   'Shell configuration file'
+  - part:  'filename'
+    regex: '^.*_rsa$'
+    name: 'Private SSH key'
+  - part:  'filename'
+    regex: '^.*_dsa$'
+    name: 'Private SSH key'
+  - part:  'filename'
+    regex: '^.*_ed25519$'
+    name: 'Private SSH key'
+  - part:  'filename'
+    regex: '^.*_ecdsa$'
+    name: 'Private SSH key'
+  - part:  'path'
+    regex: '\.?ssh/config$'
+    name: 'SSH configuration file'
+  - part:  'extension'
+    regex: '^key(pair)?$'
+    name: 'Potential cryptographic private key'
+  - part:  'filename'
+    regex: '^\.?(bash_|zsh_|sh_|z)?history$'
+    name: 'Shell command history file'
+  - part:  'filename'
+    regex: '^\.?mysql_history$'
+    name: 'MySQL client command history file'
+  - part:  'filename'
+    regex: '^\.?psql_history$'
+    name: 'PostgreSQL client command history file'
+  - part:  'filename'
+    regex: '^\.?pgpass$'
+    name: 'PostgreSQL password file'
+  - part:  'filename'
+    regex: '^\.?irb_history$'
+    name: 'Ruby IRB console history file'
+  - part:  'path'
+    regex: '\.?purple/accounts\.xml$'
+    name: 'Pidgin chat client account configuration file'
+  - part:  'path'
+    regex: '\.?xchat2?/servlist_?\.conf$'
+    name: 'Hexchat/XChat IRC client server list configuration file'
+  - part:  'path'
+    regex: '\.?irssi/config$'
+    name: 'Irssi IRC client configuration file'
+  - part:  'path'
+    regex: '\.?recon-ng/keys\.db$'
+    name: 'Recon-ng web reconnaissance framework API key database'
+  - part:  'filename'
+    regex: '^\.?dbeaver-data-sources.xml$'
+    name: 'DBeaver SQL database manager configuration file'
+  - part:  'filename'
+    regex: '^\.?muttrc$'
+    name: 'Mutt e-mail client configuration file'
+  - part:  'filename'
+    regex: '^\.?s3cfg$'
+    name: 'S3cmd configuration file'
+  - part:  'path'
+    regex: '\.?aws/credentials$'
+    name: 'AWS CLI credentials file'
+  - part:  'filename'
+    regex: '^sftp-config(\.json)?$'
+    name: 'SFTP connection configuration file'
+  - part:  'filename'
+    regex: '^\.?trc$'
+    name: 'T command-line Twitter client configuration file'
+  - part:    'filename'
+    regex:   '^\.?(bash|zsh|csh)rc$'
+    name:   'Shell configuration file'
+  - part:    'filename'
+    regex:   '^\.?(bash_|zsh_)?profile$'
+    name:   'Shell profile configuration file'
+  - part:    'filename'
+    regex:   '^\.?(bash_|zsh_)?aliases$'
+    name:   'Shell command alias configuration file'
+  - part:  'filename'
+    regex: 'config(\.inc)?\.php$'
+    name: 'PHP configuration file'
+  - part:  'extension'
+    regex: '^key(store|ring)$'
+    name: 'GNOME Keyring database file'
+  - part:    'extension'
+    regex:   '^kdbx?$'
+    name:   'KeePass password manager database file'
+  - part:  'extension'
+    regex: '^sql(dump)?$'
+    name: 'SQL dump file'
+  - part:  'filename'
+    regex: '^\.?htpasswd$'
+    name: 'Apache htpasswd file'
+  - part:    'filename'
+    regex:   '^(\.|_)?netrc$'
+    name:   'Configuration file for auto-login process'
+  - part:    'path'
+    regex:   '\.?gem/credentials$'
+    name:   'Rubygems credentials file'
+  - part:  'filename'
+    regex: '^\.?tugboat$'
+    name: 'Tugboat DigitalOcean management tool configuration'
+  - part:    'path'
+    regex:   'doctl/config.yaml$'
+    name:   'DigitalOcean doctl command-line client configuration file'
+  - part:  'filename'
+    regex: '^\.?git-credentials$'
+    name: 'git-credential-store helper credentials file'
+  - part:    'path'
+    regex:   'config/hub$'
+    name:   'GitHub Hub command-line client configuration file'
+  - part:  'filename'
+    regex: '^\.?gitconfig$'
+    name: 'Git configuration file'
+  - part:    'path'
+    regex:   '\.?chef/(.*)\.pem$'
+    name:   'Chef private key'
+  - part:    'path'
+    regex:   'etc/shadow$'
+    name:   'Potential Linux shadow file'
+  - part:    'path'
+    regex:   'etc/passwd$'
+    name:   'Potential Linux passwd file'
+    comment: 'Contains system user information'
+  - part:    'filename'
+    regex:   '^\.?dockercfg$'
+    name:   'Docker configuration file'
+  - part:    'filename'
+    regex:   '^\.?npmrc$'
+    name:   'NPM configuration file'
+  - part:  'filename'
+    regex: '^\.?env$'
+    name: 'Environment configuration file'
+  - part:  'contents'
+    regex: '-----BEGIN [EC|RSA|DSA|OPENSSH] PRIVATE KEY----'
+    name: 'Contains a private key'
+  - part: 'contents'
+    regex: '(A3T[A-Z0-9]|AKIA|AGPA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}'
+    name: 'AWS Access Key ID Value'
+  - part: 'contents'
+    regex: "((\\\"|'|`)?((?i)aws)?_?((?i)access)_?((?i)key)?_?((?i)id)?(\\\"|'|`)?\\\\s{0,50}(:|=>|=)\\\\s{0,50}(\\\"|'|`)?(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}(\\\"|'|`)?)"
+    name: 'AWS Access Key ID'
+  - part: 'contents'
+    regex: "((\\\"|'|`)?((?i)aws)?_?((?i)account)_?((?i)id)?(\\\"|'|`)?\\\\s{0,50}(:|=>|=)\\\\s{0,50}(\\\"|'|`)?[0-9]{4}-?[0-9]{4}-?[0-9]{4}(\\\"|'|`)?)"
+    name: 'AWS Account ID'
+  - part: 'contents'
+    regex: "((\\\"|'|`)?((?i)aws)?_?((?i)secret)_?((?i)access)?_?((?i)key)?_?((?i)id)?(\\\"|'|`)?\\\\s{0,50}(:|=>|=)\\\\s{0,50}(\\\"|'|`)?[A-Za-z0-9/+=]{40}(\\\"|'|`)?)"
+    name: 'AWS Secret Access Key'
+  - part: 'contents'
+    regex: "((\\\"|'|`)?((?i)aws)?_?((?i)session)?_?((?i)token)?(\\\"|'|`)?\\\\s{0,50}(:|=>|=)\\\\s{0,50}(\\\"|'|`)?[A-Za-z0-9/+=]{16,}(\\\"|'|`)?)"
+    name: 'AWS Session Token'
+  - part: 'contents'
+    regex: "(?i)artifactory.{0,50}(\\\"|'|`)?[a-zA-Z0-9=]{112}(\\\"|'|`)?"
+    name: 'Artifactory'
+  - part: 'contents'
+    regex: "(?i)codeclima.{0,50}(\\\"|'|`)?[0-9a-f]{64}(\\\"|'|`)?"
+    name: 'CodeClimate'
+  - part:  'contents'
+    regex: 'EAACEdEose0cBA[0-9A-Za-z]+'
+    name: 'Facebook access token'
+  - part: 'contents'
+    regex: "((\\\"|'|`)?type(\\\"|'|`)?\\\\s{0,50}(:|=>|=)\\\\s{0,50}(\\\"|'|`)?service_account(\\\"|'|`)?,?)"
+    name: 'Google (GCM) Service account'
+  - part:  'contents'
+    regex: '(?:r|s)k_[live|test]_[0-9a-zA-Z]{24}'
+    name: 'Stripe API key'
+  - part:  'contents'
+    regex: '[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com'
+    name: 'Google OAuth Key'
+  - part: 'contents'
+    regex: 'AIza[0-9A-Za-z\\-_]{35}'
+    name: 'Google Cloud API Key'
+  - part: 'contents'
+    regex: 'ya29\\.[0-9A-Za-z\\-_]+'
+    name: 'Google OAuth Access Token'
+  - part:  'contents'
+    regex: 'sk_[live|test]_[0-9a-z]{32}'
+    name: 'Picatic API key'
+  - part:  'contents'
+    regex: 'sq0atp-[0-9A-Za-z\-_]{22}'
+    name: 'Square Access Token'
+  - part:  'contents'
+    regex: 'sq0csp-[0-9A-Za-z\-_]{43}'
+    name: 'Square OAuth Secret'
+  - part:  'contents'
+    regex: 'access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}'
+    name: 'PayPal/Braintree Access Token'
+  - part:  'contents'
+    regex: 'amzn\.mws\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
+    name: 'Amazon MWS Auth Token'
+  - part:  'contents'
+    regex: 'SK[0-9a-fA-F]{32}'
+    name: 'Twilo API Key'
+  - part:  'contents'
+    regex: 'SG\.[0-9A-Za-z\-_]{22}\.[0-9A-Za-z\-_]{43}'
+    name: 'SendGrid API Key'
+  - part:  'contents'
+    regex: 'key-[0-9a-zA-Z]{32}'
+    name: 'MailGun API Key'
+  - part:  'contents'
+    regex: '[0-9a-f]{32}-us[0-9]{12}'
+    name: 'MailChimp API Key'
+  - part:  'contents'
+    regex: "sshpass -p.*['|\\\"]"
+    name: 'SSH Password'
+  - part: 'contents'
+    regex: '(https\\://outlook\\.office.com/webhook/[0-9a-f-]{36}\\@)'
+    name: 'Outlook team'
+  - part: 'contents'
+    regex: "(?i)sauce.{0,50}(\\\"|'|`)?[0-9a-f-]{36}(\\\"|'|`)?"
+    name: 'Sauce Token'
+  - part: 'contents'
+    regex: '(xox[pboa]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32})'
+    name: 'Slack Token'
+  - part: 'contents'
+    regex: 'https://hooks.slack.com/services/T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8}/[a-zA-Z0-9_]{24}'
+    name: 'Slack Webhook'
+  - part: 'contents'
+    regex: "(?i)sonar.{0,50}(\\\"|'|`)?[0-9a-f]{40}(\\\"|'|`)?"
+    name: 'SonarQube Docs API Key'
+  - part: 'contents'
+    regex: "(?i)hockey.{0,50}(\\\"|'|`)?[0-9a-f]{32}(\\\"|'|`)?"
+    name: 'HockeyApp'
+  - part: 'contents'
+    regex: '([\w+]{1,24})(://)([^$<]{1})([^\s";]{1,}):([^$<]{1})([^\s";/]{1,})@[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,24}([^\s]+)'
+    name: 'Username and password in URI'
+  - part: 'contents'
+    regex: 'oy2[a-z0-9]{43}'
+    name: 'NuGet API Key'
+  - part:  'contents'
+    regex: 'hawk\.[0-9A-Za-z\-_]{20}\.[0-9A-Za-z\-_]{20}'
+    name: 'StackHawk API Key'
+  - part: 'contents'
+    regex: "(Application-Trace|Routing Error|DEBUG\"? ?[=:] ?True|Caused by:|stack trace:|Microsoft .NET Framework|Traceback|[0-9]:in `|#!/us|WebApplicationException|java\\.lang\\.|phpinfo|swaggerUi|on line [0-9]|SQLSTATE)"
+    name: 'Debug Pages'
+  - part: 'contents'
+    regex: "[^a-z0-9_](system|exec|popen|pcntl_exec|eval|create_function|unserialize|file_exists|md5_file|filemtime|filesize|assert) ?\\("
+    name: 'PHP Sinks'
+  - part:  'contents'
+    regex: '([^A-Za-z0-9+/]|^)(eyJ|YTo|Tzo|PD[89]|aHR0cHM6L|aHR0cDo|rO0)[%a-zA-Z0-9+/]+={0,2}'
+    name: 'Base64 Data'
+  - part:  'contents'
+    regex: "func [a-z0-9_]+\\("
+    name: 'Go Function'
+  - part:  'contents'
+    regex: "[a-z0-9_/\\.:-]+@[a-z0-9-]+\\.[a-z0-9.-]+"
+    name: 'HTTP Auth'
+  - part:  'contents'
+    regex: "(\\\\?\"|&quot;|%22)[a-z0-9_-]*(api[_-]?key|S3|aws_|secret|passw|auth)[a-z0-9_-]*(\\\\?\"|&quot;|%22): ?(\\\\?\"|&quot;|%22)[^\"&]+(\\\\?\"|&quot;|%22)"
+    name: 'JSON Sec'
+  - part:  'contents'
+    regex: "^\u003c [a-z0-9_\\-]+: .*"
+    name: 'Headers'
+  - part:  'contents'
+    regex: "CURLOPT_(HTTPHEADER|HEADER|COOKIE|RANGE|REFERER|USERAGENT|PROXYHEADER)"
+    name: 'PHP Curl'
+  - part:  'contents'
+    regex: "\u003cinput[^\u003e]+type=[\"']?file[\"']?"
+    name: 'File Upload Field'
+  - part:  'contents'
+    regex: "Server:.*[0-9].*"
+    name: 'Server Header'
+  - part:  'contents'    
+    match: "access_token"
+    name: 'Access Token'
+  - part:  'contents' 
+    regex: "zopim[_-]account[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "zhuliang[_-]gh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "zensonatypepassword"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "zendesk[_-]travis[_-]github"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "yt[_-]server[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "yt[_-]partner[_-]refresh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "yt[_-]partner[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "yt[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "yt[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "yt[_-]account[_-]refresh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "yt[_-]account[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "yangshun[_-]gh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "yangshun[_-]gh[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "www[_-]googleapis[_-]com"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wpt[_-]ssh[_-]private[_-]key[_-]base64"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wpt[_-]ssh[_-]connect"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wpt[_-]report[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wpt[_-]prepare[_-]dir"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wpt[_-]db[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wpt[_-]db[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wporg[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wpjm[_-]phpunit[_-]google[_-]geocode[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wordpress[_-]db[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wordpress[_-]db[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wincert[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "widget[_-]test[_-]server"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "widget[_-]fb[_-]password[_-]3"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "widget[_-]fb[_-]password[_-]2"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "widget[_-]fb[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "widget[_-]basic[_-]password[_-]5"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "widget[_-]basic[_-]password[_-]4"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "widget[_-]basic[_-]password[_-]3"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "widget[_-]basic[_-]password[_-]2"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "widget[_-]basic[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "watson[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "watson[_-]device[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "watson[_-]conversation[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "wakatime[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "vscetoken"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "visual[_-]recognition[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "virustotal[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "vip[_-]github[_-]deploy[_-]key[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "vip[_-]github[_-]deploy[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "vip[_-]github[_-]build[_-]repo[_-]deploy[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "v[_-]sfdc[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "v[_-]sfdc[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "usertravis"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "user[_-]assets[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "user[_-]assets[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "use[_-]ssh"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "us[_-]east[_-]1[_-]elb[_-]amazonaws[_-]com"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "urban[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "urban[_-]master[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "urban[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "unity[_-]serial"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "unity[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twitteroauthaccesstoken"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twitteroauthaccesssecret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twitter[_-]consumer[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twitter[_-]consumer[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twine[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twilio[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twilio[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twilio[_-]configuration[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twilio[_-]chat[_-]account[_-]api[_-]service"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twilio[_-]api[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "twilio[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "trex[_-]okta[_-]client[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "trex[_-]client[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "travis[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "travis[_-]secure[_-]env[_-]vars"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "travis[_-]pull[_-]request"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "travis[_-]gh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "travis[_-]e2e[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "travis[_-]com[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "travis[_-]branch"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "travis[_-]api[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "travis[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "token[_-]core[_-]java"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "thera[_-]oss[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "tester[_-]keys[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "test[_-]test"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "test[_-]github[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "tesco[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "svn[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "surge[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "surge[_-]login"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "stripe[_-]public"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "stripe[_-]private"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "strip[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "strip[_-]publishable[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "stormpath[_-]api[_-]key[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "stormpath[_-]api[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "starship[_-]auth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "starship[_-]account[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "star[_-]test[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "star[_-]test[_-]location"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "star[_-]test[_-]bucket"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "star[_-]test[_-]aws[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "staging[_-]base[_-]url[_-]runscope"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ssmtp[_-]config"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sshpass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "srcclr[_-]api[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "square[_-]reader[_-]sdk[_-]repository[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sqssecretkey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sqsaccesskey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "spring[_-]mail[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "spotify[_-]api[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "spotify[_-]api[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "spaces[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "spaces[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "soundcloud[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "soundcloud[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonatypepassword"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonatype[_-]token[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonatype[_-]token[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonatype[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonatype[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonatype[_-]nexus[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonatype[_-]gpg[_-]passphrase"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonatype[_-]gpg[_-]key[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonar[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonar[_-]project[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sonar[_-]organization[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "socrata[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "socrata[_-]app[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "snyk[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "snyk[_-]api[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "snoowrap[_-]refresh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "snoowrap[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "snoowrap[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "slate[_-]user[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "slash[_-]developer[_-]space[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "slash[_-]developer[_-]space"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "signing[_-]key[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "signing[_-]key[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "signing[_-]key[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "signing[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "setsecretkey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "setdstsecretkey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "setdstaccesskey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ses[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ses[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "service[_-]account[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sentry[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sentry[_-]endpoint"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sentry[_-]default[_-]org"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sentry[_-]auth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sendwithus[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sendgrid[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sendgrid[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sendgrid[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sendgrid[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sendgrid[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sendgrid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "selion[_-]selenium[_-]host"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "selion[_-]log[_-]level[_-]dev"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "segment[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secretkey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secretaccesskey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]key[_-]base"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]9"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]8"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]7"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]6"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]5"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]4"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]3"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]2"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]11"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]10"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]1"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "secret[_-]0"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sdr[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "scrutinizer[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sauce[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sandbox[_-]aws[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sandbox[_-]aws[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sandbox[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "salesforce[_-]bulk[_-]test[_-]security[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "salesforce[_-]bulk[_-]test[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sacloud[_-]api"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sacloud[_-]access[_-]token[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "sacloud[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]user[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]secret[_-]assets"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]secret[_-]app[_-]logs"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]key[_-]assets"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]key[_-]app[_-]logs"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]external[_-]3[_-]amazonaws[_-]com"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]bucket[_-]name[_-]assets"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]bucket[_-]name[_-]app[_-]logs"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "s3[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "rubygems[_-]auth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "rtd[_-]store[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "rtd[_-]key[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "route53[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ropsten[_-]private[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "rinkeby[_-]private[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "rest[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "repotoken"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "reporting[_-]webdav[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "reporting[_-]webdav[_-]pwd"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "release[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "release[_-]gh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "registry[_-]secure"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "registry[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "refresh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "rediscloud[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "redis[_-]stunnel[_-]urls"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "randrmusicapiaccesstoken"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "rabbitmq[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "quip[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "qiita[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "pypi[_-]passowrd"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "pushover[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "publish[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "publish[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "publish[_-]access"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "project[_-]config"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "prod[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "prod[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "prod[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "private[_-]signing[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "pring[_-]mail[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "preferred[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "prebuild[_-]auth"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "postgresql[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "postgresql[_-]db"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "postgres[_-]env[_-]postgres[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "postgres[_-]env[_-]postgres[_-]db"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "plugin[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "plotly[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "places[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "places[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "pg[_-]host"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "pg[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "personal[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "personal[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "percy[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "percy[_-]project"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "paypal[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "passwordtravis"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "parse[_-]js[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "pagerduty[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "packagecloud[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ossrh[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ossrh[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ossrh[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ossrh[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ossrh[_-]jira[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "os[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "os[_-]auth[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "org[_-]project[_-]gradle[_-]sonatype[_-]nexus[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "org[_-]gradle[_-]project[_-]sonatype[_-]nexus[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "openwhisk[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "open[_-]whisk[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "onesignal[_-]user[_-]auth[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "onesignal[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "omise[_-]skey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "omise[_-]pubkey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "omise[_-]pkey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "omise[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "okta[_-]oauth2[_-]clientsecret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "okta[_-]oauth2[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "okta[_-]client[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ofta[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ofta[_-]region"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ofta[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "octest[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "octest[_-]app[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "octest[_-]app[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "oc[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "object[_-]store[_-]creds"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "object[_-]store[_-]bucket"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "object[_-]storage[_-]region[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "object[_-]storage[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "oauth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "numbers[_-]service[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "nuget[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "nuget[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "nuget[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "npm[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "npm[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "npm[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "npm[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "npm[_-]auth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "npm[_-]api[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "npm[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "now[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "non[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "node[_-]pre[_-]gyp[_-]secretaccesskey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "node[_-]pre[_-]gyp[_-]github[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "node[_-]pre[_-]gyp[_-]accesskeyid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "node[_-]env"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ngrok[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ngrok[_-]auth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "nexuspassword"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "nexus[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "new[_-]relic[_-]beta[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "netlify[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "nativeevents"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mysqlsecret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mysqlmasteruser"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mysql[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mysql[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mysql[_-]root[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mysql[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mysql[_-]hostname"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mysql[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "my[_-]secret[_-]env"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "multi[_-]workspace[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "multi[_-]workflow[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "multi[_-]disconnect[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "multi[_-]connect[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "multi[_-]bob[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "minio[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "minio[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mile[_-]zero[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mh[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mh[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mg[_-]public[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mg[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mapboxaccesstoken"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mapbox[_-]aws[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mapbox[_-]aws[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mapbox[_-]api[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mapbox[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "manifest[_-]app[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "manifest[_-]app[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mandrill[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "managementapiaccesstoken"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "management[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "manage[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "manage[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mailgun[_-]secret[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mailgun[_-]pub[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mailgun[_-]pub[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mailgun[_-]priv[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mailgun[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mailgun[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mailgun[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mailer[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mailchimp[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mailchimp[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "mail[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "magento[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "magento[_-]auth[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "magento[_-]auth[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "lottie[_-]upload[_-]cert[_-]key[_-]store[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "lottie[_-]upload[_-]cert[_-]key[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "lottie[_-]s3[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "lottie[_-]happo[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "lottie[_-]happo[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "looker[_-]test[_-]runner[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ll[_-]shared[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ll[_-]publish[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "linux[_-]signing[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "linkedin[_-]client[_-]secretor lottie[_-]s3[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "lighthouse[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "lektor[_-]deploy[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "lektor[_-]deploy[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "leanplum[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "kxoltsn3vogdop92m"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "kubeconfig"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "kubecfg[_-]s3[_-]path"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "kovan[_-]private[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "keystore[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "kafka[_-]rest[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "kafka[_-]instance[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "kafka[_-]admin[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "jwt[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "jdbc:mysql"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "jdbc[_-]host"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "jdbc[_-]databaseurl"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "itest[_-]gh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ios[_-]docs[_-]deploy[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "internal[_-]secrets"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "integration[_-]test[_-]appid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "integration[_-]test[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "index[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ij[_-]repo[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ij[_-]repo[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "hub[_-]dxia2[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "homebrew[_-]github[_-]api[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "hockeyapp[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "heroku[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "heroku[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "heroku[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "hb[_-]codesign[_-]key[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "hb[_-]codesign[_-]gpg[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "hab[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "hab[_-]auth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "grgit[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gren[_-]github[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gradle[_-]signing[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gradle[_-]signing[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gradle[_-]publish[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gradle[_-]publish[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gpg[_-]secret[_-]keys"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gpg[_-]private[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gpg[_-]passphrase"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gpg[_-]ownertrust"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gpg[_-]keyname"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gpg[_-]key[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "google[_-]private[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "google[_-]maps[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "google[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "google[_-]client[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "google[_-]client[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "google[_-]account[_-]type"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gogs[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gitlab[_-]user[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]tokens"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]repo"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]release[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]pwd"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]oauth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]oauth"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]hunter[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]hunter[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]deployment[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]deploy[_-]hb[_-]doc[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]auth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]auth"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]api[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "github[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "git[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "git[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "git[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "git[_-]committer[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "git[_-]committer[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "git[_-]author[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "git[_-]author[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ghost[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ghb[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gh[_-]unstable[_-]oauth[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gh[_-]repo[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gh[_-]oauth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gh[_-]oauth[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gh[_-]next[_-]unstable[_-]oauth[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gh[_-]next[_-]unstable[_-]oauth[_-]client[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gh[_-]next[_-]oauth[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gh[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gh[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gcs[_-]bucket"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gcr[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gcloud[_-]service[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gcloud[_-]project"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "gcloud[_-]bucket"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ftp[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ftp[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ftp[_-]pw"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ftp[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ftp[_-]login"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ftp[_-]host"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "fossa[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "flickr[_-]api[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "flickr[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "flask[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "firefox[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "firebase[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "firebase[_-]project[_-]develop"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "firebase[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "firebase[_-]api[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "firebase[_-]api[_-]json"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "file[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "exp[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "eureka[_-]awssecretkey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "env[_-]sonatype[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "env[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "env[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "env[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "env[_-]heroku[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "env[_-]github[_-]oauth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "end[_-]user[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "encryption[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "elasticsearch[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "elastic[_-]cloud[_-]auth"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "dsonar[_-]projectkey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "dsonar[_-]login"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "droplet[_-]travis[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "dropbox[_-]oauth[_-]bearer"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "doordash[_-]auth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "dockerhubpassword"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "dockerhub[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "docker[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "docker[_-]postgres[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "docker[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "docker[_-]passwd"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "docker[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "docker[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "docker[_-]hub[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "digitalocean[_-]ssh[_-]key[_-]ids"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "digitalocean[_-]ssh[_-]key[_-]body"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "digitalocean[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "dgpg[_-]passphrase"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "deploy[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "deploy[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "deploy[_-]secure"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "deploy[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ddgc[_-]github[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ddg[_-]test[_-]email[_-]pw"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ddg[_-]test[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "db[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "db[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "db[_-]pw"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "db[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "db[_-]host"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "db[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "db[_-]connection"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "datadog[_-]app[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "datadog[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "database[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "database[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "database[_-]port"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "database[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "database[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "database[_-]host"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "danger[_-]github[_-]api[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cypress[_-]record[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "coverity[_-]scan[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "coveralls[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "coveralls[_-]repo[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "coveralls[_-]api[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cos[_-]secrets"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "conversation[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "conversation[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "contentful[_-]v2[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "contentful[_-]test[_-]org[_-]cma[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "contentful[_-]php[_-]management[_-]test[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "contentful[_-]management[_-]api[_-]access[_-]token[_-]new"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "contentful[_-]management[_-]api[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "contentful[_-]integration[_-]management[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "contentful[_-]cma[_-]test[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "contentful[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "consumerkey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "consumer[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "conekta[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "coding[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "codecov[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "codeclimate[_-]repo[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "codacy[_-]project[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cocoapods[_-]trunk[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cocoapods[_-]trunk[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cn[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cn[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "clu[_-]ssh[_-]private[_-]key[_-]base64"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "clu[_-]repo[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudinary[_-]url[_-]staging"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudinary[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudflare[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudflare[_-]auth[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudflare[_-]auth[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudflare[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudant[_-]service[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudant[_-]processed[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudant[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudant[_-]parsed[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudant[_-]order[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudant[_-]instance"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudant[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudant[_-]audited[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloudant[_-]archived[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cloud[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "clojars[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cli[_-]e2e[_-]cma[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "claimr[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "claimr[_-]superuser"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "claimr[_-]db"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "claimr[_-]database"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ci[_-]user[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ci[_-]server[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ci[_-]registry[_-]user"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ci[_-]project[_-]url"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ci[_-]deploy[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "chrome[_-]refresh[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "chrome[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cheverny[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cf[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "certificate[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "censys[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cattle[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cattle[_-]agent[_-]instance[_-]auth"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cattle[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cargo[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "cache[_-]s3[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bx[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bx[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bundlesize[_-]github[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "built[_-]branch[_-]deploy[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bucketeer[_-]aws[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bucketeer[_-]aws[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "browserstack[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "browser[_-]stack[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "brackets[_-]repo[_-]oauth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bluemix[_-]username"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bluemix[_-]pwd"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bluemix[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bluemix[_-]pass[_-]prod"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bluemix[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bluemix[_-]auth"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bluemix[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bintraykey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bintray[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bintray[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bintray[_-]gpg[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bintray[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "bintray[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "b2[_-]bucket"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "b2[_-]app[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "awssecretkey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "awscn[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "awscn[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "awsaccesskeyid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]ses[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]ses[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]secrets"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]config[_-]secretaccesskey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]config[_-]accesskeyid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aws[_-]access"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "author[_-]npm[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "author[_-]email[_-]addr"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "auth0[_-]client[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "auth0[_-]api[_-]clientsecret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "auth[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "assistant[_-]iam[_-]apikey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "artifacts[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "artifacts[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "artifacts[_-]bucket"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "artifacts[_-]aws[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "artifacts[_-]aws[_-]access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "artifactory[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "argos[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "apple[_-]id[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "appclientsecret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "app[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "app[_-]secrete"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "app[_-]report[_-]token[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "app[_-]bucket[_-]perm"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "apigw[_-]access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "apiary[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "api[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "api[_-]key[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "api[_-]key[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aos[_-]sec"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "aos[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "ansible[_-]vault[_-]password"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "android[_-]docs[_-]deploy[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "anaconda[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "amazon[_-]secret[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "amazon[_-]bucket[_-]name"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "alicloud[_-]secret[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "alicloud[_-]access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "alias[_-]pass"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "algolia[_-]search[_-]key[_-]1"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "algolia[_-]search[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "algolia[_-]search[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "algolia[_-]api[_-]key[_-]search"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "algolia[_-]api[_-]key[_-]mcm"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "algolia[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "algolia[_-]admin[_-]key[_-]mcm"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "algolia[_-]admin[_-]key[_-]2"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "algolia[_-]admin[_-]key[_-]1"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "adzerk[_-]api[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "admin[_-]email"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "account[_-]sid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "accesskeyid"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "accesskey"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "access[_-]token"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "access[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "access[_-]key[_-]secret"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "access[_-]key[_-]id"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "access[_-]key"
+    name: 'key found'
+  - part:  'contents' 
+    regex: "acceptsslcerts"
+    name: 'acceptsslcerts'
+  - part:  'contents' 
+    regex: "acceptinsecurecerts"
+    name: 'acceptinsecurecerts'
+  - part:  'contents'
+    match: "powered by joomla 3.2"
+    name: 'powered by joomla 3.2'
+  - part:  'contents'
+    match: "powered by joomla 3.3"
+    name: 'powered by joomla 3.3'
+  - part:  'contents'
+    match: "powered by joomla 3.4"
+    name: 'powered by joomla 3.4'
+  - part:  'contents'    
+    match: "Content-type: application/x-java-serialized-object"
+    name: 'Java Serialized - Headers'
+  - part:  'contents'    
+    match: "H4sIA"
+    name: 'Java Serialized - Compressed'
+  - part:  'contents'    
+    match: "rO0"
+    name: 'Java Serialized - base64'
+  - part:  'contents'    
+    match: "AAEAAAD"
+    name: '.Net Serialized'
+  - part:  'contents'    
+    match: "TypeObject"
+    name: '.Net Serialized'
+  - part:  'contents'
+    match: "$type:"
+    name: '.Net Serialized'
+  - part:  'contents'
+    match: "$type:"
+    name: '.Net Serialized'
+  - part:  'contents'
+    match: "Content-Type: application/xml"
+    name: 'XML Content'
+  - part:  'contents'    
+    match: "Content-Type: text/xml"
+    name: 'XML Content'
+  - part:  'contents' 
+    regex: "\u005c\u002f\u0075\u0073\u0065\u0072\u005c\u002f\u0072\u0065\u0067\u0069\u0073\u0074\u0065\u0072\u002e\u002a\u0050\u006f\u0077\u0065\u0072\u0065\u0064\u0020\u0062\u0079\u0020\u0044\u0072\u0075\u0070\u0061\u006c"
+    name: "Drupal"
+  - part:  'contents'
+    regex: "\u004e\u0050\u004d\u005f\u0054\u004f\u004b\u0045\u004e\u007c\u0054\u004f\u004b\u0045\u004e\u0028\u005c\u0027\u007c\u005c\u0022\u007c\u005c\u0020\u007c\u003d\u0029\u007c\u003a\u0078\u002d\u006f\u0061\u0075\u0074\u0068\u002d\u0062\u0061\u0073\u0069\u0063\u007c\u0028\u005b\u0041\u002d\u005a\u0061\u002d\u007a\u0030\u002d\u0039\u005f\u005d\u007b\u0031\u0030\u002c\u007d\u005c\u003a\u005b\u0041\u002d\u005a\u0061\u002d\u007a\u0030\u002d\u0039\u005f\u002d\u005d\u007b\u0031\u0030\u002c\u007d\u0029"
+    name: 'NPM Token'
+  - part:  'contents'
+    regex: "\u0061\u0070\u0069\u004b\u0065\u0079\u003a\u005c\u0073\u0022\u0028\u002e\u002a\u003f\u0029"
+    name: "Firebase API"
+  - part:  'contents'
+    regex: "\u005b\u003d\u0020\u005d\u0065\u0079\u004a\u005b\u0041\u002d\u005a\u0061\u002d\u007a\u0030\u002d\u0039\u005f\u005c\u002f\u002b\u002d\u005d\u002a\u005c\u002e\u005b\u0041\u002d\u005a\u0061\u002d\u007a\u0030\u002d\u0039\u002e\u005f\u005c\u002f\u002b\u002d\u005d\u002a"
+    name: 'JWT-Response'
