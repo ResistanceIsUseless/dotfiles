@@ -1,7 +1,0 @@
-{
-    "flags": "-HnrE",
-    "patterns": [
-        "Content-Type: application/xml",
-        "Content-Type: text/xml"
-    ]
-}
