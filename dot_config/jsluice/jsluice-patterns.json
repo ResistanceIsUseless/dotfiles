@@ -1,0 +1,6698 @@
+[
+    {
+        "name": "ADMIN_PASSWORD",
+        "value": "(admin).+(secret|token|key|password).+"
+    },
+    {
+        "name": "AWS API Gateway",
+        "value": "[0-9a-z]+.execute-api.[0-9a-z.-_]+.amazonaws.com"
+    },
+    {
+        "name": "AWS API Key",
+        "value": "AKIA[0-9A-Z]{16}"
+    },
+    {
+        "name": "AWS ARN",
+        "value": "arn:aws:[a-z0-9-]+:[a-z]{2}-[a-z]+-[0-9]+:[0-9]+:.+"
+    },
+    {
+        "name": "AWS Access Key ID Value",
+        "value": "(A3T[A-Z0-9]|AKIA|AGPA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
+    },
+    {
+        "name": "AWS AppSync GraphQL Key",
+        "value": "da2-[a-z0-9]{26}"
+    },
+    {
+        "name": "AWS CloudFront",
+        "value": "[0-9a-z.-_]+.cloudfront.net"
+    },
+    {
+        "name": "AWS Cognito Pool ID",
+        "value": ":[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}"
+    },
+    {
+        "name": "AWS EC2 External",
+        "value": "ec2-[0-9a-z.-_]+.compute(-1)?.amazonaws.com"
+    },
+    {
+        "name": "AWS EC2 Internal",
+        "value": "[0-9a-z.-_]+.compute(-1)?.internal"
+    },
+    {
+        "name": "AWS ELB",
+        "value": "[0-9a-z.-_]+.elb.amazonaws.com"
+    },
+    {
+        "name": "AWS ElasticCache",
+        "value": "[0-9a-z.-_]+.cache.amazonaws.com"
+    },
+    {
+        "name": "AWS MWS ID",
+        "value": "mzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+    },
+    {
+        "name": "AWS MWS key",
+        "value": "amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+    },
+    {
+        "name": "AWS RDS",
+        "value": "[0-9a-z.-_]+.rds.amazonaws.com"
+    },
+    {
+        "name": "AWS S3 Bucket",
+        "value": "s3://[0-9a-z.-_/]+"
+    },
+    {
+        "name": "AWS S3 Endpoint",
+        "value": "[a-zA-Z0-9.-_]+.s3.[a-zA-Z0-9.-_]+.amazonaws.com"
+    },
+    {
+        "name": "AWS client ID",
+        "value": "(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
+    },
+    {
+        "name": "AWS cred file info",
+        "value": "(aws_access_key_id|aws_secret_access_key)"
+    },
+    {
+        "name": "Abbysale",
+        "value": "(?:abbysale).{0,40}\\b([a-z0-9A-Z]{40})\\b"
+    },
+    {
+        "name": "Abstract",
+        "value": "(?:abstract).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Abuseipdb",
+        "value": "(?:abuseipdb).{0,40}\\b([a-z0-9]{80})\\b"
+    },
+    {
+        "name": "Accuweather",
+        "value": "(?:accuweather).{0,40}([a-z0-9A-Z\\%]{35})\\b"
+    },
+    {
+        "name": "Adafruitio",
+        "value": "\\b(aio\\_[a-zA-Z0-9]{28})\\b"
+    },
+    {
+        "name": "Adobeio - 1",
+        "value": "(?:adobe).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Adobeio - 2",
+        "value": "(?:adobe).{0,40}\\b([a-zA-Z0-9.]{12})\\b"
+    },
+    {
+        "name": "Adzuna - 1",
+        "value": "(?:adzuna).{0,40}\\b([a-z0-9]{8})\\b"
+    },
+    {
+        "name": "Adzuna - 2",
+        "value": "(?:adzuna).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Aeroworkflow - 1",
+        "value": "(?:aeroworkflow).{0,40}\\b([0-9]{1,})\\b"
+    },
+    {
+        "name": "Aeroworkflow - 2",
+        "value": "(?:aeroworkflow).{0,40}\\b([a-zA-Z0-9^!]{20})\\b"
+    },
+    {
+        "name": "Agora",
+        "value": "(?:agora).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Airbrakeprojectkey - 1",
+        "value": "(?:airbrake).{0,40}\\b([0-9]{6})\\b"
+    },
+    {
+        "name": "Airbrakeprojectkey - 2",
+        "value": "(?:airbrake).{0,40}\\b([a-zA-Z-0-9]{32})\\b"
+    },
+    {
+        "name": "Airbrakeuserkey",
+        "value": "(?:airbrake).{0,40}\\b([a-zA-Z-0-9]{40})\\b"
+    },
+    {
+        "name": "Airship",
+        "value": "(?:airship).{0,40}\\b([0-9Aa-zA-Z]{91})\\b"
+    },
+    {
+        "name": "Airtableapikey",
+        "value": "\\b(key[a-zA-Z0-9_-]{14})\\b"
+    },
+    {
+        "name": "Airvisual",
+        "value": "(?:airvisual).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Alconost",
+        "value": "(?:alconost).{0,40}\\b([0-9Aa-z]{32})\\b"
+    },
+    {
+        "name": "Alegra - 1",
+        "value": "(?:alegra).{0,40}\\b([a-z0-9-]{20})\\b"
+    },
+    {
+        "name": "Alegra - 2",
+        "value": "(?:alegra).{0,40}\\b([a-zA-Z0-9.-@]{25,30})\\b"
+    },
+    {
+        "name": "Aletheiaapi",
+        "value": "(?:aletheiaapi).{0,40}\\b([A-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Algoliaadminkey - 1",
+        "value": "(?:algolia).{0,40}\\b([A-Z0-9]{10})\\b"
+    },
+    {
+        "name": "Algoliaadminkey - 2",
+        "value": "(?:algolia).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Alibaba - 1",
+        "value": "\\b([a-zA-Z0-9]{30})\\b"
+    },
+    {
+        "name": "Alibaba - 2",
+        "value": "\\b(LTAI[a-zA-Z0-9]{17,21})[\\\"' ;\\s]*"
+    },
+    {
+        "name": "Alienvault",
+        "value": "(?:alienvault).{0,40}\\b([a-z0-9]{64})\\b"
+    },
+    {
+        "name": "Allsports",
+        "value": "(?:allsports).{0,40}\\b([0-9a-z]{64})\\b"
+    },
+    {
+        "name": "Amadeus - 1",
+        "value": "(?:amadeus).{0,40}\\b([0-9A-Za-z]{32})\\b"
+    },
+    {
+        "name": "Amadeus - 2",
+        "value": "(?:amadeus).{0,40}\\b([0-9A-Za-z]{16})\\b"
+    },
+    {
+        "name": "Amazon SNS Topic",
+        "value": "arn:aws:sns:[a-z0-9\\-]+:[0-9]+:[A-Za-z0-9\\-_]+"
+    },
+    {
+        "name": "Ambee",
+        "value": "(?:ambee).{0,40}\\b([0-9a-f]{64})\\b"
+    },
+    {
+        "name": "Amplitudeapikey",
+        "value": "(?:amplitude).{0,40}\\b([a-f0-9]{32})"
+    },
+    {
+        "name": "Anypoint - 1",
+        "value": "(?:org).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Anypoint - 2",
+        "value": "\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Apacta",
+        "value": "(?:apacta).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Api2cart",
+        "value": "(?:api2cart).{0,40}\\b([0-9a-f]{32})\\b"
+    },
+    {
+        "name": "Apideck - 1",
+        "value": "\\b(sk_live_[a-z0-9A-Z-]{93})\\b"
+    },
+    {
+        "name": "Apideck - 2",
+        "value": "(?:apideck).{0,40}\\b([a-z0-9A-Z]{40})\\b"
+    },
+    {
+        "name": "Apiflash - 1",
+        "value": "(?:apiflash).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Apiflash - 2",
+        "value": "(?:apiflash).{0,40}\\b([a-zA-Z0-9\\S]{21,30})\\b"
+    },
+    {
+        "name": "Apifonica",
+        "value": "(?:apifonica).{0,40}\\b([0-9a-z]{11}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Apify",
+        "value": "\\b(apify\\_api\\_[a-zA-Z-0-9]{36})\\b"
+    },
+    {
+        "name": "Apimatic - 1",
+        "value": "(?:apimatic).{0,40}\\b([a-z0-9-\\S]{8,32})\\b"
+    },
+    {
+        "name": "Apimatic - 2",
+        "value": "(?:apimatic).{0,40}\\b([a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,5})\\b"
+    },
+    {
+        "name": "Apiscience",
+        "value": "(?:apiscience).{0,40}\\b([a-bA-Z0-9\\S]{22})\\b"
+    },
+    {
+        "name": "Apollo",
+        "value": "(?:apollo).{0,40}\\b([a-zA-Z0-9]{22})\\b"
+    },
+    {
+        "name": "Appcues - 1",
+        "value": "(?:appcues).{0,40}\\b([0-9]{5})\\b"
+    },
+    {
+        "name": "Appcues - 2",
+        "value": "(?:appcues).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Appcues - 3",
+        "value": "(?:appcues).{0,40}\\b([a-z0-9-]{39})\\b"
+    },
+    {
+        "name": "Appfollow",
+        "value": "(?:appfollow).{0,40}\\b([0-9A-Za-z]{20})\\b"
+    },
+    {
+        "name": "Appsynergy",
+        "value": "(?:appsynergy).{0,40}\\b([a-z0-9]{64})\\b"
+    },
+    {
+        "name": "Apptivo - 1",
+        "value": "(?:apptivo).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Apptivo - 2",
+        "value": "(?:apptivo).{0,40}\\b([a-zA-Z0-9-]{32})\\b"
+    },
+    {
+        "name": "Artifactory - 1",
+        "value": "\\b([a-zA-Z0-9]{73})"
+    },
+    {
+        "name": "Artifactory - 2",
+        "value": "\\b([A-Za-z0-9](?:[A-Za-z0-9\\-]{0,61}[A-Za-z0-9])\\.jfrog\\.io)"
+    },
+    {
+        "name": "Artifactory API Token",
+        "value": "(?:\\s|=|:|\"|^)AKC[a-zA-Z0-9]{10,}"
+    },
+    {
+        "name": "Artifactory Password",
+        "value": "(?:\\s|=|:|\"|^)AP[\\dABCDEF][a-zA-Z0-9]{8,}"
+    },
+    {
+        "name": "Artsy - 1",
+        "value": "(?:artsy).{0,40}\\b([0-9a-zA-Z]{20})\\b"
+    },
+    {
+        "name": "Artsy - 2",
+        "value": "(?:artsy).{0,40}\\b([0-9a-zA-Z]{32})\\b"
+    },
+    {
+        "name": "Asanaoauth",
+        "value": "(?:asana).{0,40}\\b([a-z\\/:0-9]{51})\\b"
+    },
+    {
+        "name": "Asanapersonalaccesstoken",
+        "value": "(?:asana).{0,40}\\b([0-9]{1,}\\/[0-9]{16,}:[A-Za-z0-9]{32,})\\b"
+    },
+    {
+        "name": "Assemblyai",
+        "value": "(?:assemblyai).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Asymmetric Private Key",
+        "value": "-----BEGIN ((EC|PGP|DSA|RSA|OPENSSH) )?PRIVATE KEY( BLOCK)?-----"
+    },
+    {
+        "name": "Audd",
+        "value": "(?:audd).{0,40}\\b([a-z0-9-]{32})\\b"
+    },
+    {
+        "name": "Auth0managementapitoken",
+        "value": "(?:auth0).{0,40}\\b(ey[a-zA-Z0-9._-]+)\\b"
+    },
+    {
+        "name": "Auth0oauth - 1",
+        "value": "(?:auth0).{0,40}\\b([a-zA-Z0-9_-]{32,60})\\b"
+    },
+    {
+        "name": "Autodesk - 1",
+        "value": "(?:autodesk).{0,40}\\b([0-9A-Za-z]{32})\\b"
+    },
+    {
+        "name": "Autodesk - 2",
+        "value": "(?:autodesk).{0,40}\\b([0-9A-Za-z]{16})\\b"
+    },
+    {
+        "name": "Autoklose",
+        "value": "(?:autoklose).{0,40}\\b([a-zA-Z0-9-]{32})\\b"
+    },
+    {
+        "name": "Autopilot",
+        "value": "(?:autopilot).{0,40}\\b([0-9a-f]{32})\\b"
+    },
+    {
+        "name": "Avazapersonalaccesstoken",
+        "value": "(?:avaza).{0,40}\\b([0-9]+-[0-9a-f]{40})\\b"
+    },
+    {
+        "name": "Aviationstack",
+        "value": "(?:aviationstack).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Aws - 1",
+        "value": "\\b((?:AKIA|ABIA|ACCA|ASIA)[0-9A-Z]{16})\\b"
+    },
+    {
+        "name": "Axonaut",
+        "value": "(?:axonaut).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Aylien - 1",
+        "value": "(?:aylien).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Aylien - 2",
+        "value": "(?:aylien).{0,40}\\b([a-z0-9]{8})\\b"
+    },
+    {
+        "name": "Ayrshare",
+        "value": "(?:ayrshare).{0,40}\\b([A-Z]{7}-[A-Z0-9]{7}-[A-Z0-9]{7}-[A-Z0-9]{7})\\b"
+    },
+    {
+        "name": "Bannerbear",
+        "value": "(?:bannerbear).{0,40}\\b([0-9a-zA-Z]{22}tt)\\b"
+    },
+    {
+        "name": "Baremetrics",
+        "value": "(?:baremetrics).{0,40}\\b([a-zA-Z0-9_]{25})\\b"
+    },
+    {
+        "name": "Baseapiio",
+        "value": "(?:baseapi|base-api).{0,40}\\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+    },
+    {
+        "name": "Basic token",
+        "value": "basic [a-zA-Z0-9_\\-:\\.=]+"
+    },
+    {
+        "name": "Beamer",
+        "value": "(?:beamer).{0,40}\\b([a-zA-Z0-9_+/]{45}=)"
+    },
+    {
+        "name": "Bearer token",
+        "value": "(bearer).+"
+    },
+    {
+        "name": "Beebole",
+        "value": "(?:beebole).{0,40}\\b([0-9a-z]{40})\\b"
+    },
+    {
+        "name": "Besttime",
+        "value": "(?:besttime).{0,40}\\b([0-9A-Za-z_]{36})\\b"
+    },
+    {
+        "name": "Billomat - 1",
+        "value": "(?:billomat).{0,40}\\b([0-9a-z]{1,})\\b"
+    },
+    {
+        "name": "Billomat - 2",
+        "value": "(?:billomat).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Bitbar",
+        "value": "(?:bitbar).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Bitcoinaverage",
+        "value": "(?:bitcoinaverage).{0,40}\\b([a-zA-Z0-9]{43})\\b"
+    },
+    {
+        "name": "Bitfinex",
+        "value": "(?:bitfinex).{0,40}\\b([A-Za-z0-9_-]{43})\\b"
+    },
+    {
+        "name": "Bitly Secret Key",
+        "value": "R_[0-9a-f]{32}"
+    },
+    {
+        "name": "Bitlyaccesstoken",
+        "value": "(?:bitly).{0,40}\\b([a-zA-Z-0-9]{40})\\b"
+    },
+    {
+        "name": "Bitmex - 1",
+        "value": "(?:bitmex).{0,40}([ \\r\\n]{1}[0-9a-zA-Z\\-\\_]{24}[ \\r\\n]{1})"
+    },
+    {
+        "name": "Bitmex - 2",
+        "value": "(?:bitmex).{0,40}([ \\r\\n]{1}[0-9a-zA-Z\\-\\_]{48}[ \\r\\n]{1})"
+    },
+    {
+        "name": "Blablabus",
+        "value": "(?:blablabus).{0,40}\\b([0-9A-Za-z]{22})\\b"
+    },
+    {
+        "name": "Blazemeter",
+        "value": "(?:blazemeter|runscope).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Blitapp",
+        "value": "(?:blitapp).{0,40}\\b([a-zA-Z0-9_-]{39})\\b"
+    },
+    {
+        "name": "Blogger",
+        "value": "(?:blogger).{0,40}\\b([0-9A-Za-z-]{39})\\b"
+    },
+    {
+        "name": "Bombbomb",
+        "value": "(?:bombbomb).{0,40}\\b([a-zA-Z0-9-._]{704})\\b"
+    },
+    {
+        "name": "Boostnote",
+        "value": "(?:boostnote).{0,40}\\b([0-9a-f]{64})\\b"
+    },
+    {
+        "name": "Borgbase",
+        "value": "(?:borgbase).{0,40}\\b([a-zA-Z0-9/_.-]{148,152})\\b"
+    },
+    {
+        "name": "Braintree API Key",
+        "value": "access_token$production$[0-9a-z]{16}$[0-9a-f]{32}"
+    },
+    {
+        "name": "Brandfetch",
+        "value": "(?:brandfetch).{0,40}\\b([0-9A-Za-z]{40})\\b"
+    },
+    {
+        "name": "Browshot",
+        "value": "(?:browshot).{0,40}\\b([a-zA-Z-0-9]{28})\\b"
+    },
+    {
+        "name": "Buddyns",
+        "value": "(?:buddyns).{0,40}\\b([0-9a-z]{40})\\b"
+    },
+    {
+        "name": "Bugherd",
+        "value": "(?:bugherd).{0,40}\\b([0-9a-z]{22})\\b"
+    },
+    {
+        "name": "Bugsnag",
+        "value": "(?:bugsnag).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Buildkite",
+        "value": "(?:buildkite).{0,40}\\b([a-z0-9]{40})\\b"
+    },
+    {
+        "name": "Bulbul",
+        "value": "(?:bulbul).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Buttercms",
+        "value": "(?:buttercms).{0,40}\\b([a-z0-9]{40})\\b"
+    },
+    {
+        "name": "Caflou",
+        "value": "(?:caflou).{0,40}\\b([a-bA-Z0-9\\S]{155})\\b"
+    },
+    {
+        "name": "Calendarific",
+        "value": "(?:calendarific).{0,40}\\b([a-z0-9]{40})\\b"
+    },
+    {
+        "name": "Calendlyapikey",
+        "value": "(?:calendly).{0,40}\\b([a-zA-Z-0-9]{20}.[a-zA-Z-0-9]{171}.[a-zA-Z-0-9_]{43})\\b"
+    },
+    {
+        "name": "Calorieninja",
+        "value": "(?:calorieninja).{0,40}\\b([0-9A-Za-z]{40})\\b"
+    },
+    {
+        "name": "Campayn",
+        "value": "(?:campayn).{0,40}\\b([a-z0-9]{64})\\b"
+    },
+    {
+        "name": "Cannyio",
+        "value": "(?:canny).{0,40}\\b([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[0-9]{4}-[a-z0-9]{12})\\b"
+    },
+    {
+        "name": "Capsulecrm",
+        "value": "(?:capsulecrm).{0,40}\\b([a-zA-Z0-9-._+=]{64})\\b"
+    },
+    {
+        "name": "Captaindata - 1",
+        "value": "(?:captaindata).{0,40}\\b([0-9a-f]{8}\\-[0-9a-f]{4}\\-[0-9a-f]{4}\\-[0-9a-f]{4}\\-[0-9a-f]{12})\\b"
+    },
+    {
+        "name": "Captaindata - 2",
+        "value": "(?:captaindata).{0,40}\\b([0-9a-f]{64})\\b"
+    },
+    {
+        "name": "Carboninterface",
+        "value": "(?:carboninterface).{0,40}\\b([a-zA-Z0-9]{21})\\b"
+    },
+    {
+        "name": "Cashboard - 1",
+        "value": "(?:cashboard).{0,40}\\b([0-9A-Z]{3}-[0-9A-Z]{3}-[0-9A-Z]{3}-[0-9A-Z]{3})\\b"
+    },
+    {
+        "name": "Cashboard - 2",
+        "value": "(?:cashboard).{0,40}\\b([0-9a-z]{1,})\\b"
+    },
+    {
+        "name": "Caspio - 1",
+        "value": "(?:caspio).{0,40}\\b([a-z0-9]{8})\\b"
+    },
+    {
+        "name": "Caspio - 2",
+        "value": "(?:caspio).{0,40}\\b([a-z0-9]{50})\\b"
+    },
+    {
+        "name": "Censys - 1",
+        "value": "(?:censys).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Censys - 2",
+        "value": "(?:censys).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Centralstationcrm",
+        "value": "(?:centralstation).{0,40}\\b([a-z0-9]{30})\\b"
+    },
+    {
+        "name": "Cexio - 1",
+        "value": "(?:cexio|cex.io).{0,40}\\b([a-z]{2}[0-9]{9})\\b"
+    },
+    {
+        "name": "Cexio - 2",
+        "value": "(?:cexio|cex.io).{0,40}\\b([0-9A-Za-z]{24,27})\\b"
+    },
+    {
+        "name": "Chatbot",
+        "value": "(?:chatbot).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+    },
+    {
+        "name": "Chatfule",
+        "value": "(?:chatfuel).{0,40}\\b([a-zA-Z0-9]{128})\\b"
+    },
+    {
+        "name": "Checio",
+        "value": "(?:checio).{0,40}\\b(pk_[a-z0-9]{45})\\b"
+    },
+    {
+        "name": "Checklyhq",
+        "value": "(?:checklyhq).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Checkout - 1",
+        "value": "(?:checkout).{0,40}\\b((sk_|sk_test_)[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})\\b"
+    },
+    {
+        "name": "Checkout - 2",
+        "value": "(?:checkout).{0,40}\\b(cus_[0-9a-zA-Z]{26})\\b"
+    },
+    {
+        "name": "Checkvist - 1",
+        "value": "(?:checkvist).{0,40}\\b([\\w\\.-]+@[\\w-]+\\.[\\w\\.-]{2,5})\\b"
+    },
+    {
+        "name": "Checkvist - 2",
+        "value": "(?:checkvist).{0,40}\\b([0-9a-zA-Z]{14})\\b"
+    },
+    {
+        "name": "Cicero",
+        "value": "(?:cicero).{0,40}\\b([0-9a-z]{40})\\b"
+    },
+    {
+        "name": "Circleci",
+        "value": "(?:circle).{0,40}([a-fA-F0-9]{40})"
+    },
+    {
+        "name": "Clearbit",
+        "value": "(?:clearbit).{0,40}\\b([0-9a-z_]{35})\\b"
+    },
+    {
+        "name": "Clickhelp - 1",
+        "value": "\\b([0-9A-Za-z]{3,20}.try.clickhelp.co)\\b"
+    },
+    {
+        "name": "Clickhelp - 2",
+        "value": "(?:clickhelp).{0,40}\\b([0-9A-Za-z]{24})\\b"
+    },
+    {
+        "name": "Clicksendsms - 1",
+        "value": "\\b([A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12})\\b"
+    },
+    {
+        "name": "Clicksendsms - 2",
+        "value": "(?:sms).{0,40}\\b([a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,5})\\b"
+    },
+    {
+        "name": "Clickuppersonaltoken",
+        "value": "(?:clickup).{0,40}\\b(pk_[0-9]{8}_[0-9A-Z]{32})\\b"
+    },
+    {
+        "name": "Cliengo",
+        "value": "(?:cliengo).{0,40}\\b([0-9a-f]{8}\\-[0-9a-f]{4}\\-[0-9a-f]{4}\\-[0-9a-f]{4}\\-[0-9a-f]{12})\\b"
+    },
+    {
+        "name": "Clinchpad",
+        "value": "(?:clinchpad).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Clockify",
+        "value": "(?:clockify).{0,40}\\b([a-zA-Z0-9]{48})\\b"
+    },
+    {
+        "name": "Clockworksms - 1",
+        "value": "(?:clockwork|textanywhere).{0,40}\\b([0-9a-zA-Z]{24})\\b"
+    },
+    {
+        "name": "Clockworksms - 2",
+        "value": "(?:clockwork|textanywhere).{0,40}\\b([0-9]{5})\\b"
+    },
+    {
+        "name": "Closecrm",
+        "value": "\\b(api_[a-z0-9A-Z.]{45})\\b"
+    },
+    {
+        "name": "Cloudelements - 1",
+        "value": "(?:cloudelements).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Cloudelements - 2",
+        "value": "(?:cloudelements).{0,40}\\b([a-zA-Z0-9]{43})\\b"
+    },
+    {
+        "name": "Cloudflareapitoken",
+        "value": "(?:cloudflare).{0,40}\\b([A-Za-z0-9_-]{40})\\b"
+    },
+    {
+        "name": "Cloudflarecakey",
+        "value": "(?:cloudflare).{0,40}\\b(v[A-Za-z0-9._-]{173,})\\b"
+    },
+    {
+        "name": "Cloudflareglobalapikey - 1",
+        "value": "\\b([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9_-]+)\\b"
+    },
+    {
+        "name": "Cloudflareglobalapikey - 2",
+        "value": "(?:cloudflare).{0,40}([A-Za-z0-9_-]{37})"
+    },
+    {
+        "name": "Cloudimage",
+        "value": "(?:cloudimage).{0,40}\\b([a-z0-9_]{30})\\b"
+    },
+    {
+        "name": "Cloudinary Credentials",
+        "value": "cloudinary://[0-9]+:[A-Za-z0-9\\-_\\.]+@[A-Za-z0-9\\-_\\.]+"
+    },
+    {
+        "name": "Cloudmersive",
+        "value": "(?:cloudmersive).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Cloudplan",
+        "value": "(?:cloudplan).{0,40}\\b([A-Z0-9-]{32})\\b"
+    },
+    {
+        "name": "Cloverly",
+        "value": "(?:cloverly).{0,40}\\b([a-z0-9:_]{28})\\b"
+    },
+    {
+        "name": "Cloze - 1",
+        "value": "(?:cloze).{0,40}\\b([0-9a-f]{32})\\b"
+    },
+    {
+        "name": "Cloze - 2",
+        "value": "(?:cloze).{0,40}\\b([\\w\\.-]+@[\\w-]+\\.[\\w\\.-]{2,5})\\b"
+    },
+    {
+        "name": "Clustdoc",
+        "value": "(?:clustdoc).{0,40}\\b([0-9a-zA-Z]{60})\\b"
+    },
+    {
+        "name": "Codacy",
+        "value": "(?:codacy).{0,40}\\b([0-9A-Za-z]{20})\\b"
+    },
+    {
+        "name": "Coinapi",
+        "value": "(?:coinapi).{0,40}\\b([A-Z0-9-]{36})\\b"
+    },
+    {
+        "name": "Coinbase",
+        "value": "(?:coinbase).{0,40}\\b([a-zA-Z-0-9]{64})\\b"
+    },
+    {
+        "name": "Coinlayer",
+        "value": "(?:coinlayer).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Coinlib",
+        "value": "(?:coinlib).{0,40}\\b([a-z0-9]{16})\\b"
+    },
+    {
+        "name": "Column",
+        "value": "(?:column).{0,40}\\b((?:test|live)_[a-zA-Z0-9]{27})\\b"
+    },
+    {
+        "name": "Commercejs",
+        "value": "(?:commercejs).{0,40}\\b([a-z0-9_]{48})\\b"
+    },
+    {
+        "name": "Commodities",
+        "value": "(?:commodities).{0,40}\\b([a-zA-Z0-9]{60})\\b"
+    },
+    {
+        "name": "Companyhub - 1",
+        "value": "(?:companyhub).{0,40}\\b([0-9a-zA-Z]{20})\\b"
+    },
+    {
+        "name": "Companyhub - 2",
+        "value": "(?:companyhub).{0,40}\\b([a-zA-Z0-9$%^=-]{4,32})\\b"
+    },
+    {
+        "name": "Confluent - 1",
+        "value": "(?:confluent).{0,40}\\b([a-zA-Z-0-9]{16})\\b"
+    },
+    {
+        "name": "Confluent - 2",
+        "value": "(?:confluent).{0,40}\\b([a-zA-Z-0-9]{64})\\b"
+    },
+    {
+        "name": "Contentfulpersonalaccesstoken",
+        "value": "\\b([CFPAT\\-a-zA-Z-0-9]{49})\\b"
+    },
+    {
+        "name": "Convertkit",
+        "value": "(?:convertkit).{0,40}\\b([a-z0-9A-Z_]{22})\\b"
+    },
+    {
+        "name": "Convier",
+        "value": "(?:convier).{0,40}\\b([0-9]{2}\\|[a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Copper - 1",
+        "value": "\\b([a-z0-9]{4,25}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,6})\\b"
+    },
+    {
+        "name": "Copper - 2",
+        "value": "(?:copper).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Countrylayer",
+        "value": "(?:countrylayer).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Courier",
+        "value": "(?:courier).{0,40}\\b(pk\\_[a-zA-Z0-9]{1,}\\_[a-zA-Z0-9]{28})\\b"
+    },
+    {
+        "name": "Coveralls",
+        "value": "(?:coveralls).{0,40}\\b([a-zA-Z0-9-]{37})\\b"
+    },
+    {
+        "name": "Crowdin",
+        "value": "(?:crowdin).{0,40}\\b([0-9A-Za-z]{80})\\b"
+    },
+    {
+        "name": "Cryptocompare",
+        "value": "(?:cryptocompare).{0,40}\\b([a-z-0-9]{64})\\b"
+    },
+    {
+        "name": "Currencycloud - 1",
+        "value": "(?:currencycloud).{0,40}\\b([0-9a-z]{64})\\b"
+    },
+    {
+        "name": "Currencyfreaks",
+        "value": "(?:currencyfreaks).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Currencylayer",
+        "value": "(?:currencylayer).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Currencyscoop",
+        "value": "(?:currencyscoop).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Currentsapi",
+        "value": "(?:currentsapi).{0,40}\\b([a-zA-Z0-9\\S]{48})\\b"
+    },
+    {
+        "name": "Customerguru - 1",
+        "value": "(?:guru).{0,40}\\b([a-z0-9A-Z]{50})\\b"
+    },
+    {
+        "name": "Customerguru - 2",
+        "value": "(?:guru).{0,40}\\b([a-z0-9A-Z]{30})\\b"
+    },
+    {
+        "name": "Customerio",
+        "value": "(?:customer).{0,40}\\b([a-z0-9A-Z]{20})\\b"
+    },
+    {
+        "name": "D7network",
+        "value": "(?:d7network).{0,40}\\b([a-zA-Z0-9\\W\\S]{23}\\=)"
+    },
+    {
+        "name": "Dailyco",
+        "value": "(?:daily).{0,40}\\b([0-9a-f]{64})\\b"
+    },
+    {
+        "name": "Dandelion",
+        "value": "(?:dandelion).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Databricks",
+        "value": "dapi[a-f0-9]{32}\\b"
+    },
+    {
+        "name": "Datadogtoken - 1",
+        "value": "(?:datadog).{0,40}\\b([a-zA-Z-0-9]{32})\\b"
+    },
+    {
+        "name": "Datadogtoken - 2",
+        "value": "(?:datadog).{0,40}\\b([a-zA-Z-0-9]{40})\\b"
+    },
+    {
+        "name": "Datafire",
+        "value": "(?:datafire).{0,40}\\b([a-z0-9\\S]{175,190})\\b"
+    },
+    {
+        "name": "Datagov",
+        "value": "(?:data.gov).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Debounce",
+        "value": "(?:debounce).{0,40}\\b([a-zA-Z0-9]{13})\\b"
+    },
+    {
+        "name": "Deepai",
+        "value": "(?:deepai).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Deepgram",
+        "value": "(?:deepgram).{0,40}\\b([0-9a-z]{40})\\b"
+    },
+    {
+        "name": "Delighted",
+        "value": "(?:delighted).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+    },
+    {
+        "name": "Deputy - 1",
+        "value": "\\b([0-9a-z]{1,}.as.deputy.com)\\b"
+    },
+    {
+        "name": "Deputy - 2",
+        "value": "(?:deputy).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Detectlanguage",
+        "value": "(?:detectlanguage).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Dfuse",
+        "value": "\\b(web\\_[0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Diffbot",
+        "value": "(?:diffbot).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Digitaloceantoken",
+        "value": "(?:digitalocean).{0,40}\\b([A-Za-z0-9_-]{64})\\b"
+    },
+    {
+        "name": "Discord Webhook",
+        "value": "https://discordapp\\.com/api/webhooks/[0-9]+/[A-Za-z0-9\\-]+"
+    },
+    {
+        "name": "Discordbottoken - 1",
+        "value": "(?:discord).{0,40}\\b([A-Za-z0-9_-]{24}\\.[A-Za-z0-9_-]{6}\\.[A-Za-z0-9_-]{27})\\b"
+    },
+    {
+        "name": "Discordbottoken - 2",
+        "value": "(?:discord).{0,40}\\b([0-9]{17})\\b"
+    },
+    {
+        "name": "Discordwebhook",
+        "value": "(https:\\/\\/discord.com\\/api\\/webhooks\\/[0-9]{18}\\/[0-9a-zA-Z-]{68})"
+    },
+    {
+        "name": "Ditto",
+        "value": "(?:ditto).{0,40}\\b([a-z0-9]{8}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{12}\\.[a-z0-9]{40})\\b"
+    },
+    {
+        "name": "Dnscheck - 1",
+        "value": "(?:dnscheck).{0,40}\\b([a-z0-9A-Z-]{36})\\b"
+    },
+    {
+        "name": "Dnscheck - 2",
+        "value": "(?:dnscheck).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+    },
+    {
+        "name": "Documo",
+        "value": "\\b(ey[a-zA-Z0-9]{34}.ey[a-zA-Z0-9]{154}.[a-zA-Z0-9_-]{43})\\b"
+    },
+    {
+        "name": "Doppler",
+        "value": "\\b(dp\\.pt\\.[a-zA-Z0-9]{43})\\b"
+    },
+    {
+        "name": "Dotmailer - 1",
+        "value": "(?:dotmailer).{0,40}\\b(apiuser-[a-z0-9]{12}@apiconnector.com)\\b"
+    },
+    {
+        "name": "Dotmailer - 2",
+        "value": "(?:dotmailer).{0,40}\\b([a-zA-Z0-9\\S]{8,24})\\b"
+    },
+    {
+        "name": "Dovico",
+        "value": "(?:dovico).{0,40}\\b([0-9a-z]{32}\\.[0-9a-z]{1,}\\b)"
+    },
+    {
+        "name": "Dronahq",
+        "value": "(?:dronahq).{0,40}\\b([a-z0-9]{50})\\b"
+    },
+    {
+        "name": "Droneci",
+        "value": "(?:droneci).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Dropbox",
+        "value": "\\b(sl\\.[A-Za-z0-9\\-\\_]{130,140})\\b"
+    },
+    {
+        "name": "Dwolla",
+        "value": "(?:dwolla).{0,40}\\b([a-zA-Z-0-9]{50})\\b"
+    },
+    {
+        "name": "Dynalist",
+        "value": "(?:dynalist).{0,40}\\b([a-zA-Z0-9-_]{128})\\b"
+    },
+    {
+        "name": "Dynatrace token",
+        "value": "dt0[a-zA-Z]{1}[0-9]{2}\\.[A-Z0-9]{24}\\.[A-Z0-9]{64}"
+    },
+    {
+        "name": "Dyspatch",
+        "value": "(?:dyspatch).{0,40}\\b([A-Z0-9]{52})\\b"
+    },
+    {
+        "name": "EC",
+        "value": "-----BEGIN EC PRIVATE KEY-----"
+    },
+    {
+        "name": "Eagleeyenetworks - 1",
+        "value": "(?:eagleeyenetworks).{0,40}\\b([a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,5})\\b"
+    },
+    {
+        "name": "Eagleeyenetworks - 2",
+        "value": "(?:eagleeyenetworks).{0,40}\\b([a-zA-Z0-9]{15})\\b"
+    },
+    {
+        "name": "Easyinsight - 1",
+        "value": "(?:easyinsight|easy-insight).{0,40}\\b([a-zA-Z0-9]{20})\\b"
+    },
+    {
+        "name": "Easyinsight - 2",
+        "value": "(?:easyinsight|easy-insight).{0,40}\\b([0-9Aa-zA-Z]{20})\\b"
+    },
+    {
+        "name": "Edamam - 1",
+        "value": "(?:edamam).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Edamam - 2",
+        "value": "(?:edamam).{0,40}\\b([0-9a-z]{8})\\b"
+    },
+    {
+        "name": "Edenai",
+        "value": "(?:edenai).{0,40}\\b([a-zA-Z0-9]{36}.[a-zA-Z0-9]{92}.[a-zA-Z0-9_]{43})\\b"
+    },
+    {
+        "name": "Eightxeight - 1",
+        "value": "(?:8x8).{0,40}\\b([a-zA-Z0-9_]{18,30})\\b"
+    },
+    {
+        "name": "Eightxeight - 2",
+        "value": "(?:8x8).{0,40}\\b([a-zA-Z0-9]{43})\\b"
+    },
+    {
+        "name": "Elasticemail",
+        "value": "(?:elastic).{0,40}\\b([A-Za-z0-9_-]{96})\\b"
+    },
+    {
+        "name": "Enablex - 1",
+        "value": "(?:enablex).{0,40}\\b([a-zA-Z0-9]{36})\\b"
+    },
+    {
+        "name": "Enablex - 2",
+        "value": "(?:enablex).{0,40}\\b([a-z0-9]{24})\\b"
+    },
+    {
+        "name": "Enigma",
+        "value": "(?:enigma).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Ethplorer",
+        "value": "(?:ethplorer).{0,40}\\b([a-z0-9A-Z-]{22})\\b"
+    },
+    {
+        "name": "Etsyapikey",
+        "value": "(?:etsy).{0,40}\\b([a-zA-Z-0-9]{24})\\b"
+    },
+    {
+        "name": "Everhour",
+        "value": "(?:everhour).{0,40}\\b([0-9Aa-f]{4}-[0-9a-f]{4}-[0-9a-f]{6}-[0-9a-f]{6}-[0-9a-f]{8})\\b"
+    },
+    {
+        "name": "Exchangerateapi",
+        "value": "(?:exchangerate).{0,40}\\b([a-z0-9]{24})\\b"
+    },
+    {
+        "name": "Exchangeratesapi",
+        "value": "(?:exchangerates).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "FCM Server Key",
+        "value": "AAAA[a-zA-Z0-9_-]{7}:[a-zA-Z0-9_-]{140}"
+    },
+    {
+        "name": "FCM_server_key",
+        "value": "(AAAA[a-zA-Z0-9_-]{7}:[a-zA-Z0-9_-]{140})"
+    },
+    {
+        "name": "Facebook Access Token",
+        "value": "EAACEdEose0cBA[0-9A-Za-z]+"
+    },
+    {
+        "name": "Facebook OAuth",
+        "value": "[fF][aA][cC][eE][bB][oO][oO][kK].*['|\"][0-9a-f]{32}['|\"]"
+    },
+    {
+        "name": "Facebookoauth",
+        "value": "(?:facebook).{0,40}\\b([A-Za-z0-9]{32})\\b"
+    },
+    {
+        "name": "Faceplusplus",
+        "value": "(?:faceplusplus).{0,40}\\b([0-9a-zA-Z_-]{32})\\b"
+    },
+    {
+        "name": "Fakejson",
+        "value": "(?:fakejson).{0,40}\\b([a-zA-Z0-9]{22})\\b"
+    },
+    {
+        "name": "Fastforex",
+        "value": "(?:fastforex).{0,40}\\b([a-z0-9-]{28})\\b"
+    },
+    {
+        "name": "Fastlypersonaltoken",
+        "value": "(?:fastly).{0,40}\\b([A-Za-z0-9_-]{32})\\b"
+    },
+    {
+        "name": "Feedier",
+        "value": "(?:feedier).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+    },
+    {
+        "name": "Fetchrss",
+        "value": "(?:fetchrss).{0,40}\\b([0-9A-Za-z.]{40})\\b"
+    },
+    {
+        "name": "Figmapersonalaccesstoken",
+        "value": "(?:figma).{0,40}\\b([0-9]{6}-[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Fileio",
+        "value": "(?:fileio).{0,40}\\b([A-Z0-9.-]{39})\\b"
+    },
+    {
+        "name": "Finage",
+        "value": "\\b(API_KEY[0-9A-Z]{32})\\b"
+    },
+    {
+        "name": "Financialmodelingprep",
+        "value": "(?:financialmodelingprep).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Findl",
+        "value": "(?:findl).{0,40}\\b([a-z0-9]{8}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{12})\\b"
+    },
+    {
+        "name": "Finnhub",
+        "value": "(?:finnhub).{0,40}\\b([0-9a-z]{20})\\b"
+    },
+    {
+        "name": "Firebase Database Detect - 1",
+        "value": "[a-z0-9.-]+\\.firebaseio\\.com"
+    },
+    {
+        "name": "Firebase Database Detect - 2",
+        "value": "[a-z0-9.-]+\\.firebaseapp\\.com"
+    },
+    {
+        "name": "Fixerio",
+        "value": "(?:fixer).{0,40}\\b([A-Za-z0-9]{32})\\b"
+    },
+    {
+        "name": "Flatio",
+        "value": "(?:flat).{0,40}\\b([0-9a-z]{128})\\b"
+    },
+    {
+        "name": "Fleetbase",
+        "value": "\\b(flb_live_[0-9a-zA-Z]{20})\\b"
+    },
+    {
+        "name": "Flickr",
+        "value": "(?:flickr).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Flightapi",
+        "value": "(?:flightapi).{0,40}\\b([a-z0-9]{24})\\b"
+    },
+    {
+        "name": "Flightstats - 1",
+        "value": "(?:flightstats).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Flightstats - 2",
+        "value": "(?:flightstats).{0,40}\\b([0-9a-z]{8})\\b"
+    },
+    {
+        "name": "Float",
+        "value": "(?:float).{0,40}\\b([a-zA-Z0-9-._+=]{59,60})\\b"
+    },
+    {
+        "name": "Flowflu - 1",
+        "value": "(?:flowflu|account).{0,40}\\b([a-zA-Z0-9]{4,30})\\b"
+    },
+    {
+        "name": "Flowflu - 2",
+        "value": "(?:flowflu).{0,40}\\b([a-zA-Z0-9]{51})\\b"
+    },
+    {
+        "name": "Flutterwave",
+        "value": "\\b(FLWSECK-[0-9a-z]{32}-X)\\b"
+    },
+    {
+        "name": "Fmfw - 1",
+        "value": "(?:fmfw).{0,40}\\b([a-zA-Z0-9-]{32})\\b"
+    },
+    {
+        "name": "Fmfw - 2",
+        "value": "(?:fmfw).{0,40}\\b([a-zA-Z0-9_-]{32})\\b"
+    },
+    {
+        "name": "Formbucket",
+        "value": "(?:formbucket).{0,40}\\b([0-9A-Za-z]{1,}.[0-9A-Za-z]{1,}\\.[0-9A-Z-a-z\\-_]{1,})"
+    },
+    {
+        "name": "Formio",
+        "value": "(?:formio).{0,40}\\b(eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\\.[0-9A-Za-z]{310}\\.[0-9A-Z-a-z\\-_]{43}[ \\r\\n]{1})"
+    },
+    {
+        "name": "Foursquare",
+        "value": "(?:foursquare).{0,40}\\b([0-9A-Z]{48})\\b"
+    },
+    {
+        "name": "Frameio",
+        "value": "\\b(fio-u-[0-9a-zA-Z_-]{64})\\b"
+    },
+    {
+        "name": "Freshbooks - 1",
+        "value": "(?:freshbooks).{0,40}\\b([0-9a-z]{64})\\b"
+    },
+    {
+        "name": "Freshbooks - 2",
+        "value": "(?:freshbooks).{0,40}\\b(https://www.[0-9A-Za-z_-]{1,}.com)\\b"
+    },
+    {
+        "name": "Freshdesk - 1",
+        "value": "(?:freshdesk).{0,40}\\b([0-9A-Za-z]{20})\\b"
+    },
+    {
+        "name": "Freshdesk - 2",
+        "value": "\\b([0-9a-z-]{1,}.freshdesk.com)\\b"
+    },
+    {
+        "name": "Front",
+        "value": "(?:front).{0,40}\\b([0-9a-zA-Z]{36}.[0-9a-zA-Z\\.\\-\\_]{188,244})\\b"
+    },
+    {
+        "name": "Fulcrum",
+        "value": "(?:fulcrum).{0,40}\\b([a-z0-9]{80})\\b"
+    },
+    {
+        "name": "Fullstory",
+        "value": "(?:fullstory).{0,40}\\b([a-zA-Z-0-9/+]{88})\\b"
+    },
+    {
+        "name": "Fusebill",
+        "value": "(?:fusebill).{0,40}\\b([a-zA-Z0-9]{88})\\b"
+    },
+    {
+        "name": "Fxmarket",
+        "value": "(?:fxmarket).{0,40}\\b([0-9Aa-zA-Z-_=]{20})\\b"
+    },
+    {
+        "name": "Gcp",
+        "value": "\\{[^{]+auth_provider_x509_cert_url[^}]+\\}"
+    },
+    {
+        "name": "Geckoboard",
+        "value": "(?:geckoboard).{0,40}\\b([a-zA-Z0-9]{44})\\b"
+    },
+    {
+        "name": "Generic - 1376",
+        "value": "jdbc:mysql(=| =|:| :)"
+    },
+    {
+        "name": "Generic - 1688",
+        "value": "TOKEN[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+    },
+    {
+        "name": "Generic - 1689",
+        "value": "API[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+    },
+    {
+        "name": "Generic - 1690",
+        "value": "KEY[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+    },
+    {
+        "name": "Generic - 1691",
+        "value": "SECRET[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+    },
+    {
+        "name": "Generic - 1692",
+        "value": "AUTHORIZATION[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+    },
+    {
+        "name": "Generic - 1693",
+        "value": "PASSWORD[\\\\-|_|A-Z0-9]*(\\'|\\\")?(:|=)(\\'|\\\")?[\\\\-|_|A-Z0-9]{10}"
+    },
+    {
+        "name": "Generic - 1695",
+        "value": "(A|a)(P|p)(Ii)[\\-|_|A-Za-z0-9]*(\\''|\")?( )*(:|=)( )*(\\''|\")?[0-9A-Za-z\\-_]+(\\''|\")?"
+    },
+    {
+        "name": "Generic - 1696",
+        "value": "(K|k)(E|e)(Y|y)[\\-|_|A-Za-z0-9]*(\\''|\")?( )*(:|=)( )*(\\''|\")?[0-9A-Za-z\\-_]+(\\''|\")?"
+    },
+    {
+        "name": "Generic - 1700",
+        "value": "BEGIN OPENSSH PRIVATE KEY"
+    },
+    {
+        "name": "Generic - 1701",
+        "value": "BEGIN PRIVATE KEY"
+    },
+    {
+        "name": "Generic - 1702",
+        "value": "BEGIN RSA PRIVATE KEY"
+    },
+    {
+        "name": "Generic - 1703",
+        "value": "BEGIN DSA PRIVATE KEY"
+    },
+    {
+        "name": "Generic - 1704",
+        "value": "BEGIN EC PRIVATE KEY"
+    },
+    {
+        "name": "Generic - 1705",
+        "value": "BEGIN PGP PRIVATE KEY BLOCK"
+    },
+    {
+        "name": "Generic - 1706",
+        "value": "[a-z0-9.-]+\\.s3\\.amazonaws\\.com"
+    },
+    {
+        "name": "Generic - 1707",
+        "value": "[a-z0-9.-]+\\.s3-[a-z0-9-]\\.amazonaws\\.com"
+    },
+    {
+        "name": "Generic - 1708",
+        "value": "[a-z0-9.-]+\\.s3-website[.-](eu|ap|us|ca|sa|cn)"
+    },
+    {
+        "name": "Generic - 1709",
+        "value": "s3\\.amazonaws\\.com/[a-z0-9._-]+"
+    },
+    {
+        "name": "Generic - 1710",
+        "value": "algolia_api_key"
+    },
+    {
+        "name": "Generic - 1711",
+        "value": "asana_access_token"
+    },
+    {
+        "name": "Generic - 1713",
+        "value": "azure_tenant"
+    },
+    {
+        "name": "Generic - 1714",
+        "value": "bitly_access_token"
+    },
+    {
+        "name": "Generic - 1715",
+        "value": "branchio_secret"
+    },
+    {
+        "name": "Generic - 1716",
+        "value": "browserstack_access_key"
+    },
+    {
+        "name": "Generic - 1717",
+        "value": "buildkite_access_token"
+    },
+    {
+        "name": "Generic - 1718",
+        "value": "comcast_access_token"
+    },
+    {
+        "name": "Generic - 1719",
+        "value": "datadog_api_key"
+    },
+    {
+        "name": "Generic - 1720",
+        "value": "deviantart_secret"
+    },
+    {
+        "name": "Generic - 1721",
+        "value": "deviantart_access_token"
+    },
+    {
+        "name": "Generic - 1722",
+        "value": "dropbox_api_token"
+    },
+    {
+        "name": "Generic - 1723",
+        "value": "facebook_appsecret"
+    },
+    {
+        "name": "Generic - 1724",
+        "value": "facebook_access_token"
+    },
+    {
+        "name": "Generic - 1725",
+        "value": "firebase_custom_token"
+    },
+    {
+        "name": "Generic - 1726",
+        "value": "firebase_id_token"
+    },
+    {
+        "name": "Generic - 1727",
+        "value": "github_client"
+    },
+    {
+        "name": "Generic - 1728",
+        "value": "github_ssh_key"
+    },
+    {
+        "name": "Generic - 1730",
+        "value": "gitlab_private_token"
+    },
+    {
+        "name": "Generic - 1731",
+        "value": "google_cm"
+    },
+    {
+        "name": "Generic - 1732",
+        "value": "google_maps_key"
+    },
+    {
+        "name": "Generic - 1733",
+        "value": "heroku_api_key"
+    },
+    {
+        "name": "Generic - 1734",
+        "value": "instagram_access_token"
+    },
+    {
+        "name": "Generic - 1735",
+        "value": "mailchimp_api_key"
+    },
+    {
+        "name": "Generic - 1736",
+        "value": "mailgun_api_key"
+    },
+    {
+        "name": "Generic - 1737",
+        "value": "mailjet"
+    },
+    {
+        "name": "Generic - 1738",
+        "value": "mapbox_access_token"
+    },
+    {
+        "name": "Generic - 1739",
+        "value": "pagerduty_api_token"
+    },
+    {
+        "name": "Generic - 1740",
+        "value": "paypal_key_sb"
+    },
+    {
+        "name": "Generic - 1741",
+        "value": "paypal_key_live"
+    },
+    {
+        "name": "Generic - 1742",
+        "value": "paypal_token_sb"
+    },
+    {
+        "name": "Generic - 1743",
+        "value": "paypal_token_live"
+    },
+    {
+        "name": "Generic - 1744",
+        "value": "pendo_integration_key"
+    },
+    {
+        "name": "Generic - 1745",
+        "value": "salesforce_access_token"
+    },
+    {
+        "name": "Generic - 1746",
+        "value": "saucelabs_ukey"
+    },
+    {
+        "name": "Generic - 1747",
+        "value": "sendgrid_api_key"
+    },
+    {
+        "name": "Generic - 1748",
+        "value": "slack_api_token"
+    },
+    {
+        "name": "Generic - 1749",
+        "value": "slack_webhook"
+    },
+    {
+        "name": "Generic - 1750",
+        "value": "square_secret"
+    },
+    {
+        "name": "Generic - 1751",
+        "value": "square_auth_token"
+    },
+    {
+        "name": "Generic - 1752",
+        "value": "travisci_api_token"
+    },
+    {
+        "name": "Generic - 1753",
+        "value": "twilio_sid_token"
+    },
+    {
+        "name": "Generic - 1754",
+        "value": "twitter_api_secret"
+    },
+    {
+        "name": "Generic - 1755",
+        "value": "twitter_bearer_token"
+    },
+    {
+        "name": "Generic - 1756",
+        "value": "spotify_access_token"
+    },
+    {
+        "name": "Generic - 1757",
+        "value": "stripe_key_live"
+    },
+    {
+        "name": "Generic - 1758",
+        "value": "wakatime_api_key"
+    },
+    {
+        "name": "Generic - 1759",
+        "value": "wompi_auth_bearer_sb"
+    },
+    {
+        "name": "Generic - 1760",
+        "value": "wompi_auth_bearer_live"
+    },
+    {
+        "name": "Generic - 1761",
+        "value": "wpengine_api_key"
+    },
+    {
+        "name": "Generic - 1762",
+        "value": "zapier_webhook"
+    },
+    {
+        "name": "Generic - 1763",
+        "value": "zendesk_access_token"
+    },
+    {
+        "name": "Generic - 1764",
+        "value": "ssh-rsa"
+    },
+    {
+        "name": "Generic - 1765",
+        "value": "s3-[a-z0-9-]+\\.amazonaws\\.com/[a-z0-9._-]+"
+    },
+    {
+        "name": "Generic API Key",
+        "value": "[aA][pP][iI]_?[kK][eE][yY].*['|\"][0-9a-zA-Z]{32,45}['|\"]"
+    },
+    {
+        "name": "Generic Secret",
+        "value": "[sS][eE][cC][rR][eE][tT].*['|\"][0-9a-zA-Z]{32,45}['|\"]"
+    },
+    {
+        "name": "Generic key",
+        "value": "(private|public|api|secret|password|pass|passphrase|access).+(key|token|secret|password).+"
+    },
+    {
+        "name": "Generic secret text",
+        "value": "secret.+"
+    },
+    {
+        "name": "Generic token",
+        "value": "token.+"
+    },
+    {
+        "name": "Generic webhook secret",
+        "value": "(webhook).+(secret|token|key).+"
+    },
+    {
+        "name": "Gengo",
+        "value": "(?:gengo).{0,40}([ ]{0,1}[0-9a-zA-Z\\[\\]\\-\\(\\)\\{\\}|_^@$=~]{64}[ \\r\\n]{1})"
+    },
+    {
+        "name": "Geoapify",
+        "value": "(?:geoapify).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Geocode",
+        "value": "(?:geocode).{0,40}\\b([a-z0-9]{28})\\b"
+    },
+    {
+        "name": "Geocodify",
+        "value": "(?:geocodify).{0,40}\\b([0-9a-z]{40})\\b"
+    },
+    {
+        "name": "Geocodio - 1",
+        "value": "(?:geocod).{0,40}\\b([a-zA-Z0-9\\S]{7,30})\\b"
+    },
+    {
+        "name": "Geocodio - 2",
+        "value": "(?:geocod).{0,40}\\b([a-z0-9]{39})\\b"
+    },
+    {
+        "name": "Geoipifi",
+        "value": "(?:ipifi).{0,40}\\b([a-z0-9A-Z_]{32})\\b"
+    },
+    {
+        "name": "Getemail",
+        "value": "(?:getemail).{0,40}\\b([a-zA-Z0-9-]{20})\\b"
+    },
+    {
+        "name": "Getemails - 1",
+        "value": "(?:getemails).{0,40}\\b([a-z0-9-]{26})\\b"
+    },
+    {
+        "name": "Getemails - 2",
+        "value": "(?:getemails).{0,40}\\b([a-z0-9-]{18})\\b"
+    },
+    {
+        "name": "Getgeoapi",
+        "value": "(?:getgeoapi).{0,40}\\b([0-9a-z]{40})\\b"
+    },
+    {
+        "name": "Getgist",
+        "value": "(?:getgist).{0,40}\\b([a-z0-9A-Z+=]{68})"
+    },
+    {
+        "name": "Getsandbox - 1",
+        "value": "(?:getsandbox).{0,40}\\b([a-z0-9-]{40})\\b"
+    },
+    {
+        "name": "Getsandbox - 2",
+        "value": "(?:getsandbox).{0,40}\\b([a-z0-9-]{15,30})\\b"
+    },
+    {
+        "name": "GitHub",
+        "value": "[gG][iI][tT][hH][uU][bB].*['|\"][0-9a-zA-Z]{35,40}['|\"]"
+    },
+    {
+        "name": "Github - 2",
+        "value": "\\b((?:ghp|gho|ghu|ghs|ghr)_[a-zA-Z0-9]{36,255}\\b)"
+    },
+    {
+        "name": "Github App Token",
+        "value": "(ghu|ghs)_[0-9a-zA-Z]{36}"
+    },
+    {
+        "name": "Github OAuth Access Token",
+        "value": "gho_[0-9a-zA-Z]{36}"
+    },
+    {
+        "name": "Github Personal Access Token",
+        "value": "ghp_[0-9a-zA-Z]{36}"
+    },
+    {
+        "name": "Github Refresh Token",
+        "value": "ghr_[0-9a-zA-Z]{76}"
+    },
+    {
+        "name": "Github_old",
+        "value": "(?:github)[^\\.].{0,40}[ =:'\"]+([a-f0-9]{40})\\b"
+    },
+    {
+        "name": "Githubapp - 1",
+        "value": "(?:github).{0,40}\\b([0-9]{6})\\b"
+    },
+    {
+        "name": "Githubapp - 2",
+        "value": "(?:github).{0,40}(-----BEGIN RSA PRIVATE KEY-----\\s[A-Za-z0-9+\\/\\s]*\\s-----END RSA PRIVATE KEY-----)"
+    },
+    {
+        "name": "Gitlab",
+        "value": "(?:gitlab).{0,40}\\b([a-zA-Z0-9\\-=_]{20,22})\\b"
+    },
+    {
+        "name": "Gitlabv2",
+        "value": "\\b(glpat-[a-zA-Z0-9\\-=_]{20,22})\\b"
+    },
+    {
+        "name": "Gitter",
+        "value": "(?:gitter).{0,40}\\b([a-z0-9-]{40})\\b"
+    },
+    {
+        "name": "Glassnode",
+        "value": "(?:glassnode).{0,40}\\b([0-9A-Za-z]{27})\\b"
+    },
+    {
+        "name": "Gocanvas - 1",
+        "value": "(?:gocanvas).{0,40}\\b([0-9A-Za-z/+]{43}=[ \\r\\n]{1})"
+    },
+    {
+        "name": "Gocanvas - 2",
+        "value": "(?:gocanvas).{0,40}\\b([\\w\\.-]+@[\\w-]+\\.[\\w\\.-]{2,5})\\b"
+    },
+    {
+        "name": "Gocardless",
+        "value": "\\b(live_[0-9A-Za-z\\_\\-]{40}[ \"'\\r\\n]{1})"
+    },
+    {
+        "name": "Goodday",
+        "value": "(?:goodday).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Google (GCP) Service Account",
+        "value": "\"type\": \"service_account\""
+    },
+    {
+        "name": "Google API Key",
+        "value": "AIza[0-9a-z-_]{35}"
+    },
+    {
+        "name": "Google Calendar URI",
+        "value": "https://www\\.google\\.com/calendar/embed\\?src=[A-Za-z0-9%@&;=\\-_\\./]+"
+    },
+    {
+        "name": "Google Cloud Platform OAuth",
+        "value": "[0-9]+-[0-9A-Za-z_]{32}\\.apps\\.googleusercontent\\.com"
+    },
+    {
+        "name": "Google OAuth Access Token",
+        "value": "ya29\\.[0-9A-Za-z\\-_]+"
+    },
+    {
+        "name": "Google Oauth ID",
+        "value": "[0-9]+-[0-9a-z_]{32}.apps.googleusercontent.com"
+    },
+    {
+        "name": "Graphcms - 1",
+        "value": "(?:graph).{0,40}\\b([a-z0-9]{25})\\b"
+    },
+    {
+        "name": "Graphcms - 2",
+        "value": "\\b(ey[a-zA-Z0-9]{73}.ey[a-zA-Z0-9]{365}.[a-zA-Z0-9_-]{683})\\b"
+    },
+    {
+        "name": "Graphhopper",
+        "value": "(?:graphhopper).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Groovehq",
+        "value": "(?:groove).{0,40}\\b([a-z0-9A-Z]{64})"
+    },
+    {
+        "name": "Guardianapi",
+        "value": "\\b([0-9Aa-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Guru - 1",
+        "value": "(?:guru).{0,40}\\b([a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,5})\\b"
+    },
+    {
+        "name": "Guru - 2",
+        "value": "(?:guru).{0,40}\\b([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})\\b"
+    },
+    {
+        "name": "Gyazo",
+        "value": "(?:gyazo).{0,40}\\b([0-9A-Za-z-]{43})\\b"
+    },
+    {
+        "name": "Happi",
+        "value": "(?:happi).{0,40}\\b([a-zA-Z0-9]{56})"
+    },
+    {
+        "name": "Happyscribe",
+        "value": "(?:happyscribe).{0,40}\\b([0-9a-zA-Z]{24})\\b"
+    },
+    {
+        "name": "Harvest - 1",
+        "value": "(?:harvest).{0,40}\\b([a-z0-9A-Z._]{97})\\b"
+    },
+    {
+        "name": "Harvest - 2",
+        "value": "(?:harvest).{0,40}\\b([0-9]{4,9})\\b"
+    },
+    {
+        "name": "Hellosign",
+        "value": "(?:hellosign).{0,40}\\b([a-zA-Z-0-9/+]{64})\\b"
+    },
+    {
+        "name": "Helpcrunch",
+        "value": "(?:helpcrunch).{0,40}\\b([a-zA-Z-0-9+/=]{328})"
+    },
+    {
+        "name": "Helpscout",
+        "value": "(?:helpscout).{0,40}\\b([A-Za-z0-9]{56})\\b"
+    },
+    {
+        "name": "Hereapi",
+        "value": "(?:hereapi).{0,40}\\b([a-zA-Z0-9\\S]{43})\\b"
+    },
+    {
+        "name": "Heroku",
+        "value": "(?:heroku).{0,40}\\b([0-9Aa-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+    },
+    {
+        "name": "Hive - 1",
+        "value": "(?:hive).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Hive - 2",
+        "value": "(?:hive).{0,40}\\b([0-9A-Za-z]{17})\\b"
+    },
+    {
+        "name": "Hiveage",
+        "value": "(?:hiveage).{0,40}\\b([0-9A-Za-z\\_\\-]{20})\\b"
+    },
+    {
+        "name": "Holidayapi",
+        "value": "(?:holidayapi).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Host",
+        "value": "(?:host).{0,40}\\b([a-z0-9]{14})\\b"
+    },
+    {
+        "name": "Html2pdf",
+        "value": "(?:html2pdf).{0,40}\\b([a-zA-Z0-9]{64})\\b"
+    },
+    {
+        "name": "Hubspotapikey",
+        "value": "(?:hubspot).{0,40}\\b([A-Za-z0-9]{8}\\-[A-Za-z0-9]{4}\\-[A-Za-z0-9]{4}\\-[A-Za-z0-9]{4}\\-[A-Za-z0-9]{12})\\b"
+    },
+    {
+        "name": "Humanity",
+        "value": "(?:humanity).{0,40}\\b([0-9a-z]{40})\\b"
+    },
+    {
+        "name": "Hunter",
+        "value": "(?:hunter).{0,40}\\b([a-z0-9_-]{40})\\b"
+    },
+    {
+        "name": "Hypertrack - 1",
+        "value": "(?:hypertrack).{0,40}\\b([0-9a-zA-Z\\_\\-]{54})\\b"
+    },
+    {
+        "name": "Hypertrack - 2",
+        "value": "(?:hypertrack).{0,40}\\b([0-9a-zA-Z\\_\\-]{27})\\b"
+    },
+    {
+        "name": "Ibmclouduserkey",
+        "value": "(?:ibm).{0,40}\\b([A-Za-z0-9_-]{44})\\b"
+    },
+    {
+        "name": "Iconfinder",
+        "value": "(?:iconfinder).{0,40}\\b([a-zA-Z0-9]{64})\\b"
+    },
+    {
+        "name": "Iexcloud",
+        "value": "(?:iexcloud).{0,40}\\b([a-z0-9_]{35})\\b"
+    },
+    {
+        "name": "Imagekit",
+        "value": "(?:imagekit).{0,40}\\b([a-zA-Z0-9_=]{36})"
+    },
+    {
+        "name": "Imagga",
+        "value": "(?:imagga).{0,40}\\b([a-z0-9A-Z=]{72})"
+    },
+    {
+        "name": "Impala",
+        "value": "(?:impala).{0,40}\\b([0-9A-Za-z_]{46})\\b"
+    },
+    {
+        "name": "Insightly",
+        "value": "(?:insightly).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Instagram oauth",
+        "value": "[0-9a-fA-F]{7}\\.[0-9a-fA-F]{32}"
+    },
+    {
+        "name": "Integromat",
+        "value": "(?:integromat).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Intercom",
+        "value": "(?:intercom).{0,40}\\b([a-zA-Z0-9\\W\\S]{59}\\=)"
+    },
+    {
+        "name": "Intrinio",
+        "value": "(?:intrinio).{0,40}\\b([a-zA-Z0-9]{44})\\b"
+    },
+    {
+        "name": "Invoiceocean - 1",
+        "value": "(?:invoiceocean).{0,40}\\b([0-9A-Za-z]{20})\\b"
+    },
+    {
+        "name": "Invoiceocean - 2",
+        "value": "\\b([0-9a-z]{1,}.invoiceocean.com)\\b"
+    },
+    {
+        "name": "Ipapi",
+        "value": "(?:ipapi).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Ipgeolocation",
+        "value": "(?:ipgeolocation).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Ipify",
+        "value": "(?:ipify).{0,40}\\b([a-zA-Z0-9_-]{32})\\b"
+    },
+    {
+        "name": "Ipinfodb",
+        "value": "(?:ipinfodb).{0,40}\\b([a-z0-9]{64})\\b"
+    },
+    {
+        "name": "Ipquality",
+        "value": "(?:ipquality).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Ipstack",
+        "value": "(?:ipstack).{0,40}\\b([a-fA-f0-9]{32})\\b"
+    },
+    {
+        "name": "JDBC Connection String",
+        "value": "jdbc:[a-z:]+://[A-Za-z0-9\\.\\-_:;=/@?,&]+"
+    },
+    {
+        "name": "JWT Token",
+        "value": "eyJ[a-zA-Z0-9]{10,}\\.eyJ[a-zA-Z0-9]{10,}\\.[a-zA-Z0-9_\\-]{10,}"
+    },
+    {
+        "name": "Jiratoken - 1",
+        "value": "(?:jira).{0,40}\\b([a-zA-Z-0-9]{24})\\b"
+    },
+    {
+        "name": "Jiratoken - 2",
+        "value": "(?:jira).{0,40}\\b([a-zA-Z-0-9]{5,24}\\@[a-zA-Z-0-9]{3,16}\\.com)\\b"
+    },
+    {
+        "name": "Jiratoken - 3",
+        "value": "(?:jira).{0,40}\\b([a-zA-Z-0-9]{5,24}\\.[a-zA-Z-0-9]{3,16}\\.[a-zA-Z-0-9]{3,16})\\b"
+    },
+    {
+        "name": "Jotform",
+        "value": "(?:jotform).{0,40}\\b([0-9Aa-z]{32})\\b"
+    },
+    {
+        "name": "Jumpcloud",
+        "value": "(?:jumpcloud).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Juro",
+        "value": "(?:juro).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Kanban - 1",
+        "value": "(?:kanban).{0,40}\\b([0-9A-Z]{12})\\b"
+    },
+    {
+        "name": "Kanban - 2",
+        "value": "\\b([0-9a-z]{1,}.kanbantool.com)\\b"
+    },
+    {
+        "name": "Karmacrm",
+        "value": "(?:karma).{0,40}\\b([a-zA-Z0-9]{20})\\b"
+    },
+    {
+        "name": "Keenio - 1",
+        "value": "(?:keen).{0,40}\\b([0-9a-z]{24})\\b"
+    },
+    {
+        "name": "Keenio - 2",
+        "value": "(?:keen).{0,40}\\b([0-9A-Z]{64})\\b"
+    },
+    {
+        "name": "Kickbox",
+        "value": "(?:kickbox).{0,40}\\b([a-zA-Z0-9_]+[a-zA-Z0-9]{64})\\b"
+    },
+    {
+        "name": "Klipfolio",
+        "value": "(?:klipfolio).{0,40}\\b([0-9a-f]{40})\\b"
+    },
+    {
+        "name": "Kontent",
+        "value": "(?:kontent).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Kraken - 1",
+        "value": "(?:kraken).{0,40}\\b([0-9A-Za-z\\/\\+=]{56}[ \"'\\r\\n]{1})"
+    },
+    {
+        "name": "Kraken - 2",
+        "value": "(?:kraken).{0,40}\\b([0-9A-Za-z\\/\\+=]{86,88}[ \"'\\r\\n]{1})"
+    },
+    {
+        "name": "Kucoin - 1",
+        "value": "(?:kucoin).{0,40}([ \\r\\n]{1}[!-~]{7,32}[ \\r\\n]{1})"
+    },
+    {
+        "name": "Kucoin - 2",
+        "value": "(?:kucoin).{0,40}\\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+    },
+    {
+        "name": "Kucoin - 3",
+        "value": "(?:kucoin).{0,40}\\b([0-9a-f]{24})\\b"
+    },
+    {
+        "name": "Kylas",
+        "value": "(?:kylas).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Languagelayer",
+        "value": "(?:languagelayer).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Lastfm",
+        "value": "(?:lastfm).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Launchdarkly",
+        "value": "(?:launchdarkly).{0,40}\\b([a-z0-9-]{40})\\b"
+    },
+    {
+        "name": "Leadfeeder",
+        "value": "(?:leadfeeder).{0,40}\\b([a-zA-Z0-9-]{43})\\b"
+    },
+    {
+        "name": "Lendflow",
+        "value": "(?:lendflow).{0,40}\\b([a-zA-Z0-9]{36}\\.[a-zA-Z0-9]{235}\\.[a-zA-Z0-9]{32}\\-[a-zA-Z0-9]{47}\\-[a-zA-Z0-9_]{162}\\-[a-zA-Z0-9]{42}\\-[a-zA-Z0-9_]{40}\\-[a-zA-Z0-9_]{66}\\-[a-zA-Z0-9_]{59}\\-[a-zA-Z0-9]{7}\\-[a-zA-Z0-9_]{220})\\b"
+    },
+    {
+        "name": "Lessannoyingcrm",
+        "value": "(?:less).{0,40}\\b([a-zA-Z0-9-]{57})\\b"
+    },
+    {
+        "name": "Lexigram",
+        "value": "(?:lexigram).{0,40}\\b([a-zA-Z0-9\\S]{301})\\b"
+    },
+    {
+        "name": "Linearapi",
+        "value": "\\b(lin_api_[0-9A-Za-z]{40})\\b"
+    },
+    {
+        "name": "Linemessaging",
+        "value": "(?:line).{0,40}\\b([A-Za-z0-9+/]{171,172})\\b"
+    },
+    {
+        "name": "Linenotify",
+        "value": "(?:linenotify).{0,40}\\b([0-9A-Za-z]{43})\\b"
+    },
+    {
+        "name": "Linkpreview",
+        "value": "(?:linkpreview).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Liveagent",
+        "value": "(?:liveagent).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Livestorm",
+        "value": "(?:livestorm).{0,40}\\b(eyJhbGciOiJIUzI1NiJ9\\.eyJhdWQiOiJhcGkubGl2ZXN0b3JtLmNvIiwianRpIjoi[0-9A-Z-a-z]{134}\\.[0-9A-Za-z\\-\\_]{43}[ \\r\\n]{1})"
+    },
+    {
+        "name": "Lob",
+        "value": "(?:lob).{0,40}\\b([a-zA-Z0-9_]{40})\\b"
+    },
+    {
+        "name": "Locationiq",
+        "value": "\\b(pk\\.[a-zA-Z-0-9]{32})\\b"
+    },
+    {
+        "name": "Loginradius",
+        "value": "(?:loginradius).{0,40}\\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+    },
+    {
+        "name": "Lokalisetoken",
+        "value": "(?:lokalise).{0,40}\\b([a-z0-9]{40})\\b"
+    },
+    {
+        "name": "Loyverse",
+        "value": "(?:loyverse).{0,40}\\b([0-9-a-z]{32})\\b"
+    },
+    {
+        "name": "Luno - 1",
+        "value": "(?:luno).{0,40}\\b([a-z0-9]{13})\\b"
+    },
+    {
+        "name": "Luno - 2",
+        "value": "(?:luno).{0,40}\\b([a-zA-Z0-9_-]{43})\\b"
+    },
+    {
+        "name": "M3o",
+        "value": "(?:m3o).{0,40}\\b([0-9A-Za-z]{48})\\b"
+    },
+    {
+        "name": "Macaddress",
+        "value": "(?:macaddress).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+    },
+    {
+        "name": "Madkudu",
+        "value": "(?:madkudu).{0,40}\\b([0-9a-f]{32})\\b"
+    },
+    {
+        "name": "Magnetic",
+        "value": "(?:magnetic).{0,40}\\b([0-9Aa-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "MailChimp API Key",
+        "value": "[0-9a-f]{32}-us[0-9]{1,2}"
+    },
+    {
+        "name": "Mailboxlayer",
+        "value": "(?:mailboxlayer).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Mailerlite",
+        "value": "(?:mailerlite).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Mailgun - 2",
+        "value": "(?:mailgun).{0,40}\\b([a-zA-Z-0-9]{72})\\b"
+    },
+    {
+        "name": "Mailgun API Key - 1",
+        "value": "key-[0-9a-zA-Z]{32}"
+    },
+    {
+        "name": "Mailgun API key - 2",
+        "value": "(mailgun|mg)[0-9a-z]{32}"
+    },
+    {
+        "name": "Mailjetbasicauth",
+        "value": "(?:mailjet).{0,40}\\b([A-Za-z0-9]{87}\\=)"
+    },
+    {
+        "name": "Mailjetsms",
+        "value": "(?:mailjet).{0,40}\\b([A-Za-z0-9]{32})\\b"
+    },
+    {
+        "name": "Mailmodo",
+        "value": "(?:mailmodo).{0,40}\\b([A-Z0-9]{7}-[A-Z0-9]{7}-[A-Z0-9]{7}-[A-Z0-9]{7})\\b"
+    },
+    {
+        "name": "Mailsac",
+        "value": "(?:mailsac).{0,40}\\b(k_[0-9A-Za-z]{36,})\\b"
+    },
+    {
+        "name": "Mandrill",
+        "value": "(?:mandrill).{0,40}\\b([A-Za-z0-9_-]{22})\\b"
+    },
+    {
+        "name": "Manifest",
+        "value": "(?:manifest).{0,40}\\b([a-zA-z0-9]{32})\\b"
+    },
+    {
+        "name": "Mapbox - 1",
+        "value": "\\b(sk\\.[a-zA-Z-0-9\\.]{80,240})\\b"
+    },
+    {
+        "name": "Mapquest",
+        "value": "(?:mapquest).{0,40}\\b([0-9A-Za-z]{32})\\b"
+    },
+    {
+        "name": "Marketstack",
+        "value": "(?:marketstack).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Mattermostpersonaltoken - 1",
+        "value": "(?:mattermost).{0,40}\\b([A-Za-z0-9-_]{1,}.cloud.mattermost.com)\\b"
+    },
+    {
+        "name": "Mattermostpersonaltoken - 2",
+        "value": "(?:mattermost).{0,40}\\b([a-z0-9]{26})\\b"
+    },
+    {
+        "name": "Mavenlink",
+        "value": "(?:mavenlink).{0,40}\\b([0-9a-z]{64})\\b"
+    },
+    {
+        "name": "Maxmindlicense - 1",
+        "value": "(?:maxmind|geoip).{0,40}\\b([0-9A-Za-z]{16})\\b"
+    },
+    {
+        "name": "Maxmindlicense - 2",
+        "value": "(?:maxmind|geoip).{0,40}\\b([0-9]{2,7})\\b"
+    },
+    {
+        "name": "Meaningcloud",
+        "value": "(?:meaningcloud).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Mediastack",
+        "value": "(?:mediastack).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Meistertask",
+        "value": "(?:meistertask).{0,40}\\b([a-zA-Z0-9]{43})\\b"
+    },
+    {
+        "name": "Mesibo",
+        "value": "(?:mesibo).{0,40}\\b([0-9A-Za-z]{64})\\b"
+    },
+    {
+        "name": "Messagebird",
+        "value": "(?:messagebird).{0,40}\\b([A-Za-z0-9_-]{25})\\b"
+    },
+    {
+        "name": "Metaapi - 1",
+        "value": "(?:metaapi|meta-api).{0,40}\\b([0-9a-f]{64})\\b"
+    },
+    {
+        "name": "Metaapi - 2",
+        "value": "(?:metaapi|meta-api).{0,40}\\b([0-9a-f]{24})\\b"
+    },
+    {
+        "name": "Metrilo",
+        "value": "(?:metrilo).{0,40}\\b([a-z0-9]{16})\\b"
+    },
+    {
+        "name": "Microsoft Teams Webhook",
+        "value": "https://outlook\\.office\\.com/webhook/[A-Za-z0-9\\-@]+/IncomingWebhook/[A-Za-z0-9\\-]+/[A-Za-z0-9\\-]+"
+    },
+    {
+        "name": "Microsoftteamswebhook",
+        "value": "(https:\\/\\/[a-zA-Z-0-9]+\\.webhook\\.office\\.com\\/webhookb2\\/[a-zA-Z-0-9]{8}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{12}\\@[a-zA-Z-0-9]{8}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{12}\\/IncomingWebhook\\/[a-zA-Z-0-9]{32}\\/[a-zA-Z-0-9]{8}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{4}-[a-zA-Z-0-9]{12})"
+    },
+    {
+        "name": "Midise",
+        "value": "midi-662b69edd2[a-zA-Z0-9]{54}"
+    },
+    {
+        "name": "Mindmeister",
+        "value": "(?:mindmeister).{0,40}\\b([a-zA-Z0-9]{43})\\b"
+    },
+    {
+        "name": "Mite - 1",
+        "value": "(?:mite).{0,40}\\b([0-9a-z]{16})\\b"
+    },
+    {
+        "name": "Mite - 2",
+        "value": "\\b([0-9a-z-]{1,}.mite.yo.lk)\\b"
+    },
+    {
+        "name": "Mixmax",
+        "value": "(?:mixmax).{0,40}\\b([a-zA-Z0-9_-]{36})\\b"
+    },
+    {
+        "name": "Mixpanel - 1",
+        "value": "(?:mixpanel).{0,40}\\b([a-zA-Z0-9.-]{30,40})\\b"
+    },
+    {
+        "name": "Mixpanel - 2",
+        "value": "(?:mixpanel).{0,40}\\b([a-zA-Z0-9-]{32})\\b"
+    },
+    {
+        "name": "Moderation",
+        "value": "(?:moderation).{0,40}\\b([a-zA-Z0-9]{36}\\.[a-zA-Z0-9]{115}\\.[a-zA-Z0-9_]{43})\\b"
+    },
+    {
+        "name": "Monday",
+        "value": "(?:monday).{0,40}\\b(ey[a-zA-Z0-9_.]{210,225})\\b"
+    },
+    {
+        "name": "Moonclerck",
+        "value": "(?:moonclerck).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Moonclerk",
+        "value": "(?:moonclerk).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Moosend",
+        "value": "(?:moosend).{0,40}\\b([0-9Aa-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+    },
+    {
+        "name": "Mrticktock - 1",
+        "value": "(?:mrticktock).{0,40}\\b([a-zA-Z0-9!=@#$%()_^]{1,50})"
+    },
+    {
+        "name": "Mrticktock - 2",
+        "value": "\\b([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-z]+)\\b"
+    },
+    {
+        "name": "Myfreshworks - 1",
+        "value": "(?:freshworks).{0,40}\\b([a-zA-Z0-9-_]{2,20})\\b"
+    },
+    {
+        "name": "Myfreshworks - 2",
+        "value": "(?:freshworks).{0,40}\\b([a-z0-9A-Z-]{22})\\b"
+    },
+    {
+        "name": "Myintervals",
+        "value": "(?:myintervals).{0,40}\\b([0-9a-z]{11})\\b"
+    },
+    {
+        "name": "Nasdaqdatalink",
+        "value": "(?:nasdaq).{0,40}\\b([a-zA-Z0-9_-]{20})\\b"
+    },
+    {
+        "name": "Nethunt - 1",
+        "value": "(?:nethunt).{0,40}\\b([a-zA-Z0-9.-@]{25,30})\\b"
+    },
+    {
+        "name": "Nethunt - 2",
+        "value": "(?:nethunt).{0,40}\\b([a-z0-9-\\S]{36})\\b"
+    },
+    {
+        "name": "Netlify",
+        "value": "(?:netlify).{0,40}\\b([A-Za-z0-9_-]{43,45})\\b"
+    },
+    {
+        "name": "Neutrinoapi - 1",
+        "value": "(?:neutrinoapi).{0,40}\\b([a-zA-Z0-9]{48})\\b"
+    },
+    {
+        "name": "Neutrinoapi - 2",
+        "value": "(?:neutrinoapi).{0,40}\\b([a-zA-Z0-9]{6,24})\\b"
+    },
+    {
+        "name": "Newrelic Admin API Key",
+        "value": "NRAA-[a-f0-9]{27}"
+    },
+    {
+        "name": "Newrelic Insights API Key",
+        "value": "NRI(?:I|Q)-[A-Za-z0-9\\-_]{32}"
+    },
+    {
+        "name": "Newrelic REST API Key",
+        "value": "NRRA-[a-f0-9]{42}"
+    },
+    {
+        "name": "Newrelic Synthetics Location Key",
+        "value": "NRSP-[a-z]{2}[0-9]{2}[a-f0-9]{31}"
+    },
+    {
+        "name": "Newrelicpersonalapikey",
+        "value": "(?:newrelic).{0,40}\\b([A-Za-z0-9_\\.]{4}-[A-Za-z0-9_\\.]{42})\\b"
+    },
+    {
+        "name": "Newsapi",
+        "value": "(?:newsapi).{0,40}\\b([a-z0-9]{32})"
+    },
+    {
+        "name": "Newscatcher",
+        "value": "(?:newscatcher).{0,40}\\b([0-9A-Za-z_]{43})\\b"
+    },
+    {
+        "name": "Nexmoapikey - 1",
+        "value": "(?:nexmo).{0,40}\\b([A-Za-z0-9_-]{8})\\b"
+    },
+    {
+        "name": "Nexmoapikey - 2",
+        "value": "(?:nexmo).{0,40}\\b([A-Za-z0-9_-]{16})\\b"
+    },
+    {
+        "name": "Nftport",
+        "value": "(?:nftport).{0,40}\\b([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})\\b"
+    },
+    {
+        "name": "Nicereply",
+        "value": "(?:nicereply).{0,40}\\b([0-9a-f]{40})\\b"
+    },
+    {
+        "name": "Nimble",
+        "value": "(?:nimble).{0,40}\\b([a-zA-Z0-9]{30})\\b"
+    },
+    {
+        "name": "Nitro",
+        "value": "(?:nitro).{0,40}\\b([0-9a-f]{32})\\b"
+    },
+    {
+        "name": "Noticeable",
+        "value": "(?:noticeable).{0,40}\\b([0-9a-zA-Z]{20})\\b"
+    },
+    {
+        "name": "Notion",
+        "value": "\\b(secret_[A-Za-z0-9]{43})\\b"
+    },
+    {
+        "name": "Nozbeteams",
+        "value": "(?:nozbe|nozbeteams).{0,40}\\b([0-9A-Za-z]{16}_[0-9A-Za-z\\-_]{64}[ \\r\\n]{1})"
+    },
+    {
+        "name": "Numverify",
+        "value": "(?:numverify).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Nutritionix - 1",
+        "value": "(?:nutritionix).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Nutritionix - 2",
+        "value": "(?:nutritionix).{0,40}\\b([a-z0-9]{8})\\b"
+    },
+    {
+        "name": "Nylas",
+        "value": "(?:nylas).{0,40}\\b([0-9A-Za-z]{30})\\b"
+    },
+    {
+        "name": "Nytimes",
+        "value": "(?:nytimes).{0,40}\\b([a-z0-9A-Z-]{32})\\b"
+    },
+    {
+        "name": "Oanda",
+        "value": "(?:oanda).{0,40}\\b([a-zA-Z0-9]{24})\\b"
+    },
+    {
+        "name": "Okta - 1",
+        "value": "[a-z0-9-]{1,40}\\.okta(?:preview|-emea){0,1}\\.com"
+    },
+    {
+        "name": "Okta - 2",
+        "value": "00[a-zA-Z0-9_-]{40}"
+    },
+    {
+        "name": "Omnisend",
+        "value": "(?:omnisend).{0,40}\\b([a-z0-9A-Z-]{75})\\b"
+    },
+    {
+        "name": "Onedesk - 1",
+        "value": "(?:onedesk).{0,40}\\b([a-zA-Z0-9!=@#$%^]{8,64})"
+    },
+    {
+        "name": "Onelogin - 1",
+        "value": "id[a-zA-Z0-9_' \"=]{0,20}([a-z0-9]{64})"
+    },
+    {
+        "name": "Onelogin - 2",
+        "value": "secret[a-zA-Z0-9_' \"=]{0,20}([a-z0-9]{64})"
+    },
+    {
+        "name": "Onepagecrm - 1",
+        "value": "(?:onepagecrm).{0,40}\\b([a-zA-Z0-9=]{44})"
+    },
+    {
+        "name": "Onepagecrm - 2",
+        "value": "(?:onepagecrm).{0,40}\\b([a-z0-9]{24})\\b"
+    },
+    {
+        "name": "Onwaterio",
+        "value": "(?:onwater).{0,40}\\b([a-zA-Z0-9_-]{20})\\b"
+    },
+    {
+        "name": "Oopspam",
+        "value": "(?:oopspam).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Opencagedata",
+        "value": "(?:opencagedata).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Opengraphr",
+        "value": "(?:opengraphr).{0,40}\\b([0-9Aa-zA-Z]{80})\\b"
+    },
+    {
+        "name": "Openuv",
+        "value": "(?:openuv).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Openweather",
+        "value": "(?:openweather).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Optimizely",
+        "value": "(?:optimizely).{0,40}\\b([0-9A-Za-z-:]{54})\\b"
+    },
+    {
+        "name": "Owlbot",
+        "value": "(?:owlbot).{0,40}\\b([a-z0-9]{40})\\b"
+    },
+    {
+        "name": "PGP private key block",
+        "value": "-----BEGIN PGP PRIVATE KEY BLOCK-----"
+    },
+    {
+        "name": "Pagerdutyapikey",
+        "value": "(?:pagerduty).{0,40}\\b([a-z]{1}\\+[a-zA-Z]{9}\\-[a-z]{2}\\-[a-z0-9]{5})\\b"
+    },
+    {
+        "name": "Pandadoc",
+        "value": "(?:pandadoc).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Pandascore",
+        "value": "(?:pandascore).{0,40}([ \\r\\n]{0,1}[0-9A-Za-z\\-\\_]{51}[ \\r\\n]{1})"
+    },
+    {
+        "name": "Paralleldots",
+        "value": "(?:paralleldots).{0,40}\\b([0-9A-Za-z]{43})\\b"
+    },
+    {
+        "name": "Partnerstack",
+        "value": "(?:partnerstack).{0,40}\\b([0-9A-Za-z]{64})\\b"
+    },
+    {
+        "name": "Passbase",
+        "value": "(?:passbase).{0,40}\\b([a-zA-Z0-9]{128})\\b"
+    },
+    {
+        "name": "Password in URL",
+        "value": "[a-zA-Z]{3,10}://[^/\\s:@]{3,20}:[^/\\s:@]{3,20}@.{1,100}[\"'\\s]"
+    },
+    {
+        "name": "Pastebin",
+        "value": "(?:pastebin).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+    },
+    {
+        "name": "PayPal Braintree access token",
+        "value": "access_token\\$production\\$[0-9a-z]{16}\\$[0-9a-f]{32}"
+    },
+    {
+        "name": "Paymoapp",
+        "value": "(?:paymoapp).{0,40}\\b([a-zA-Z0-9]{44})\\b"
+    },
+    {
+        "name": "Paymongo",
+        "value": "(?:paymongo).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+    },
+    {
+        "name": "Paypaloauth - 1",
+        "value": "\\b([A-Za-z0-9_\\.]{7}-[A-Za-z0-9_\\.]{72})\\b"
+    },
+    {
+        "name": "Paypaloauth - 2",
+        "value": "\\b([A-Za-z0-9_\\.]{69}-[A-Za-z0-9_\\.]{10})\\b"
+    },
+    {
+        "name": "Paystack",
+        "value": "\\b(sk\\_[a-z]{1,}\\_[A-Za-z0-9]{40})\\b"
+    },
+    {
+        "name": "Pdflayer",
+        "value": "(?:pdflayer).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Pdfshift",
+        "value": "(?:pdfshift).{0,40}\\b([0-9a-f]{32})\\b"
+    },
+    {
+        "name": "Peopledatalabs",
+        "value": "(?:peopledatalabs).{0,40}\\b([a-z0-9]{64})\\b"
+    },
+    {
+        "name": "Pepipost",
+        "value": "(?:pepipost|netcore).{0,40}\\b([a-zA-Z-0-9]{32})\\b"
+    },
+    {
+        "name": "Picatic API key",
+        "value": "sk_live_[0-9a-z]{32}"
+    },
+    {
+        "name": "Pipedream",
+        "value": "(?:pipedream).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Pipedrive",
+        "value": "(?:pipedrive).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Pivotaltracker",
+        "value": "(?:pivotal).{0,40}([a-z0-9]{32})"
+    },
+    {
+        "name": "Pixabay",
+        "value": "(?:pixabay).{0,40}\\b([a-z0-9-]{34})\\b"
+    },
+    {
+        "name": "Plaidkey - 1",
+        "value": "(?:plaid).{0,40}\\b([a-z0-9]{24})\\b"
+    },
+    {
+        "name": "Plaidkey - 2",
+        "value": "(?:plaid).{0,40}\\b([a-z0-9]{30})\\b"
+    },
+    {
+        "name": "Planviewleankit - 1",
+        "value": "(?:planviewleankit|planview).{0,40}\\b([0-9a-f]{128})\\b"
+    },
+    {
+        "name": "Planviewleankit - 2",
+        "value": "(?:planviewleankit|planview).{0,40}(?:subdomain).\\b([a-zA-Z][a-zA-Z0-9.-]{1,23}[a-zA-Z0-9])\\b"
+    },
+    {
+        "name": "Planyo",
+        "value": "(?:planyo).{0,40}\\b([0-9a-z]{62})\\b"
+    },
+    {
+        "name": "Plivo - 1",
+        "value": "(?:plivo).{0,40}\\b([A-Za-z0-9_-]{40})\\b"
+    },
+    {
+        "name": "Plivo - 2",
+        "value": "(?:plivo).{0,40}\\b([A-Z]{20})\\b"
+    },
+    {
+        "name": "Poloniex - 1",
+        "value": "(?:poloniex).{0,40}\\b([0-9a-f]{128})\\b"
+    },
+    {
+        "name": "Poloniex - 2",
+        "value": "(?:poloniex).{0,40}\\b([0-9A-Z]{8}-[0-9A-Z]{8}-[0-9A-Z]{8}-[0-9A-Z]{8})\\b"
+    },
+    {
+        "name": "Polygon",
+        "value": "(?:polygon).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+    },
+    {
+        "name": "Positionstack",
+        "value": "(?:positionstack).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+    },
+    {
+        "name": "Postageapp",
+        "value": "(?:postageapp).{0,40}\\b([0-9A-Za-z]{32})\\b"
+    },
+    {
+        "name": "Posthog",
+        "value": "\\b(phc_[a-zA-Z0-9_]{43})\\b"
+    },
+    {
+        "name": "Postman",
+        "value": "\\b(PMAK-[a-zA-Z-0-9]{59})\\b"
+    },
+    {
+        "name": "Postmark",
+        "value": "(?:postmark).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Powrbot",
+        "value": "(?:powrbot).{0,40}\\b([a-z0-9A-Z]{40})\\b"
+    },
+    {
+        "name": "Privatekey",
+        "value": "-----\\s*?BEGIN[ A-Z0-9_-]*?PRIVATE KEY\\s*?-----[\\s\\S]*?----\\s*?END[ A-Z0-9_-]*? PRIVATE KEY\\s*?-----"
+    },
+    {
+        "name": "Prospectcrm",
+        "value": "(?:prospect).{0,40}\\b([a-z0-9-]{32})\\b"
+    },
+    {
+        "name": "Prospectio",
+        "value": "(?:prospect).{0,40}\\b([a-z0-9A-Z-]{50})\\b"
+    },
+    {
+        "name": "Protocolsio",
+        "value": "(?:protocols).{0,40}\\b([a-z0-9]{64})\\b"
+    },
+    {
+        "name": "Proxycrawl",
+        "value": "(?:proxycrawl).{0,40}\\b([a-zA-Z0-9_]{22})\\b"
+    },
+    {
+        "name": "Pubnubpublishkey - 1",
+        "value": "\\b(sub-c-[0-9a-z]{8}-[a-z]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})\\b"
+    },
+    {
+        "name": "Pubnubpublishkey - 2",
+        "value": "\\b(pub-c-[0-9a-z]{8}-[0-9a-z]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})\\b"
+    },
+    {
+        "name": "Purestake",
+        "value": "(?:purestake).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Pushbulletapikey",
+        "value": "(?:pushbullet).{0,40}\\b([A-Za-z0-9_\\.]{34})\\b"
+    },
+    {
+        "name": "Pusherchannelkey - 1",
+        "value": "(?:key).{0,40}\\b([a-z0-9]{20})\\b"
+    },
+    {
+        "name": "Pusherchannelkey - 2",
+        "value": "(?:pusher).{0,40}\\b([a-z0-9]{20})\\b"
+    },
+    {
+        "name": "Pusherchannelkey - 3",
+        "value": "(?:pusher).{0,40}\\b([0-9]{7})\\b"
+    },
+    {
+        "name": "PyPI upload token",
+        "value": "pypi-AgEIcHlwaS5vcmc[A-Za-z0-9-_]{50,1000}"
+    },
+    {
+        "name": "Qualaroo",
+        "value": "(?:qualaroo).{0,40}\\b([a-z0-9A-Z=]{64})"
+    },
+    {
+        "name": "Qubole",
+        "value": "(?:qubole).{0,40}\\b([0-9a-z]{64})\\b"
+    },
+    {
+        "name": "Quickmetrics",
+        "value": "(?:quickmetrics).{0,40}\\b([a-zA-Z0-9_-]{22})\\b"
+    },
+    {
+        "name": "REDIS_URL",
+        "value": "(REDIS_URL).+"
+    },
+    {
+        "name": "RKCS8",
+        "value": "-----BEGIN PRIVATE KEY-----"
+    },
+    {
+        "name": "RSA private key",
+        "value": "-----BEGIN RSA PRIVATE KEY-----"
+    },
+    {
+        "name": "Rapidapi",
+        "value": "(?:rapidapi).{0,40}\\b([A-Za-z0-9_-]{50})\\b"
+    },
+    {
+        "name": "Raven",
+        "value": "(?:raven).{0,40}\\b([A-Z0-9-]{16})\\b"
+    },
+    {
+        "name": "Rawg",
+        "value": "(?:rawg).{0,40}\\b([0-9Aa-z]{32})\\b"
+    },
+    {
+        "name": "Razorpay - 1",
+        "value": "\\brzp_\\w{2,6}_\\w{10,20}\\b"
+    },
+    {
+        "name": "Razorpay - 2",
+        "value": "(?:razor|secret|rzp|key)[-\\w]*[\\\" :=']*([A-Za-z0-9]{20,50})"
+    },
+    {
+        "name": "Readme",
+        "value": "(?:readme).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+    },
+    {
+        "name": "Reallysimplesystems",
+        "value": "\\b(ey[a-zA-Z0-9-._]{153}.ey[a-zA-Z0-9-._]{916,1000})\\b"
+    },
+    {
+        "name": "Rebrandly",
+        "value": "(?:rebrandly).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+    },
+    {
+        "name": "Refiner",
+        "value": "(?:refiner).{0,40}\\b([0-9Aa-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+    },
+    {
+        "name": "Repairshopr - 1",
+        "value": "(?:repairshopr).{0,40}\\b([a-zA-Z0-9_.!+$#^*]{3,32})\\b"
+    },
+    {
+        "name": "Repairshopr - 2",
+        "value": "(?:repairshopr).{0,40}\\b([a-zA-Z0-9-]{51})\\b"
+    },
+    {
+        "name": "Restpack",
+        "value": "(?:restpack).{0,40}\\b([a-zA-Z0-9]{48})\\b"
+    },
+    {
+        "name": "Restpackhtmltopdfapi",
+        "value": "(?:restpack).{0,40}\\b([0-9A-Za-z]{48})\\b"
+    },
+    {
+        "name": "Rev - 1",
+        "value": "(?:rev).{0,40}\\b([0-9a-zA-Z\\/\\+]{27}\\=[ \\r\\n]{1})"
+    },
+    {
+        "name": "Rev - 2",
+        "value": "(?:rev).{0,40}\\b([0-9a-zA-Z\\-]{27}[ \\r\\n]{1})"
+    },
+    {
+        "name": "Revampcrm - 1",
+        "value": "(?:revamp).{0,40}\\b([a-zA-Z0-9]{40}\\b)"
+    },
+    {
+        "name": "Revampcrm - 2",
+        "value": "(?:revamp).{0,40}\\b([a-zA-Z0-9.-@]{25,30})\\b"
+    },
+    {
+        "name": "Ringcentral - 1",
+        "value": "(?:ringcentral).{0,40}\\b(https://www.[0-9A-Za-z_-]{1,}.com)\\b"
+    },
+    {
+        "name": "Ringcentral - 2",
+        "value": "(?:ringcentral).{0,40}\\b([0-9A-Za-z_-]{22})\\b"
+    },
+    {
+        "name": "Ritekit",
+        "value": "(?:ritekit).{0,40}\\b([0-9a-f]{44})\\b"
+    },
+    {
+        "name": "Roaring",
+        "value": "(?:roaring).{0,40}\\b([0-9A-Za-z_-]{28})\\b"
+    },
+    {
+        "name": "Rocketreach",
+        "value": "(?:rocketreach).{0,40}\\b([a-z0-9-]{39})\\b"
+    },
+    {
+        "name": "Roninapp - 1",
+        "value": "(?:ronin).{0,40}\\b([0-9Aa-zA-Z]{3,32})\\b"
+    },
+    {
+        "name": "Roninapp - 2",
+        "value": "(?:ronin).{0,40}\\b([0-9a-zA-Z]{26})\\b"
+    },
+    {
+        "name": "Route4me",
+        "value": "(?:route4me).{0,40}\\b([0-9A-Z]{32})\\b"
+    },
+    {
+        "name": "Rownd - 1",
+        "value": "(?:rownd).{0,40}\\b([a-z0-9]{8}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{12})\\b"
+    },
+    {
+        "name": "Rownd - 2",
+        "value": "(?:rownd).{0,40}\\b([a-z0-9]{48})\\b"
+    },
+    {
+        "name": "Rownd - 3",
+        "value": "(?:rownd).{0,40}\\b([0-9]{18})\\b"
+    },
+    {
+        "name": "Rubygems",
+        "value": "\\b(rubygems_[a-zA0-9]{48})\\b"
+    },
+    {
+        "name": "Runrunit - 1",
+        "value": "(?:runrunit).{0,40}\\b([0-9a-f]{32})\\b"
+    },
+    {
+        "name": "Runrunit - 2",
+        "value": "(?:runrunit).{0,40}\\b([0-9A-Za-z]{18,20})\\b"
+    },
+    {
+        "name": "SSH",
+        "value": "-----BEGIN OPENSSH PRIVATE KEY-----"
+    },
+    {
+        "name": "SSH (DSA) private key",
+        "value": "-----BEGIN DSA PRIVATE KEY-----"
+    },
+    {
+        "name": "Salesblink",
+        "value": "(?:salesblink).{0,40}\\b([a-zA-Z]{16})\\b"
+    },
+    {
+        "name": "Salescookie",
+        "value": "(?:salescookie).{0,40}\\b([a-zA-z0-9]{32})\\b"
+    },
+    {
+        "name": "Salesflare",
+        "value": "(?:salesflare).{0,40}\\b([a-zA-Z0-9_]{45})\\b"
+    },
+    {
+        "name": "Satismeterprojectkey - 1",
+        "value": "(?:satismeter).{0,40}\\b([a-zA-Z0-9]{4,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,12})\\b"
+    },
+    {
+        "name": "Satismeterprojectkey - 2",
+        "value": "(?:satismeter).{0,40}\\b([a-zA-Z0-9]{24})\\b"
+    },
+    {
+        "name": "Satismeterprojectkey - 3",
+        "value": "(?:satismeter).{0,40}\\b([a-zA-Z0-9!=@#$%^]{6,32})"
+    },
+    {
+        "name": "Satismeterwritekey",
+        "value": "(?:satismeter).{0,40}\\b([a-z0-9A-Z]{16})\\b"
+    },
+    {
+        "name": "Saucelabs - 1",
+        "value": "\\b(oauth\\-[a-z0-9]{8,}\\-[a-z0-9]{5})\\b"
+    },
+    {
+        "name": "Saucelabs - 2",
+        "value": "(?:saucelabs).{0,40}\\b([a-z0-9]{8}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{4}\\-[a-z0-9]{12})\\b"
+    },
+    {
+        "name": "Scalewaykey",
+        "value": "(?:scaleway).{0,40}\\b([0-9a-z]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Scrapeowl",
+        "value": "(?:scrapeowl).{0,40}\\b([0-9a-z]{30})\\b"
+    },
+    {
+        "name": "Scraperapi",
+        "value": "(?:scraperapi).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Scraperbox",
+        "value": "(?:scraperbox).{0,40}\\b([A-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Scrapersite",
+        "value": "(?:scrapersite).{0,40}\\b([a-zA-Z0-9]{45})\\b"
+    },
+    {
+        "name": "Scrapestack",
+        "value": "(?:scrapestack).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Scrapfly",
+        "value": "(?:scrapfly).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Scrapingant",
+        "value": "(?:scrapingant).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Scrapingbee",
+        "value": "(?:scrapingbee).{0,40}\\b([A-Z0-9]{80})\\b"
+    },
+    {
+        "name": "Screenshotapi",
+        "value": "(?:screenshotapi).{0,40}\\b([0-9A-Z]{7}\\-[0-9A-Z]{7}\\-[0-9A-Z]{7}\\-[0-9A-Z]{7})\\b"
+    },
+    {
+        "name": "Screenshotlayer",
+        "value": "(?:screenshotlayer).{0,40}\\b([a-zA-Z0-9_]{32})\\b"
+    },
+    {
+        "name": "Securitytrails",
+        "value": "(?:securitytrails).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Segmentapikey",
+        "value": "(?:segment).{0,40}\\b([A-Za-z0-9_\\-a-zA-Z]{43}\\.[A-Za-z0-9_\\-a-zA-Z]{43})\\b"
+    },
+    {
+        "name": "Selectpdf",
+        "value": "(?:selectpdf).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Semaphore",
+        "value": "(?:semaphore).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "SendGrid API Key",
+        "value": "SG\\.[\\w_]{16,32}\\.[\\w_]{16,64}"
+    },
+    {
+        "name": "Sendbird - 1",
+        "value": "(?:sendbird).{0,40}\\b([0-9a-f]{40})\\b"
+    },
+    {
+        "name": "Sendbird - 2",
+        "value": "(?:sendbird).{0,40}\\b([0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})\\b"
+    },
+    {
+        "name": "Sendbirdorganizationapi",
+        "value": "(?:sendbird).{0,40}\\b([0-9a-f]{24})\\b"
+    },
+    {
+        "name": "Sendgrid",
+        "value": "(?:sendgrid).{0,40}(SG\\.[\\w\\-_]{20,24}\\.[\\w\\-_]{39,50})\\b"
+    },
+    {
+        "name": "Sendinbluev2",
+        "value": "\\b(xkeysib\\-[A-Za-z0-9_-]{81})\\b"
+    },
+    {
+        "name": "Sentiment - 1",
+        "value": "(?:sentiment).{0,40}\\b([0-9]{17})\\b"
+    },
+    {
+        "name": "Sentiment - 2",
+        "value": "(?:sentiment).{0,40}\\b([a-zA-Z0-9]{20})\\b"
+    },
+    {
+        "name": "Sentrytoken",
+        "value": "(?:sentry).{0,40}\\b([a-f0-9]{64})\\b"
+    },
+    {
+        "name": "Serphouse",
+        "value": "(?:serphouse).{0,40}\\b([0-9A-Za-z]{60})\\b"
+    },
+    {
+        "name": "Serpstack",
+        "value": "(?:serpstack).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Sheety - 1",
+        "value": "(?:sheety).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Sheety - 2",
+        "value": "(?:sheety).{0,40}\\b([0-9a-z]{64})\\b"
+    },
+    {
+        "name": "Sherpadesk",
+        "value": "(?:sherpadesk).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Shipday",
+        "value": "(?:shipday).{0,40}\\b([a-zA-Z0-9.]{11}[a-zA-Z0-9]{20})\\b"
+    },
+    {
+        "name": "Shodankey",
+        "value": "(?:shodan).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Shopify access token",
+        "value": "shpat_[a-fA-F0-9]{32}"
+    },
+    {
+        "name": "Shopify custom app access token",
+        "value": "shpca_[a-fA-F0-9]{32}"
+    },
+    {
+        "name": "Shopify private app access token",
+        "value": "shppa_[a-fA-F0-9]{32}"
+    },
+    {
+        "name": "Shopify shared secret",
+        "value": "shpss_[a-fA-F0-9]{32}"
+    },
+    {
+        "name": "Shoppable Service Auth",
+        "value": "data-shoppable-auth-token.+"
+    },
+    {
+        "name": "Shortcut",
+        "value": "(?:shortcut).{0,40}\\b([0-9a-f-]{36})\\b"
+    },
+    {
+        "name": "Shotstack",
+        "value": "(?:shotstack).{0,40}\\b([a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Shutterstock - 1",
+        "value": "(?:shutterstock).{0,40}\\b([0-9a-zA-Z]{32})\\b"
+    },
+    {
+        "name": "Shutterstock - 2",
+        "value": "(?:shutterstock).{0,40}\\b([0-9a-zA-Z]{16})\\b"
+    },
+    {
+        "name": "Shutterstockoauth",
+        "value": "(?:shutterstock).{0,40}\\b(v2/[0-9A-Za-z]{388})\\b"
+    },
+    {
+        "name": "Signalwire - 1",
+        "value": "\\b([0-9a-z-]{3,64}.signalwire.com)\\b"
+    },
+    {
+        "name": "Signalwire - 2",
+        "value": "(?:signalwire).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Signalwire - 3",
+        "value": "(?:signalwire).{0,40}\\b([0-9A-Za-z]{50})\\b"
+    },
+    {
+        "name": "Signaturit",
+        "value": "(?:signaturit).{0,40}\\b([0-9A-Za-z]{86})\\b"
+    },
+    {
+        "name": "Signupgenius",
+        "value": "(?:signupgenius).{0,40}\\b([0-9A-Za-z]{32})\\b"
+    },
+    {
+        "name": "Sigopt",
+        "value": "(?:sigopt).{0,40}\\b([A-Z0-9]{48})\\b"
+    },
+    {
+        "name": "Simplesat",
+        "value": "(?:simplesat).{0,40}\\b([a-z0-9]{40})"
+    },
+    {
+        "name": "Simplynoted",
+        "value": "(?:simplynoted).{0,40}\\b([a-zA-Z0-9\\S]{340,360})\\b"
+    },
+    {
+        "name": "Simvoly",
+        "value": "(?:simvoly).{0,40}\\b([a-z0-9]{33})\\b"
+    },
+    {
+        "name": "Sinchmessage",
+        "value": "(?:sinch).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Sirv - 1",
+        "value": "(?:sirv).{0,40}\\b([a-zA-Z0-9\\S]{88})"
+    },
+    {
+        "name": "Sirv - 2",
+        "value": "(?:sirv).{0,40}\\b([a-zA-Z0-9]{26})\\b"
+    },
+    {
+        "name": "Siteleaf",
+        "value": "(?:siteleaf).{0,40}\\b([0-9Aa-z]{32})\\b"
+    },
+    {
+        "name": "Skrappio",
+        "value": "(?:skrapp).{0,40}\\b([a-z0-9A-Z]{42})\\b"
+    },
+    {
+        "name": "Skybiometry",
+        "value": "(?:skybiometry).{0,40}\\b([0-9a-z]{25,26})\\b"
+    },
+    {
+        "name": "Slack",
+        "value": "xox[baprs]-[0-9a-zA-Z]{10,48}"
+    },
+    {
+        "name": "Slack Token",
+        "value": "(xox[pborsa]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32})"
+    },
+    {
+        "name": "Slack User token",
+        "value": "xoxp-[0-9A-Za-z\\-]{72}"
+    },
+    {
+        "name": "Slack Webhook",
+        "value": "https://hooks.slack.com/services/T[a-zA-Z0-9_]{8,10}/B[a-zA-Z0-9_]{8,12}/[a-zA-Z0-9_]{23,24}"
+    },
+    {
+        "name": "Slack access token",
+        "value": "xoxb-[0-9A-Za-z\\-]{51}"
+    },
+    {
+        "name": "Slackwebhook",
+        "value": "(https:\\/\\/hooks.slack.com\\/services\\/[A-Za-z0-9+\\/]{44,46})"
+    },
+    {
+        "name": "Smartsheets",
+        "value": "(?:smartsheets).{0,40}\\b([a-zA-Z0-9]{37})\\b"
+    },
+    {
+        "name": "Smartystreets - 1",
+        "value": "(?:smartystreets).{0,40}\\b([a-zA-Z0-9]{20})\\b"
+    },
+    {
+        "name": "Smartystreets - 2",
+        "value": "(?:smartystreets).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Smooch - 1",
+        "value": "(?:smooch).{0,40}\\b(act_[0-9a-z]{24})\\b"
+    },
+    {
+        "name": "Smooch - 2",
+        "value": "(?:smooch).{0,40}\\b([0-9a-zA-Z_-]{86})\\b"
+    },
+    {
+        "name": "Snipcart",
+        "value": "(?:snipcart).{0,40}\\b([0-9A-Za-z_]{75})\\b"
+    },
+    {
+        "name": "Snykkey",
+        "value": "(?:snyk).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "SonarQube Token",
+        "value": "sonar.{0,50}(?:\"|'|`)?[0-9a-f]{40}(?:\"|'|`)?"
+    },
+    {
+        "name": "Sparkpost",
+        "value": "\\b([a-zA-Z0-9]{40})\\b"
+    },
+    {
+        "name": "Splunkobservabilitytoken",
+        "value": "(?:splunk).{0,40}\\b([a-z0-9A-Z]{22})\\b"
+    },
+    {
+        "name": "Spoonacular",
+        "value": "(?:spoonacular).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Sportsmonk",
+        "value": "(?:sportsmonk).{0,40}\\b([0-9a-zA-Z]{60})\\b"
+    },
+    {
+        "name": "Spotifykey - 1",
+        "value": "(?:key|secret).{0,40}\\b([A-Za-z0-9]{32})\\b"
+    },
+    {
+        "name": "Spotifykey - 2",
+        "value": "(?:id).{0,40}\\b([A-Za-z0-9]{32})\\b"
+    },
+    {
+        "name": "Square",
+        "value": "(?:square).{0,40}(EAAA[a-zA-Z0-9\\-\\+\\=]{60})"
+    },
+    {
+        "name": "Square API Key",
+        "value": "sq0(atp|csp)-[0-9a-z-_]{22,43}"
+    },
+    {
+        "name": "Square OAuth Secret",
+        "value": "sq0csp-[0-9A-Za-z\\-_]{43}"
+    },
+    {
+        "name": "Square access token",
+        "value": "sq0atp-[0-9A-Za-z\\-_]{22}"
+    },
+    {
+        "name": "Squareapp - 1",
+        "value": "[\\w\\-]*sq0i[a-z]{2}-[0-9A-Za-z\\-_]{22,43}"
+    },
+    {
+        "name": "Squareapp - 2",
+        "value": "[\\w\\-]*sq0c[a-z]{2}-[0-9A-Za-z\\-_]{40,50}"
+    },
+    {
+        "name": "Squarespace",
+        "value": "(?:squarespace).{0,40}\\b([0-9Aa-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+    },
+    {
+        "name": "Squareup",
+        "value": "\\b(sq0idp-[0-9A-Za-z]{22})\\b"
+    },
+    {
+        "name": "Sslmate",
+        "value": "(?:sslmate).{0,40}\\b([a-zA-Z0-9]{36})\\b"
+    },
+    {
+        "name": "Stitchdata",
+        "value": "(?:stitchdata).{0,40}\\b([0-9a-z_]{35})\\b"
+    },
+    {
+        "name": "Stockdata",
+        "value": "(?:stockdata).{0,40}\\b([0-9A-Za-z]{40})\\b"
+    },
+    {
+        "name": "Storecove",
+        "value": "(?:storecove).{0,40}\\b([a-zA-Z0-9_-]{43})\\b"
+    },
+    {
+        "name": "Stormglass",
+        "value": "(?:stormglass).{0,40}\\b([0-9Aa-z-]{73})\\b"
+    },
+    {
+        "name": "Storyblok",
+        "value": "(?:storyblok).{0,40}\\b([0-9A-Za-z]{22}t{2})\\b"
+    },
+    {
+        "name": "Storychief",
+        "value": "(?:storychief).{0,40}\\b([a-zA-Z0-9_\\-.]{940,1000})"
+    },
+    {
+        "name": "Strava - 1",
+        "value": "(?:strava).{0,40}\\b([0-9]{5})\\b"
+    },
+    {
+        "name": "Strava - 2",
+        "value": "(?:strava).{0,40}\\b([0-9a-z]{40})\\b"
+    },
+    {
+        "name": "Streak",
+        "value": "(?:streak).{0,40}\\b([0-9Aa-f]{32})\\b"
+    },
+    {
+        "name": "Stripe",
+        "value": "[rs]k_live_[a-zA-Z0-9]{20,30}"
+    },
+    {
+        "name": "Stripe API Key - 1",
+        "value": "sk_live_[0-9a-zA-Z]{24}"
+    },
+    {
+        "name": "Stripe API key - 2",
+        "value": "stripe[sr]k_live_[0-9a-zA-Z]{24}"
+    },
+    {
+        "name": "Stripe API key - 3",
+        "value": "stripe[sk|rk]_live_[0-9a-zA-Z]{24}"
+    },
+    {
+        "name": "Stripe Public Live Key",
+        "value": "pk_live_[0-9a-z]{24}"
+    },
+    {
+        "name": "Stripe Public Test Key",
+        "value": "pk_test_[0-9a-z]{24}"
+    },
+    {
+        "name": "Stripe Restriced Key",
+        "value": "rk_(?:live|test)_[0-9a-zA-Z]{24}"
+    },
+    {
+        "name": "Stripe Restricted API Key",
+        "value": "rk_live_[0-9a-zA-Z]{24}"
+    },
+    {
+        "name": "Stripe Secret Key",
+        "value": "sk_(?:live|test)_[0-9a-zA-Z]{24}"
+    },
+    {
+        "name": "Stripe Secret Live Key",
+        "value": "(sk|rk)_live_[0-9a-z]{24}"
+    },
+    {
+        "name": "Stripe Secret Test Key",
+        "value": "(sk|rk)_test_[0-9a-z]{24}"
+    },
+    {
+        "name": "Stytch - 1",
+        "value": "(?:stytch).{0,40}\\b([a-zA-Z0-9-_]{47}=)"
+    },
+    {
+        "name": "Stytch - 2",
+        "value": "(?:stytch).{0,40}\\b([a-z0-9-]{49})\\b"
+    },
+    {
+        "name": "Sugester - 1",
+        "value": "(?:sugester).{0,40}\\b([a-zA-Z0-9_.!+$#^*%]{3,32})\\b"
+    },
+    {
+        "name": "Sugester - 2",
+        "value": "(?:sugester).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Sumologickey - 1",
+        "value": "(?:sumo).{0,40}\\b([A-Za-z0-9]{14})\\b"
+    },
+    {
+        "name": "Sumologickey - 2",
+        "value": "(?:sumo).{0,40}\\b([A-Za-z0-9]{64})\\b"
+    },
+    {
+        "name": "Supernotesapi",
+        "value": "(?:supernotes).{0,40}([ \\r\\n]{0,1}[0-9A-Za-z\\-_]{43}[ \\r\\n]{1})"
+    },
+    {
+        "name": "Surveyanyplace - 1",
+        "value": "(?:survey).{0,40}\\b([a-z0-9A-Z-]{36})\\b"
+    },
+    {
+        "name": "Surveyanyplace - 2",
+        "value": "(?:survey).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+    },
+    {
+        "name": "Surveybot",
+        "value": "(?:surveybot).{0,40}\\b([A-Za-z0-9-]{80})\\b"
+    },
+    {
+        "name": "Surveysparrow",
+        "value": "(?:surveysparrow).{0,40}\\b([a-zA-Z0-9-_]{88})\\b"
+    },
+    {
+        "name": "Survicate",
+        "value": "(?:survicate).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Swell - 1",
+        "value": "(?:swell).{0,40}\\b([a-zA-Z0-9]{6,24})\\b"
+    },
+    {
+        "name": "Swell - 2",
+        "value": "(?:swell).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Swiftype",
+        "value": "(?:swiftype).{0,40}\\b([a-zA-z-0-9]{6}\\_[a-zA-z-0-9]{6}\\-[a-zA-z-0-9]{6})\\b"
+    },
+    {
+        "name": "Tallyfy",
+        "value": "(?:tallyfy).{0,40}\\b([0-9A-Za-z]{36}\\.[0-9A-Za-z]{264}\\.[0-9A-Za-z\\-\\_]{683})\\b"
+    },
+    {
+        "name": "Tatumio",
+        "value": "(?:tatum).{0,40}\\b([0-9a-z-]{36})\\b"
+    },
+    {
+        "name": "Taxjar",
+        "value": "(?:taxjar).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Teamgate - 1",
+        "value": "(?:teamgate).{0,40}\\b([a-z0-9]{40})\\b"
+    },
+    {
+        "name": "Teamgate - 2",
+        "value": "(?:teamgate).{0,40}\\b([a-zA-Z0-9]{80})\\b"
+    },
+    {
+        "name": "Teamworkcrm",
+        "value": "(?:teamwork|teamworkcrm).{0,40}\\b(tkn\\.v1_[0-9A-Za-z]{71}=[ \\r\\n]{1})"
+    },
+    {
+        "name": "Teamworkdesk",
+        "value": "(?:teamwork|teamworkdesk).{0,40}\\b(tkn\\.v1_[0-9A-Za-z]{71}=[ \\r\\n]{1})"
+    },
+    {
+        "name": "Teamworkspaces",
+        "value": "(?:teamwork|teamworkspaces).{0,40}\\b(tkn\\.v1_[0-9A-Za-z]{71}=[ \\r\\n]{1})"
+    },
+    {
+        "name": "Technicalanalysisapi",
+        "value": "(?:technicalanalysisapi).{0,40}\\b([A-Z0-9]{48})\\b"
+    },
+    {
+        "name": "Telegram Bot API Key",
+        "value": "[0-9]+:AA[0-9A-Za-z\\-_]{33}"
+    },
+    {
+        "name": "Telegram Secret",
+        "value": "d{5,}:A[0-9a-z_-]{34,34}"
+    },
+    {
+        "name": "Telegrambottoken",
+        "value": "(?:telegram).{0,40}\\b([0-9]{8,10}:[a-zA-Z0-9_-]{35})\\b"
+    },
+    {
+        "name": "Telnyx",
+        "value": "(?:telnyx).{0,40}\\b(KEY[0-9A-Za-z_-]{55})\\b"
+    },
+    {
+        "name": "Terraformcloudpersonaltoken",
+        "value": "\\b([A-Za-z0-9]{14}.atlasv1.[A-Za-z0-9]{67})\\b"
+    },
+    {
+        "name": "Testdetector",
+        "value": "\\b(test)\\b"
+    },
+    {
+        "name": "Text2data",
+        "value": "(?:text2data).{0,40}\\b([0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})\\b"
+    },
+    {
+        "name": "Textmagic - 1",
+        "value": "(?:textmagic).{0,40}\\b([0-9A-Za-z]{30})\\b"
+    },
+    {
+        "name": "Textmagic - 2",
+        "value": "(?:textmagic).{0,40}\\b([0-9A-Za-z]{1,25})\\b"
+    },
+    {
+        "name": "Theoddsapi",
+        "value": "(?:theoddsapi|the-odds-api).{0,40}\\b([0-9a-f]{32})\\b"
+    },
+    {
+        "name": "Thinkific - 1",
+        "value": "(?:thinkific).{0,40}\\b([0-9a-f]{32})\\b"
+    },
+    {
+        "name": "Thinkific - 2",
+        "value": "(?:thinkific).{0,40}\\b([0-9A-Za-z]{4,40})\\b"
+    },
+    {
+        "name": "Thousandeyes - 1",
+        "value": "(?:thousandeyes).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Thousandeyes - 2",
+        "value": "(?:thousandeyes).{0,40}\\b([a-zA-Z0-9]{3,20}@[a-zA-Z0-9]{2,12}.[a-zA-Z0-9]{2,5})\\b"
+    },
+    {
+        "name": "Ticketmaster",
+        "value": "(?:ticketmaster).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Tiingo",
+        "value": "(?:tiingo).{0,40}\\b([0-9a-z]{40})\\b"
+    },
+    {
+        "name": "Timezoneapi",
+        "value": "(?:timezoneapi).{0,40}\\b([a-zA-Z0-9]{20})\\b"
+    },
+    {
+        "name": "Tly",
+        "value": "(?:tly).{0,40}\\b([0-9A-Za-z]{60})\\b"
+    },
+    {
+        "name": "Tmetric",
+        "value": "(?:tmetric).{0,40}\\b([0-9A-Z]{64})\\b"
+    },
+    {
+        "name": "Todoist",
+        "value": "(?:todoist).{0,40}\\b([0-9a-z]{40})\\b"
+    },
+    {
+        "name": "Toggltrack",
+        "value": "(?:toggl).{0,40}\\b([0-9Aa-z]{32})\\b"
+    },
+    {
+        "name": "Tomorrowio",
+        "value": "(?:tomorrow).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Tomtom",
+        "value": "(?:tomtom).{0,40}\\b([0-9Aa-zA-Z]{32})\\b"
+    },
+    {
+        "name": "Tradier",
+        "value": "(?:tradier).{0,40}\\b([a-zA-Z0-9]{28})\\b"
+    },
+    {
+        "name": "Travelpayouts",
+        "value": "(?:travelpayouts).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Travisci",
+        "value": "(?:travis).{0,40}\\b([a-zA-Z0-9A-Z_]{22})\\b"
+    },
+    {
+        "name": "Trello URL",
+        "value": "https://trello.com/b/[0-9a-z]/[0-9a-z_-]+"
+    },
+    {
+        "name": "Trelloapikey - 1",
+        "value": "(?:trello).{0,40}\\b([a-zA-Z-0-9]{32})\\b"
+    },
+    {
+        "name": "Tru - 1",
+        "value": "(?:tru).{0,40}\\b([0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12})\\b"
+    },
+    {
+        "name": "Tru - 2",
+        "value": "(?:tru).{0,40}\\b([0-9a-zA-Z.-_]{26})\\b"
+    },
+    {
+        "name": "Twelvedata",
+        "value": "(?:twelvedata).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Twilio - 1",
+        "value": "\\bAC[0-9a-f]{32}\\b"
+    },
+    {
+        "name": "Twilio - 2",
+        "value": "\\b[0-9a-f]{32}\\b"
+    },
+    {
+        "name": "Twilio API Key",
+        "value": "SK[0-9a-fA-F]{32}"
+    },
+    {
+        "name": "Twitter Access Token",
+        "value": "[tT][wW][iI][tT][tT][eE][rR].*[1-9][0-9]+-[0-9a-zA-Z]{40}"
+    },
+    {
+        "name": "Twitter Client ID",
+        "value": "twitter[0-9a-z]{18,25}"
+    },
+    {
+        "name": "Twitter OAuth",
+        "value": "[tT][wW][iI][tT][tT][eE][rR].*['|\"][0-9a-zA-Z]{35,44}['|\"]"
+    },
+    {
+        "name": "Twitter Secret Key",
+        "value": "twitter[0-9a-z]{35,44}"
+    },
+    {
+        "name": "Tyntec",
+        "value": "(?:tyntec).{0,40}\\b([a-zA-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Typeform",
+        "value": "(?:typeform).{0,40}\\b([0-9A-Za-z]{44})\\b"
+    },
+    {
+        "name": "Ubidots",
+        "value": "\\b(BBFF-[0-9a-zA-Z]{30})\\b"
+    },
+    {
+        "name": "Unifyid",
+        "value": "(?:unify).{0,40}\\b([0-9A-Za-z_=-]{44})"
+    },
+    {
+        "name": "Unplugg",
+        "value": "(?:unplu).{0,40}\\b([a-z0-9]{64})\\b"
+    },
+    {
+        "name": "Unsplash",
+        "value": "(?:unsplash).{0,40}\\b([0-9A-Za-z_]{43})\\b"
+    },
+    {
+        "name": "Upcdatabase",
+        "value": "(?:upcdatabase).{0,40}\\b([A-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Uplead",
+        "value": "(?:uplead).{0,40}\\b([a-z0-9-]{32})\\b"
+    },
+    {
+        "name": "Uploadcare",
+        "value": "(?:uploadcare).{0,40}\\b([a-z0-9]{20})\\b"
+    },
+    {
+        "name": "Upwave",
+        "value": "(?:upwave).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Uri",
+        "value": "\\b[a-zA-Z]{1,10}:?\\/\\/[-.%\\w{}]{1,50}:([-.%\\S]{3,50})@[-.%\\w\\/:]+\\b"
+    },
+    {
+        "name": "Urlscan",
+        "value": "(?:urlscan).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "User",
+        "value": "(?:user).{0,40}\\b([a-zA-Z0-9-._+=]{64})\\b"
+    },
+    {
+        "name": "Userstack",
+        "value": "(?:userstack).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Vatlayer",
+        "value": "(?:vatlayer).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Vault Token",
+        "value": "([sb]\\.[a-zA-Z0-9]{24})"
+    },
+    {
+        "name": "Vercel",
+        "value": "(?:vercel).{0,40}\\b([a-zA-Z0-9]{24})\\b"
+    },
+    {
+        "name": "Verifier - 1",
+        "value": "(?:verifier).{0,40}\\b([a-zA-Z-0-9-]{5,16}\\@[a-zA-Z-0-9]{4,16}\\.[a-zA-Z-0-9]{3,6})\\b"
+    },
+    {
+        "name": "Verifier - 2",
+        "value": "(?:verifier).{0,40}\\b([a-z0-9]{96})\\b"
+    },
+    {
+        "name": "Verimail",
+        "value": "(?:verimail).{0,40}\\b([A-Z0-9]{32})\\b"
+    },
+    {
+        "name": "Veriphone",
+        "value": "(?:veriphone).{0,40}\\b([0-9A-Z]{32})\\b"
+    },
+    {
+        "name": "Versioneye",
+        "value": "(?:versioneye).{0,40}\\b([a-zA-Z0-9-]{40})\\b"
+    },
+    {
+        "name": "Viewneo",
+        "value": "(?:viewneo).{0,40}\\b([a-z0-9A-Z]{120,300}.[a-z0-9A-Z]{150,300}.[a-z0-9A-Z-_]{600,800})"
+    },
+    {
+        "name": "Virustotal",
+        "value": "(?:virustotal).{0,40}\\b([a-f0-9]{64})\\b"
+    },
+    {
+        "name": "Visualcrossing",
+        "value": "(?:visualcrossing).{0,40}\\b([0-9A-Z]{25})\\b"
+    },
+    {
+        "name": "Voicegain",
+        "value": "(?:voicegain).{0,40}\\b(ey[0-9a-zA-Z_-]{34}.ey[0-9a-zA-Z_-]{108}.[0-9a-zA-Z_-]{43})\\b"
+    },
+    {
+        "name": "Vouchery - 1",
+        "value": "(?:vouchery).{0,40}\\b([a-z0-9-]{36})\\b"
+    },
+    {
+        "name": "Vouchery - 2",
+        "value": "(?:vouchery).{0,40}\\b([a-zA-Z0-9-\\S]{2,20})\\b"
+    },
+    {
+        "name": "Vpnapi",
+        "value": "(?:vpnapi).{0,40}\\b([a-z0-9A-Z]{32})\\b"
+    },
+    {
+        "name": "Vultrapikey",
+        "value": "(?:vultr).{0,40} \\b([A-Z0-9]{36})\\b"
+    },
+    {
+        "name": "Vyte",
+        "value": "(?:vyte).{0,40}\\b([0-9a-z]{50})\\b"
+    },
+    {
+        "name": "Walkscore",
+        "value": "(?:walkscore).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Weatherbit",
+        "value": "(?:weatherbit).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Weatherstack",
+        "value": "(?:weatherstack).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Webex - 1",
+        "value": "(?:error).{0,40}(redirect_uri_mismatch)"
+    },
+    {
+        "name": "Webex - 2",
+        "value": "(?:webex).{0,40}\\b([A-Za-z0-9_-]{65})\\b"
+    },
+    {
+        "name": "Webex - 3",
+        "value": "(?:webex).{0,40}\\b([A-Za-z0-9_-]{64})\\b"
+    },
+    {
+        "name": "Webflow",
+        "value": "(?:webflow).{0,40}\\b([a-zA0-9]{64})\\b"
+    },
+    {
+        "name": "Webscraper",
+        "value": "(?:webscraper).{0,40}\\b([a-zA-Z0-9]{60})\\b"
+    },
+    {
+        "name": "Webscraping",
+        "value": "(?:webscraping).{0,40}\\b([0-9A-Za-z]{32})\\b"
+    },
+    {
+        "name": "Wepay - 1",
+        "value": "\\b(\\d{6})\\b"
+    },
+    {
+        "name": "Wepay - 2",
+        "value": "(?:wepay).{0,40}\\b([a-zA-Z0-9_?]{62})\\b"
+    },
+    {
+        "name": "Whoxy",
+        "value": "(?:whoxy).{0,40}\\b([0-9a-z]{33})\\b"
+    },
+    {
+        "name": "Worksnaps",
+        "value": "(?:worksnaps).{0,40}\\b([0-9A-Za-z]{40})\\b"
+    },
+    {
+        "name": "Workstack",
+        "value": "(?:workstack).{0,40}\\b([0-9Aa-zA-Z]{60})\\b"
+    },
+    {
+        "name": "Worldcoinindex",
+        "value": "(?:worldcoinindex).{0,40}\\b([a-zA-Z0-9]{35})\\b"
+    },
+    {
+        "name": "Worldweather",
+        "value": "(?:worldweather).{0,40}\\b([0-9a-z]{31})\\b"
+    },
+    {
+        "name": "Wrike",
+        "value": "(?:wrike).{0,40}\\b(ey[a-zA-Z0-9-._]{333})\\b"
+    },
+    {
+        "name": "Yandex",
+        "value": "(?:yandex).{0,40}\\b([a-z0-9A-Z.]{83})\\b"
+    },
+    {
+        "name": "Youneedabudget",
+        "value": "(?:youneedabudget).{0,40}\\b([0-9a-f]{64})\\b"
+    },
+    {
+        "name": "Yousign",
+        "value": "(?:yousign).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Youtubeapikey - 1",
+        "value": "(?:youtube).{0,40}\\b([a-zA-Z-0-9_]{39})\\b"
+    },
+    {
+        "name": "Youtubeapikey - 2",
+        "value": "(?:youtube).{0,40}\\b([a-zA-Z-0-9]{24})\\b"
+    },
+    {
+        "name": "Zapier Webhook",
+        "value": "https://(?:www.)?hooks\\.zapier\\.com/hooks/catch/[A-Za-z0-9]+/[A-Za-z0-9]+/"
+    },
+    {
+        "name": "Zapierwebhook",
+        "value": "(https:\\/\\/hooks.zapier.com\\/hooks\\/catch\\/[A-Za-z0-9\\/]{16})"
+    },
+    {
+        "name": "Zendeskapi - 1",
+        "value": "\\b([a-zA-Z-0-9]{3,16}\\.zendesk\\.com)\\b"
+    },
+    {
+        "name": "Zendeskapi - 2",
+        "value": "\\b([a-zA-Z-0-9-]{5,16}\\@[a-zA-Z-0-9]{4,16}\\.[a-zA-Z-0-9]{3,6})\\b"
+    },
+    {
+        "name": "Zendeskapi - 3",
+        "value": "(?:zendesk).{0,40}([A-Za-z0-9_-]{40})"
+    },
+    {
+        "name": "Zenkitapi",
+        "value": "(?:zenkit).{0,40}\\b([0-9a-z]{8}\\-[0-9A-Za-z]{32})\\b"
+    },
+    {
+        "name": "Zenscrape",
+        "value": "(?:zenscrape).{0,40}\\b([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\\b"
+    },
+    {
+        "name": "Zenserp",
+        "value": "(?:zenserp).{0,40}\\b([0-9a-z-]{36})\\b"
+    },
+    {
+        "name": "Zeplin",
+        "value": "(?:zeplin).{0,40}\\b([a-zA-Z0-9-.]{350,400})\\b"
+    },
+    {
+        "name": "Zerobounce",
+        "value": "(?:zerobounce).{0,40}\\b([a-z0-9]{32})\\b"
+    },
+    {
+        "name": "Zipapi - 1",
+        "value": "(?:zipapi).{0,40}\\b([a-zA-Z0-9!=@#$%^]{7,})"
+    },
+    {
+        "name": "Zipapi - 3",
+        "value": "(?:zipapi).{0,40}\\b([0-9a-z]{32})\\b"
+    },
+    {
+        "name": "Zipbooks - 1",
+        "value": "(?:zipbooks|password).{0,40}\\b([a-zA-Z0-9!=@#$%^]{8,})"
+    },
+    {
+        "name": "Zipcodeapi",
+        "value": "(?:zipcodeapi).{0,40}\\b([a-zA-Z0-9]{64})\\b"
+    },
+    {
+        "name": "Zoho Webhook",
+        "value": "https://creator\\.zoho\\.com/api/[A-Za-z0-9/\\-_\\.]+\\?authtoken=[A-Za-z0-9]+"
+    },
+    {
+        "name": "Zonkafeedback",
+        "value": "(?:zonka).{0,40}\\b([A-Za-z0-9]{36})\\b"
+    },
+    {
+        "name": "access_key_secret",
+        "value": "access[_-]?key[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "access_secret",
+        "value": "access[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "access_token",
+        "value": "access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "account_sid",
+        "value": "account[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "admin_email",
+        "value": "admin[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "adzerk_api_key",
+        "value": "adzerk[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "algolia_admin_key_1",
+        "value": "algolia[_-]?admin[_-]?key[_-]?1(=| =|:| :)"
+    },
+    {
+        "name": "algolia_admin_key_2",
+        "value": "algolia[_-]?admin[_-]?key[_-]?2(=| =|:| :)"
+    },
+    {
+        "name": "algolia_admin_key_mcm",
+        "value": "algolia[_-]?admin[_-]?key[_-]?mcm(=| =|:| :)"
+    },
+    {
+        "name": "algolia_api_key",
+        "value": "algolia[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "algolia_api_key_mcm",
+        "value": "algolia[_-]?api[_-]?key[_-]?mcm(=| =|:| :)"
+    },
+    {
+        "name": "algolia_api_key_search",
+        "value": "algolia[_-]?api[_-]?key[_-]?search(=| =|:| :)"
+    },
+    {
+        "name": "algolia_search_api_key",
+        "value": "algolia[_-]?search[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "algolia_search_key",
+        "value": "algolia[_-]?search[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "algolia_search_key_1",
+        "value": "algolia[_-]?search[_-]?key[_-]?1(=| =|:| :)"
+    },
+    {
+        "name": "alias_pass",
+        "value": "alias[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "alicloud_access_key",
+        "value": "alicloud[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "alicloud_secret_key",
+        "value": "alicloud[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "amazon_bucket_name",
+        "value": "amazon[_-]?bucket[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "amazon_secret_access_key",
+        "value": "amazon[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "anaconda_token",
+        "value": "anaconda[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "android_docs_deploy_token",
+        "value": "android[_-]?docs[_-]?deploy[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "ansible_vault_password",
+        "value": "ansible[_-]?vault[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "aos_key",
+        "value": "aos[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "aos_sec",
+        "value": "aos[_-]?sec(=| =|:| :)"
+    },
+    {
+        "name": "api_key",
+        "value": "api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "api_key_secret",
+        "value": "api[_-]?key[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "api_key_sid",
+        "value": "api[_-]?key[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "api_secret",
+        "value": "api[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "apiary_api_key",
+        "value": "apiary[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "apigw_access_token",
+        "value": "apigw[_-]?access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "apikey_patterns",
+        "value": "apikey[:](?:['\"]?[a-zA-Z0-9-_|]+['\"]?)"
+    },
+    {
+        "name": "app_bucket_perm",
+        "value": "app[_-]?bucket[_-]?perm(=| =|:| :)"
+    },
+    {
+        "name": "app_report_token_key",
+        "value": "app[_-]?report[_-]?token[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "app_secrete",
+        "value": "app[_-]?secrete(=| =|:| :)"
+    },
+    {
+        "name": "app_token",
+        "value": "app[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "appclientsecret",
+        "value": "appclientsecret(=| =|:| :)"
+    },
+    {
+        "name": "apple_id_password",
+        "value": "apple[_-]?id[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "argos_token",
+        "value": "argos[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "artifactory",
+        "value": "(artifactory.{0,50}(\"|')?[a-zA-Z0-9=]{112}(\"|')?)"
+    },
+    {
+        "name": "artifactory_key",
+        "value": "artifactory[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "artifacts_aws_access_key_id",
+        "value": "artifacts[_-]?aws[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "artifacts_aws_secret_access_key",
+        "value": "artifacts[_-]?aws[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "artifacts_bucket",
+        "value": "artifacts[_-]?bucket(=| =|:| :)"
+    },
+    {
+        "name": "artifacts_key",
+        "value": "artifacts[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "artifacts_secret",
+        "value": "artifacts[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "assistant_iam_apikey",
+        "value": "assistant[_-]?iam[_-]?apikey(=| =|:| :)"
+    },
+    {
+        "name": "auth0_api_clientsecret",
+        "value": "auth0[_-]?api[_-]?clientsecret(=| =|:| :)"
+    },
+    {
+        "name": "auth0_client_secret",
+        "value": "auth0[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "auth_token",
+        "value": "auth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "author_email_addr",
+        "value": "author[_-]?email[_-]?addr(=| =|:| :)"
+    },
+    {
+        "name": "author_npm_api_key",
+        "value": "author[_-]?npm[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "aws_access",
+        "value": "aws[_-]?access(=| =|:| :)"
+    },
+    {
+        "name": "aws_access_key",
+        "value": "aws[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "aws_access_key_id - 1",
+        "value": "aws[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "aws_access_key_id - 2",
+        "value": "(?:A3T|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[a-zA-Z0-9-_]{12,}"
+    },
+    {
+        "name": "aws_config_accesskeyid",
+        "value": "aws[_-]?config[_-]?accesskeyid(=| =|:| :)"
+    },
+    {
+        "name": "aws_config_secretaccesskey",
+        "value": "aws[_-]?config[_-]?secretaccesskey(=| =|:| :)"
+    },
+    {
+        "name": "aws_key",
+        "value": "aws[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "aws_patterns",
+        "value": "(?:accesskeyid|secretaccesskey|aws_access_key_id|aws_secret_access_key)"
+    },
+    {
+        "name": "aws_s3",
+        "value": "([a-zA-Z0-9_-]+.s3.[a-z0-9_-]+.amazonaws.com)"
+    },
+    {
+        "name": "aws_secret",
+        "value": "aws[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "aws_secret_access_key",
+        "value": "aws[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "aws_secret_key",
+        "value": "aws[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "aws_secrets",
+        "value": "aws[_-]?secrets(=| =|:| :)"
+    },
+    {
+        "name": "aws_ses_access_key_id",
+        "value": "aws[_-]?ses[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "aws_ses_secret_access_key",
+        "value": "aws[_-]?ses[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "awsaccesskeyid",
+        "value": "awsaccesskeyid(=| =|:| :)"
+    },
+    {
+        "name": "awscn_access_key_id",
+        "value": "awscn[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "awscn_secret_access_key",
+        "value": "awscn[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "awssecretkey",
+        "value": "awssecretkey(=| =|:| :)"
+    },
+    {
+        "name": "b2_app_key",
+        "value": "b2[_-]?app[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "b2_bucket",
+        "value": "b2[_-]?bucket(=| =|:| :)"
+    },
+    {
+        "name": "basic_auth_credentials",
+        "value": "([a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z]+)"
+    },
+    {
+        "name": "bintray_api_key",
+        "value": "bintray[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "bintray_apikey",
+        "value": "bintray[_-]?apikey(=| =|:| :)"
+    },
+    {
+        "name": "bintray_gpg_password",
+        "value": "bintray[_-]?gpg[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "bintray_key",
+        "value": "bintray[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "bintray_token",
+        "value": "bintray[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "bintraykey",
+        "value": "bintraykey(=| =|:| :)"
+    },
+    {
+        "name": "bluemix_api_key",
+        "value": "bluemix[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "bluemix_auth",
+        "value": "bluemix[_-]?auth(=| =|:| :)"
+    },
+    {
+        "name": "bluemix_pass",
+        "value": "bluemix[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "bluemix_pass_prod",
+        "value": "bluemix[_-]?pass[_-]?prod(=| =|:| :)"
+    },
+    {
+        "name": "bluemix_password",
+        "value": "bluemix[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "bluemix_pwd",
+        "value": "bluemix[_-]?pwd(=| =|:| :)"
+    },
+    {
+        "name": "bluemix_username",
+        "value": "bluemix[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "brackets_repo_oauth_token",
+        "value": "brackets[_-]?repo[_-]?oauth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "browser_stack_access_key",
+        "value": "browser[_-]?stack[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "browserstack_access_key",
+        "value": "browserstack[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "bucketeer_aws_access_key_id",
+        "value": "bucketeer[_-]?aws[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "bucketeer_aws_secret_access_key",
+        "value": "bucketeer[_-]?aws[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "built_branch_deploy_key",
+        "value": "built[_-]?branch[_-]?deploy[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "bundlesize_github_token",
+        "value": "bundlesize[_-]?github[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "bx_password",
+        "value": "bx[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "bx_username",
+        "value": "bx[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "cache_s3_secret_key",
+        "value": "cache[_-]?s3[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "cargo_token",
+        "value": "cargo[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "cattle_access_key",
+        "value": "cattle[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "cattle_agent_instance_auth",
+        "value": "cattle[_-]?agent[_-]?instance[_-]?auth(=| =|:| :)"
+    },
+    {
+        "name": "cattle_secret_key",
+        "value": "cattle[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "censys_secret",
+        "value": "censys[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "certificate_password",
+        "value": "certificate[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "cf_password",
+        "value": "cf[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "cheverny_token",
+        "value": "cheverny[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "chrome_client_secret",
+        "value": "chrome[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "chrome_refresh_token",
+        "value": "chrome[_-]?refresh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "ci_deploy_password",
+        "value": "ci[_-]?deploy[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "ci_project_url",
+        "value": "ci[_-]?project[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "ci_registry_user",
+        "value": "ci[_-]?registry[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "ci_server_name",
+        "value": "ci[_-]?server[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "ci_user_token",
+        "value": "ci[_-]?user[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "claimr_database",
+        "value": "claimr[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "claimr_db",
+        "value": "claimr[_-]?db(=| =|:| :)"
+    },
+    {
+        "name": "claimr_superuser",
+        "value": "claimr[_-]?superuser(=| =|:| :)"
+    },
+    {
+        "name": "claimr_token",
+        "value": "claimr[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "cli_e2e_cma_token",
+        "value": "cli[_-]?e2e[_-]?cma[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "client_secret",
+        "value": "client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "clojars_password",
+        "value": "clojars[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "cloud_api_key",
+        "value": "cloud[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "cloudant_archived_database",
+        "value": "cloudant[_-]?archived[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "cloudant_audited_database",
+        "value": "cloudant[_-]?audited[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "cloudant_database",
+        "value": "cloudant[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "cloudant_instance",
+        "value": "cloudant[_-]?instance(=| =|:| :)"
+    },
+    {
+        "name": "cloudant_order_database",
+        "value": "cloudant[_-]?order[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "cloudant_parsed_database",
+        "value": "cloudant[_-]?parsed[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "cloudant_password",
+        "value": "cloudant[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "cloudant_processed_database",
+        "value": "cloudant[_-]?processed[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "cloudant_service_database",
+        "value": "cloudant[_-]?service[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "cloudflare_api_key",
+        "value": "cloudflare[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "cloudflare_auth_email",
+        "value": "cloudflare[_-]?auth[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "cloudflare_auth_key",
+        "value": "cloudflare[_-]?auth[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "cloudflare_email",
+        "value": "cloudflare[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "cloudinary_url",
+        "value": "cloudinary[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "cloudinary_url_staging",
+        "value": "cloudinary[_-]?url[_-]?staging(=| =|:| :)"
+    },
+    {
+        "name": "clu_repo_url",
+        "value": "clu[_-]?repo[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "clu_ssh_private_key_base64",
+        "value": "clu[_-]?ssh[_-]?private[_-]?key[_-]?base64(=| =|:| :)"
+    },
+    {
+        "name": "cn_access_key_id",
+        "value": "cn[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "cn_secret_access_key",
+        "value": "cn[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "cocoapods_trunk_email",
+        "value": "cocoapods[_-]?trunk[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "cocoapods_trunk_token",
+        "value": "cocoapods[_-]?trunk[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "codacy_project_token",
+        "value": "codacy[_-]?project[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "codeclimate",
+        "value": "(codeclima.{0,50}(\"|')?[0-9a-f]{64}(\"|')?)"
+    },
+    {
+        "name": "codeclimate_repo_token",
+        "value": "codeclimate[_-]?repo[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "codecov_token",
+        "value": "codecov[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "coding_token",
+        "value": "coding[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "conekta_apikey",
+        "value": "conekta[_-]?apikey(=| =|:| :)"
+    },
+    {
+        "name": "consumer_key",
+        "value": "consumer[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "consumerkey",
+        "value": "consumerkey(=| =|:| :)"
+    },
+    {
+        "name": "contentful_access_token",
+        "value": "contentful[_-]?access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "contentful_cma_test_token",
+        "value": "contentful[_-]?cma[_-]?test[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "contentful_integration_management_token",
+        "value": "contentful[_-]?integration[_-]?management[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "contentful_php_management_test_token",
+        "value": "contentful[_-]?php[_-]?management[_-]?test[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "contentful_test_org_cma_token",
+        "value": "contentful[_-]?test[_-]?org[_-]?cma[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "contentful_v2_access_token",
+        "value": "contentful[_-]?v2[_-]?access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "conversation_password",
+        "value": "conversation[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "conversation_username",
+        "value": "conversation[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "cos_secrets",
+        "value": "cos[_-]?secrets(=| =|:| :)"
+    },
+    {
+        "name": "coveralls_api_token",
+        "value": "coveralls[_-]?api[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "coveralls_repo_token",
+        "value": "coveralls[_-]?repo[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "coveralls_token",
+        "value": "coveralls[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "coverity_scan_token",
+        "value": "coverity[_-]?scan[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "cypress_record_key",
+        "value": "cypress[_-]?record[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "danger_github_api_token",
+        "value": "danger[_-]?github[_-]?api[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "database_host",
+        "value": "database[_-]?host(=| =|:| :)"
+    },
+    {
+        "name": "database_name",
+        "value": "database[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "database_password",
+        "value": "database[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "database_port",
+        "value": "database[_-]?port(=| =|:| :)"
+    },
+    {
+        "name": "database_user",
+        "value": "database[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "database_username",
+        "value": "database[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "datadog_api_key",
+        "value": "datadog[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "datadog_app_key",
+        "value": "datadog[_-]?app[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "db_connection",
+        "value": "db[_-]?connection(=| =|:| :)"
+    },
+    {
+        "name": "db_database",
+        "value": "db[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "db_host",
+        "value": "db[_-]?host(=| =|:| :)"
+    },
+    {
+        "name": "db_password",
+        "value": "db[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "db_pw",
+        "value": "db[_-]?pw(=| =|:| :)"
+    },
+    {
+        "name": "db_user",
+        "value": "db[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "db_username",
+        "value": "db[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "ddg_test_email",
+        "value": "ddg[_-]?test[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "ddg_test_email_pw",
+        "value": "ddg[_-]?test[_-]?email[_-]?pw(=| =|:| :)"
+    },
+    {
+        "name": "ddgc_github_token",
+        "value": "ddgc[_-]?github[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "deploy_password",
+        "value": "deploy[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "deploy_secure",
+        "value": "deploy[_-]?secure(=| =|:| :)"
+    },
+    {
+        "name": "deploy_token",
+        "value": "deploy[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "deploy_user",
+        "value": "deploy[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "dgpg_passphrase",
+        "value": "dgpg[_-]?passphrase(=| =|:| :)"
+    },
+    {
+        "name": "digitalocean_access_token",
+        "value": "digitalocean[_-]?access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "digitalocean_ssh_key_body",
+        "value": "digitalocean[_-]?ssh[_-]?key[_-]?body(=| =|:| :)"
+    },
+    {
+        "name": "digitalocean_ssh_key_ids",
+        "value": "digitalocean[_-]?ssh[_-]?key[_-]?ids(=| =|:| :)"
+    },
+    {
+        "name": "docker_hub_password",
+        "value": "docker[_-]?hub[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "docker_key",
+        "value": "docker[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "docker_pass",
+        "value": "docker[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "docker_passwd",
+        "value": "docker[_-]?passwd(=| =|:| :)"
+    },
+    {
+        "name": "docker_password",
+        "value": "docker[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "docker_postgres_url",
+        "value": "docker[_-]?postgres[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "docker_token",
+        "value": "docker[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "dockerhub_password",
+        "value": "dockerhub[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "dockerhubpassword",
+        "value": "dockerhubpassword(=| =|:| :)"
+    },
+    {
+        "name": "doordash_auth_token",
+        "value": "doordash[_-]?auth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "dropbox_oauth_bearer",
+        "value": "dropbox[_-]?oauth[_-]?bearer(=| =|:| :)"
+    },
+    {
+        "name": "droplet_travis_password",
+        "value": "droplet[_-]?travis[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "dsonar_login",
+        "value": "dsonar[_-]?login(=| =|:| :)"
+    },
+    {
+        "name": "dsonar_projectkey",
+        "value": "dsonar[_-]?projectkey(=| =|:| :)"
+    },
+    {
+        "name": "elastic_cloud_auth",
+        "value": "elastic[_-]?cloud[_-]?auth(=| =|:| :)"
+    },
+    {
+        "name": "elasticsearch_password",
+        "value": "elasticsearch[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "encryption_password",
+        "value": "encryption[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "end_user_password",
+        "value": "end[_-]?user[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "env_github_oauth_token",
+        "value": "env[_-]?github[_-]?oauth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "env_heroku_api_key",
+        "value": "env[_-]?heroku[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "env_key",
+        "value": "env[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "env_secret",
+        "value": "env[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "env_secret_access_key",
+        "value": "env[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "env_sonatype_password",
+        "value": "env[_-]?sonatype[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "eureka_awssecretkey",
+        "value": "eureka[_-]?awssecretkey(=| =|:| :)"
+    },
+    {
+        "name": "exp_password",
+        "value": "exp[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "facebook_access_token",
+        "value": "(EAACEdEose0cBA[0-9A-Za-z]+)"
+    },
+    {
+        "name": "facebook_oauth",
+        "value": "[f|F][a|A][c|C][e|E][b|B][o|O][o|O][k|K].*['|\"][0-9a-f]{32}['|\"]"
+    },
+    {
+        "name": "file_password",
+        "value": "file[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "firebase_api_json",
+        "value": "firebase[_-]?api[_-]?json(=| =|:| :)"
+    },
+    {
+        "name": "firebase_api_token",
+        "value": "firebase[_-]?api[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "firebase_key",
+        "value": "firebase[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "firebase_project_develop",
+        "value": "firebase[_-]?project[_-]?develop(=| =|:| :)"
+    },
+    {
+        "name": "firebase_token",
+        "value": "firebase[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "firefox_secret",
+        "value": "firefox[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "flask_secret_key",
+        "value": "flask[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "flickr_api_key",
+        "value": "flickr[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "flickr_api_secret",
+        "value": "flickr[_-]?api[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "fossa_api_key",
+        "value": "fossa[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "ftp_host",
+        "value": "ftp[_-]?host(=| =|:| :)"
+    },
+    {
+        "name": "ftp_login",
+        "value": "ftp[_-]?login(=| =|:| :)"
+    },
+    {
+        "name": "ftp_password",
+        "value": "ftp[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "ftp_pw",
+        "value": "ftp[_-]?pw(=| =|:| :)"
+    },
+    {
+        "name": "ftp_user",
+        "value": "ftp[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "ftp_username",
+        "value": "ftp[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "gcloud_bucket",
+        "value": "gcloud[_-]?bucket(=| =|:| :)"
+    },
+    {
+        "name": "gcloud_project",
+        "value": "gcloud[_-]?project(=| =|:| :)"
+    },
+    {
+        "name": "gcloud_service_key",
+        "value": "gcloud[_-]?service[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "gcp_api_key",
+        "value": "(AIza[0-9A-Za-z-_]{35})"
+    },
+    {
+        "name": "gcr_password",
+        "value": "gcr[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "gcs_bucket",
+        "value": "gcs[_-]?bucket(=| =|:| :)"
+    },
+    {
+        "name": "generic password",
+        "value": "password.+"
+    },
+    {
+        "name": "gh_api_key",
+        "value": "gh[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "gh_email",
+        "value": "gh[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "gh_next_oauth_client_secret",
+        "value": "gh[_-]?next[_-]?oauth[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "gh_next_unstable_oauth_client_id",
+        "value": "gh[_-]?next[_-]?unstable[_-]?oauth[_-]?client[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "gh_next_unstable_oauth_client_secret",
+        "value": "gh[_-]?next[_-]?unstable[_-]?oauth[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "gh_oauth_client_secret",
+        "value": "gh[_-]?oauth[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "gh_oauth_token",
+        "value": "gh[_-]?oauth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "gh_repo_token",
+        "value": "gh[_-]?repo[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "gh_token",
+        "value": "gh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "gh_unstable_oauth_client_secret",
+        "value": "gh[_-]?unstable[_-]?oauth[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "ghb_token",
+        "value": "ghb[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "ghost_api_key",
+        "value": "ghost[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "git_author_email",
+        "value": "git[_-]?author[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "git_author_name",
+        "value": "git[_-]?author[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "git_committer_email",
+        "value": "git[_-]?committer[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "git_committer_name",
+        "value": "git[_-]?committer[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "git_email",
+        "value": "git[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "git_name",
+        "value": "git[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "git_token",
+        "value": "git[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "github_access_token - 1",
+        "value": "github[_-]?access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "github_access_token - 2",
+        "value": "[a-zA-Z0-9_-]*:[a-zA-Z0-9_-]+@github.com*"
+    },
+    {
+        "name": "github_api_key",
+        "value": "github[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "github_api_token",
+        "value": "github[_-]?api[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "github_auth",
+        "value": "github[_-]?auth(=| =|:| :)"
+    },
+    {
+        "name": "github_auth_token",
+        "value": "github[_-]?auth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "github_client_secret",
+        "value": "github[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "github_deploy_hb_doc_pass",
+        "value": "github[_-]?deploy[_-]?hb[_-]?doc[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "github_deployment_token",
+        "value": "github[_-]?deployment[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "github_hunter_token",
+        "value": "github[_-]?hunter[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "github_hunter_username",
+        "value": "github[_-]?hunter[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "github_key",
+        "value": "github[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "github_oauth",
+        "value": "github[_-]?oauth(=| =|:| :)"
+    },
+    {
+        "name": "github_oauth_token",
+        "value": "github[_-]?oauth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "github_password",
+        "value": "github[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "github_pwd",
+        "value": "github[_-]?pwd(=| =|:| :)"
+    },
+    {
+        "name": "github_release_token",
+        "value": "github[_-]?release[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "github_repo",
+        "value": "github[_-]?repo(=| =|:| :)"
+    },
+    {
+        "name": "github_token",
+        "value": "github[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "github_tokens",
+        "value": "github[_-]?tokens(=| =|:| :)"
+    },
+    {
+        "name": "gitlab_user_email",
+        "value": "gitlab[_-]?user[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "gogs_password",
+        "value": "gogs[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "google_account_type",
+        "value": "google[_-]?account[_-]?type(=| =|:| :)"
+    },
+    {
+        "name": "google_captcha",
+        "value": "(6L[0-9A-Za-z-_]{38})"
+    },
+    {
+        "name": "google_client_email",
+        "value": "google[_-]?client[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "google_client_id",
+        "value": "google[_-]?client[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "google_client_secret",
+        "value": "google[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "google_cloud_platform_api_key",
+        "value": "(v[0-9]\\.)[0-9a-f]{40}"
+    },
+    {
+        "name": "google_maps_api_key",
+        "value": "google[_-]?maps[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "google_oauth",
+        "value": "(ya29.[0-9A-Za-z-_]+)"
+    },
+    {
+        "name": "google_patterns",
+        "value": "(?:google_client_id|google_client_secret|google_client_token)"
+    },
+    {
+        "name": "google_private_key",
+        "value": "google[_-]?private[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "google_url",
+        "value": "([0-9]{12}-[a-z0-9]{32}.apps.googleusercontent.com)"
+    },
+    {
+        "name": "gpg_key_name",
+        "value": "gpg[_-]?key[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "gpg_keyname",
+        "value": "gpg[_-]?keyname(=| =|:| :)"
+    },
+    {
+        "name": "gpg_ownertrust",
+        "value": "gpg[_-]?ownertrust(=| =|:| :)"
+    },
+    {
+        "name": "gpg_passphrase",
+        "value": "gpg[_-]?passphrase(=| =|:| :)"
+    },
+    {
+        "name": "gpg_private_key",
+        "value": "gpg[_-]?private[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "gpg_secret_keys",
+        "value": "gpg[_-]?secret[_-]?keys(=| =|:| :)"
+    },
+    {
+        "name": "gradle_publish_key",
+        "value": "gradle[_-]?publish[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "gradle_publish_secret",
+        "value": "gradle[_-]?publish[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "gradle_signing_key_id",
+        "value": "gradle[_-]?signing[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "gradle_signing_password",
+        "value": "gradle[_-]?signing[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "gren_github_token",
+        "value": "gren[_-]?github[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "grgit_user",
+        "value": "grgit[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "hab_auth_token",
+        "value": "hab[_-]?auth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "hab_key",
+        "value": "hab[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "hb_codesign_gpg_pass",
+        "value": "hb[_-]?codesign[_-]?gpg[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "hb_codesign_key_pass",
+        "value": "hb[_-]?codesign[_-]?key[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "heroku_api_key",
+        "value": "heroku[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "heroku_api_key_api_key",
+        "value": "([h|H][e|E][r|R][o|O][k|K][u|U].{0,30}[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12})"
+    },
+    {
+        "name": "heroku_email",
+        "value": "heroku[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "heroku_token",
+        "value": "heroku[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "hockeyapp",
+        "value": "hockey.{0,50}(\"|')?[0-9a-f]{32}(\"|')?"
+    },
+    {
+        "name": "hockeyapp_token",
+        "value": "hockeyapp[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "homebrew_github_api_token",
+        "value": "homebrew[_-]?github[_-]?api[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "hub_dxia2_password",
+        "value": "hub[_-]?dxia2[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "ij_repo_password",
+        "value": "ij[_-]?repo[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "ij_repo_username",
+        "value": "ij[_-]?repo[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "index_name",
+        "value": "index[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "integration_test_api_key",
+        "value": "integration[_-]?test[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "integration_test_appid",
+        "value": "integration[_-]?test[_-]?appid(=| =|:| :)"
+    },
+    {
+        "name": "internal_secrets",
+        "value": "internal[_-]?secrets(=| =|:| :)"
+    },
+    {
+        "name": "ios_docs_deploy_token",
+        "value": "ios[_-]?docs[_-]?deploy[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "itest_gh_token",
+        "value": "itest[_-]?gh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "jdbc",
+        "value": "mysql: jdbc:mysql(=| =|:| :)"
+    },
+    {
+        "name": "jdbc_databaseurl",
+        "value": "jdbc[_-]?databaseurl(=| =|:| :)"
+    },
+    {
+        "name": "jdbc_host",
+        "value": "jdbc[_-]?host(=| =|:| :)"
+    },
+    {
+        "name": "json_web1_token",
+        "value": "(eyJ[a-zA-Z0-9-]{10,}.eyJ[a-zA-Z0-9-]{10,}.[a-zA-Z0-9-]{10,})"
+    },
+    {
+        "name": "jwt_secret",
+        "value": "jwt[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "kafka_admin_url",
+        "value": "kafka[_-]?admin[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "kafka_instance_name",
+        "value": "kafka[_-]?instance[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "kafka_rest_url",
+        "value": "kafka[_-]?rest[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "keystore_pass",
+        "value": "keystore[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "kovan_private_key",
+        "value": "kovan[_-]?private[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "kubecfg_s3_path",
+        "value": "kubecfg[_-]?s3[_-]?path(=| =|:| :)"
+    },
+    {
+        "name": "kubeconfig",
+        "value": "kubeconfig(=| =|:| :)"
+    },
+    {
+        "name": "kxoltsn3vogdop92m",
+        "value": "kxoltsn3vogdop92m(=| =|:| :)"
+    },
+    {
+        "name": "leanplum_key",
+        "value": "leanplum[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "lektor_deploy_password",
+        "value": "lektor[_-]?deploy[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "lektor_deploy_username",
+        "value": "lektor[_-]?deploy[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "lighthouse_api_key",
+        "value": "lighthouse[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "linux_signing_key",
+        "value": "linux[_-]?signing[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "ll_publish_url",
+        "value": "ll[_-]?publish[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "ll_shared_key",
+        "value": "ll[_-]?shared[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "looker_test_runner_client_secret",
+        "value": "looker[_-]?test[_-]?runner[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "lottie_happo_api_key",
+        "value": "lottie[_-]?happo[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "lottie_happo_secret_key",
+        "value": "lottie[_-]?happo[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "lottie_s3_secret_key",
+        "value": "lottie[_-]?s3[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "lottie_upload_cert_key_password",
+        "value": "lottie[_-]?upload[_-]?cert[_-]?key[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "lottie_upload_cert_key_store_password",
+        "value": "lottie[_-]?upload[_-]?cert[_-]?key[_-]?store[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "magento_auth_password",
+        "value": "magento[_-]?auth[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "magento_auth_username",
+        "value": "magento[_-]?auth[_-]?username (=| =|:| :)"
+    },
+    {
+        "name": "magento_password",
+        "value": "magento[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "mail_password",
+        "value": "mail[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "mailchimp",
+        "value": "(W(?:[a-f0-9]{32}(-us[0-9]{1,2}))a-zA-Z0-9)"
+    },
+    {
+        "name": "mailchimp_api_key",
+        "value": "mailchimp[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "mailchimp_key",
+        "value": "mailchimp[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "mailer_password",
+        "value": "mailer[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "mailgun",
+        "value": "(key-[0-9a-f]{32})"
+    },
+    {
+        "name": "mailgun_api_key",
+        "value": "mailgun[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "mailgun_apikey",
+        "value": "mailgun[_-]?apikey(=| =|:| :)"
+    },
+    {
+        "name": "mailgun_password",
+        "value": "mailgun[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "mailgun_priv_key",
+        "value": "mailgun[_-]?priv[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "mailgun_pub_apikey",
+        "value": "mailgun[_-]?pub[_-]?apikey(=| =|:| :)"
+    },
+    {
+        "name": "mailgun_pub_key",
+        "value": "mailgun[_-]?pub[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "mailgun_secret_api_key",
+        "value": "mailgun[_-]?secret[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "manage_key",
+        "value": "manage[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "manage_secret",
+        "value": "manage[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "management_token",
+        "value": "management[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "managementapiaccesstoken",
+        "value": "managementapiaccesstoken(=| =|:| :)"
+    },
+    {
+        "name": "mandrill_api_key",
+        "value": "mandrill[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "manifest_app_token",
+        "value": "manifest[_-]?app[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "manifest_app_url",
+        "value": "manifest[_-]?app[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "mapbox_access_token",
+        "value": "mapbox[_-]?access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "mapbox_api_token",
+        "value": "mapbox[_-]?api[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "mapbox_aws_access_key_id",
+        "value": "mapbox[_-]?aws[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "mapbox_aws_secret_access_key",
+        "value": "mapbox[_-]?aws[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "mapboxaccesstoken",
+        "value": "mapboxaccesstoken(=| =|:| :)"
+    },
+    {
+        "name": "master_password",
+        "value": "(master_password).+"
+    },
+    {
+        "name": "mfa_token",
+        "value": "(?:token=[A-Za-z0-9\\s_]*[A-Za-z0-9][A-Za-z0-9\\s_])"
+    },
+    {
+        "name": "mg_api_key",
+        "value": "mg[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "mg_public_api_key",
+        "value": "mg[_-]?public[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "mh_apikey",
+        "value": "mh[_-]?apikey(=| =|:| :)"
+    },
+    {
+        "name": "mh_password",
+        "value": "mh[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "mile_zero_key",
+        "value": "mile[_-]?zero[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "minio_access_key",
+        "value": "minio[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "minio_secret_key",
+        "value": "minio[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "multi_bob_sid",
+        "value": "multi[_-]?bob[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "multi_connect_sid",
+        "value": "multi[_-]?connect[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "multi_disconnect_sid",
+        "value": "multi[_-]?disconnect[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "multi_workflow_sid",
+        "value": "multi[_-]?workflow[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "multi_workspace_sid",
+        "value": "multi[_-]?workspace[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "my_secret_env",
+        "value": "my[_-]?secret[_-]?env(=| =|:| :)"
+    },
+    {
+        "name": "mysql_database",
+        "value": "mysql[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "mysql_hostname",
+        "value": "mysql[_-]?hostname(=| =|:| :)"
+    },
+    {
+        "name": "mysql_password",
+        "value": "mysql[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "mysql_root_password",
+        "value": "mysql[_-]?root[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "mysql_user",
+        "value": "mysql[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "mysql_username",
+        "value": "mysql[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "mysqlmasteruser",
+        "value": "mysqlmasteruser(=| =|:| :)"
+    },
+    {
+        "name": "mysqlsecret",
+        "value": "mysqlsecret(=| =|:| :)"
+    },
+    {
+        "name": "nativeevents",
+        "value": "nativeevents(=| =|:| :)"
+    },
+    {
+        "name": "netlify_api_key",
+        "value": "netlify[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "new_relic_beta_token",
+        "value": "new[_-]?relic[_-]?beta[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "nexus_password",
+        "value": "nexus[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "nexuspassword",
+        "value": "nexuspassword(=| =|:| :)"
+    },
+    {
+        "name": "ngrok_auth_token",
+        "value": "ngrok[_-]?auth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "ngrok_token",
+        "value": "ngrok[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "node_env",
+        "value": "node[_-]?env(=| =|:| :)"
+    },
+    {
+        "name": "node_pre_gyp_accesskeyid",
+        "value": "node[_-]?pre[_-]?gyp[_-]?accesskeyid(=| =|:| :)"
+    },
+    {
+        "name": "node_pre_gyp_github_token",
+        "value": "node[_-]?pre[_-]?gyp[_-]?github[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "node_pre_gyp_secretaccesskey",
+        "value": "node[_-]?pre[_-]?gyp[_-]?secretaccesskey(=| =|:| :)"
+    },
+    {
+        "name": "non_token",
+        "value": "non[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "now_token",
+        "value": "now[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "npm_api_key",
+        "value": "npm[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "npm_api_token",
+        "value": "npm[_-]?api[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "npm_auth_token",
+        "value": "npm[_-]?auth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "npm_email",
+        "value": "npm[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "npm_password",
+        "value": "npm[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "npm_secret_key",
+        "value": "npm[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "npm_token - 1",
+        "value": "npm[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "npm_token - 2",
+        "value": "([a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})"
+    },
+    {
+        "name": "nuget_api_key - 1",
+        "value": "(oy2[a-z0-9]{43})"
+    },
+    {
+        "name": "nuget_api_key - 2",
+        "value": "nuget[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "numbers_service_pass",
+        "value": "numbers[_-]?service[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "oauth_token",
+        "value": "oauth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "object_storage_password",
+        "value": "object[_-]?storage[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "object_storage_region_name",
+        "value": "object[_-]?storage[_-]?region[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "object_store_bucket",
+        "value": "object[_-]?store[_-]?bucket(=| =|:| :)"
+    },
+    {
+        "name": "object_store_creds",
+        "value": "object[_-]?store[_-]?creds(=| =|:| :)"
+    },
+    {
+        "name": "oc_pass",
+        "value": "oc[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "octest_app_password",
+        "value": "octest[_-]?app[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "octest_app_username",
+        "value": "octest[_-]?app[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "octest_password",
+        "value": "octest[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "ofta_key",
+        "value": "ofta[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "ofta_region",
+        "value": "ofta[_-]?region(=| =|:| :)"
+    },
+    {
+        "name": "ofta_secret",
+        "value": "ofta[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "okta_client_token",
+        "value": "okta[_-]?client[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "okta_oauth2_client_secret",
+        "value": "okta[_-]?oauth2[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "okta_oauth2_clientsecret",
+        "value": "okta[_-]?oauth2[_-]?clientsecret(=| =|:| :)"
+    },
+    {
+        "name": "omise_key",
+        "value": "omise[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "omise_pkey",
+        "value": "omise[_-]?pkey(=| =|:| :)"
+    },
+    {
+        "name": "omise_pubkey",
+        "value": "omise[_-]?pubkey(=| =|:| :)"
+    },
+    {
+        "name": "omise_skey",
+        "value": "omise[_-]?skey(=| =|:| :)"
+    },
+    {
+        "name": "onesignal_api_key",
+        "value": "onesignal[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "onesignal_user_auth_key",
+        "value": "onesignal[_-]?user[_-]?auth[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "open_whisk_key",
+        "value": "open[_-]?whisk[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "openwhisk_key",
+        "value": "openwhisk[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "os_auth_url",
+        "value": "os[_-]?auth[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "os_password",
+        "value": "os[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "ossrh_jira_password",
+        "value": "ossrh[_-]?jira[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "ossrh_pass",
+        "value": "ossrh[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "ossrh_password",
+        "value": "ossrh[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "ossrh_secret",
+        "value": "ossrh[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "ossrh_username",
+        "value": "ossrh[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "outlook_team",
+        "value": "(https://outlook.office.com/webhook/[0-9a-f-]{36}@)"
+    },
+    {
+        "name": "packagecloud_token",
+        "value": "packagecloud[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "pagerduty_apikey",
+        "value": "pagerduty[_-]?apikey(=| =|:| :)"
+    },
+    {
+        "name": "parse_js_key",
+        "value": "parse[_-]?js[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "passwordtravis",
+        "value": "passwordtravis(=| =|:| :)"
+    },
+    {
+        "name": "paypal",
+        "value": "[a-zA-Z0-9]{1,2}([E][A-Z]{1}[a-zA-Z0-9_-]{78})[a-zA-Z0-9]{1,2}"
+    },
+    {
+        "name": "paypal_braintree_access_token",
+        "value": "(access_token$production$[0-9a-z]{16}$[0-9a-f]{32})"
+    },
+    {
+        "name": "paypal_client_secret",
+        "value": "paypal[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "percy_project",
+        "value": "percy[_-]?project(=| =|:| :)"
+    },
+    {
+        "name": "percy_token",
+        "value": "percy[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "personal_key",
+        "value": "personal[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "personal_secret",
+        "value": "personal[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "pg_database",
+        "value": "pg[_-]?database(=| =|:| :)"
+    },
+    {
+        "name": "pg_host",
+        "value": "pg[_-]?host(=| =|:| :)"
+    },
+    {
+        "name": "places_api_key",
+        "value": "places[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "places_apikey",
+        "value": "places[_-]?apikey(=| =|:| :)"
+    },
+    {
+        "name": "plotly_apikey",
+        "value": "plotly[_-]?apikey(=| =|:| :)"
+    },
+    {
+        "name": "plugin_password",
+        "value": "plugin[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "postgres_env_postgres_db",
+        "value": "postgres[_-]?env[_-]?postgres[_-]?db(=| =|:| :)"
+    },
+    {
+        "name": "postgres_env_postgres_password",
+        "value": "postgres[_-]?env[_-]?postgres[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "postgresql_db",
+        "value": "postgresql[_-]?db(=| =|:| :)"
+    },
+    {
+        "name": "postgresql_pass",
+        "value": "postgresql[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "prebuild_auth",
+        "value": "prebuild[_-]?auth(=| =|:| :)"
+    },
+    {
+        "name": "preferred_username",
+        "value": "preferred[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "pring_mail_username",
+        "value": "pring[_-]?mail[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "private_key",
+        "value": "-----(?:(?:BEGIN|END) )(?:(?:EC|PGP|DSA|RSA|OPENSSH).)?PRIVATE.KEY(.BLOCK)?-----"
+    },
+    {
+        "name": "private_signing_password",
+        "value": "private[_-]?signing[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "prod_access_key_id",
+        "value": "prod[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "prod_password",
+        "value": "prod[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "prod_secret_key",
+        "value": "prod[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "project_config",
+        "value": "project[_-]?config(=| =|:| :)"
+    },
+    {
+        "name": "publish_access",
+        "value": "publish[_-]?access(=| =|:| :)"
+    },
+    {
+        "name": "publish_key",
+        "value": "publish[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "publish_secret",
+        "value": "publish[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "pushover_token",
+        "value": "pushover[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "pypi_passowrd",
+        "value": "pypi[_-]?passowrd(=| =|:| :)"
+    },
+    {
+        "name": "qiita_token",
+        "value": "qiita[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "quip_token",
+        "value": "quip[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "rabbitmq_password",
+        "value": "rabbitmq[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "randrmusicapiaccesstoken",
+        "value": "randrmusicapiaccesstoken(=| =|:| :)"
+    },
+    {
+        "name": "redis_stunnel_urls",
+        "value": "redis[_-]?stunnel[_-]?urls(=| =|:| :)"
+    },
+    {
+        "name": "rediscloud_url",
+        "value": "rediscloud[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "refresh_token",
+        "value": "refresh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "registry_pass",
+        "value": "registry[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "registry_secure",
+        "value": "registry[_-]?secure(=| =|:| :)"
+    },
+    {
+        "name": "release_gh_token",
+        "value": "release[_-]?gh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "release_token",
+        "value": "release[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "reporting_webdav_pwd",
+        "value": "reporting[_-]?webdav[_-]?pwd(=| =|:| :)"
+    },
+    {
+        "name": "reporting_webdav_url",
+        "value": "reporting[_-]?webdav[_-]?url(=| =|:| :)"
+    },
+    {
+        "name": "repotoken",
+        "value": "repotoken(=| =|:| :)"
+    },
+    {
+        "name": "rest_api_key",
+        "value": "rest[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "rinkeby_private_key",
+        "value": "rinkeby[_-]?private[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "ropsten_private_key",
+        "value": "ropsten[_-]?private[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "route53_access_key_id",
+        "value": "route53[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "rtd_key_pass",
+        "value": "rtd[_-]?key[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "rtd_store_pass",
+        "value": "rtd[_-]?store[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "rubygems_auth_token",
+        "value": "rubygems[_-]?auth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "s3_access_key",
+        "value": "s3[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "s3_access_key_id",
+        "value": "s3[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "s3_bucket_name_app_logs",
+        "value": "s3[_-]?bucket[_-]?name[_-]?app[_-]?logs(=| =|:| :)"
+    },
+    {
+        "name": "s3_bucket_name_assets",
+        "value": "s3[_-]?bucket[_-]?name[_-]?assets(=| =|:| :)"
+    },
+    {
+        "name": "s3_external_3_amazonaws_com",
+        "value": "s3[_-]?external[_-]?3[_-]?amazonaws[_-]?com(=| =|:| :)"
+    },
+    {
+        "name": "s3_key",
+        "value": "s3[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "s3_key_app_logs",
+        "value": "s3[_-]?key[_-]?app[_-]?logs(=| =|:| :)"
+    },
+    {
+        "name": "s3_key_assets",
+        "value": "s3[_-]?key[_-]?assets(=| =|:| :)"
+    },
+    {
+        "name": "s3_secret_app_logs",
+        "value": "s3[_-]?secret[_-]?app[_-]?logs(=| =|:| :)"
+    },
+    {
+        "name": "s3_secret_assets",
+        "value": "s3[_-]?secret[_-]?assets(=| =|:| :)"
+    },
+    {
+        "name": "s3_secret_key",
+        "value": "s3[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "s3_user_secret",
+        "value": "s3[_-]?user[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "sacloud_access_token",
+        "value": "sacloud[_-]?access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "sacloud_access_token_secret",
+        "value": "sacloud[_-]?access[_-]?token[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "sacloud_api",
+        "value": "sacloud[_-]?api(=| =|:| :)"
+    },
+    {
+        "name": "salesforce_bulk_test_password",
+        "value": "salesforce[_-]?bulk[_-]?test[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "salesforce_bulk_test_security_token",
+        "value": "salesforce[_-]?bulk[_-]?test[_-]?security[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "sandbox_access_token",
+        "value": "sandbox[_-]?access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "sandbox_aws_access_key_id",
+        "value": "sandbox[_-]?aws[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "sandbox_aws_secret_access_key",
+        "value": "sandbox[_-]?aws[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "sauce_access_key",
+        "value": "sauce[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "sauce_token",
+        "value": "(sauce.{0,50}(\"|')?[0-9a-f-]{36}(\"|')?)"
+    },
+    {
+        "name": "scrutinizer_token",
+        "value": "scrutinizer[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "sdr_token",
+        "value": "sdr[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "secret_0",
+        "value": "secret[_-]?0(=| =|:| :)"
+    },
+    {
+        "name": "secret_1",
+        "value": "secret[_-]?1(=| =|:| :)"
+    },
+    {
+        "name": "secret_10",
+        "value": "secret[_-]?10(=| =|:| :)"
+    },
+    {
+        "name": "secret_11",
+        "value": "secret[_-]?11(=| =|:| :)"
+    },
+    {
+        "name": "secret_2",
+        "value": "secret[_-]?2(=| =|:| :)"
+    },
+    {
+        "name": "secret_3",
+        "value": "secret[_-]?3(=| =|:| :)"
+    },
+    {
+        "name": "secret_4",
+        "value": "secret[_-]?4(=| =|:| :)"
+    },
+    {
+        "name": "secret_5",
+        "value": "secret[_-]?5(=| =|:| :)"
+    },
+    {
+        "name": "secret_6",
+        "value": "secret[_-]?6(=| =|:| :)"
+    },
+    {
+        "name": "secret_7",
+        "value": "secret[_-]?7(=| =|:| :)"
+    },
+    {
+        "name": "secret_8",
+        "value": "secret[_-]?8(=| =|:| :)"
+    },
+    {
+        "name": "secret_9",
+        "value": "secret[_-]?9(=| =|:| :)"
+    },
+    {
+        "name": "secret_key_base",
+        "value": "secret[_-]?key[_-]?base(=| =|:| :)"
+    },
+    {
+        "name": "secretaccesskey",
+        "value": "secretaccesskey(=| =|:| :)"
+    },
+    {
+        "name": "secretkey",
+        "value": "secretkey(=| =|:| :)"
+    },
+    {
+        "name": "segment_api_key",
+        "value": "segment[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "selion_log_level_dev",
+        "value": "selion[_-]?log[_-]?level[_-]?dev(=| =|:| :)"
+    },
+    {
+        "name": "selion_selenium_host",
+        "value": "selion[_-]?selenium[_-]?host(=| =|:| :)"
+    },
+    {
+        "name": "sendgrid - 2",
+        "value": "sendgrid(=| =|:| :)"
+    },
+    {
+        "name": "sendgrid_api_key - 1",
+        "value": "sendgrid[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "sendgrid_api_key - 2",
+        "value": "(SG.[a-zA-Z0-9-]{16,32}.[a-zA-Z0-9-]{16,64})"
+    },
+    {
+        "name": "sendgrid_key",
+        "value": "sendgrid[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "sendgrid_password",
+        "value": "sendgrid[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "sendgrid_user",
+        "value": "sendgrid[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "sendgrid_username",
+        "value": "sendgrid[_-]?username(=| =|:| :)"
+    },
+    {
+        "name": "sendwithus_key",
+        "value": "sendwithus[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "sentry_auth_token",
+        "value": "sentry[_-]?auth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "sentry_default_org",
+        "value": "sentry[_-]?default[_-]?org(=| =|:| :)"
+    },
+    {
+        "name": "sentry_endpoint",
+        "value": "sentry[_-]?endpoint(=| =|:| :)"
+    },
+    {
+        "name": "sentry_key",
+        "value": "sentry[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "service_account_secret",
+        "value": "service[_-]?account[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "ses_access_key",
+        "value": "ses[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "ses_secret_key",
+        "value": "ses[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "setdstaccesskey",
+        "value": "setdstaccesskey(=| =|:| :)"
+    },
+    {
+        "name": "setdstsecretkey",
+        "value": "setdstsecretkey(=| =|:| :)"
+    },
+    {
+        "name": "setsecretkey",
+        "value": "setsecretkey(=| =|:| :)"
+    },
+    {
+        "name": "signing_key",
+        "value": "signing[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "signing_key_password",
+        "value": "signing[_-]?key[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "signing_key_secret",
+        "value": "signing[_-]?key[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "signing_key_sid",
+        "value": "signing[_-]?key[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "slack_webhook_url",
+        "value": "(hooks.slack.com/services/T[A-Z0-9]{8}/B[A-Z0-9]{8}/[a-zA-Z0-9]{1,})"
+    },
+    {
+        "name": "slash_developer_space",
+        "value": "slash[_-]?developer[_-]?space(=| =|:| :)"
+    },
+    {
+        "name": "slash_developer_space_key",
+        "value": "slash[_-]?developer[_-]?space[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "slate_user_email",
+        "value": "slate[_-]?user[_-]?email(=| =|:| :)"
+    },
+    {
+        "name": "snoowrap_client_secret",
+        "value": "snoowrap[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "snoowrap_password",
+        "value": "snoowrap[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "snoowrap_refresh_token",
+        "value": "snoowrap[_-]?refresh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "snyk_api_token",
+        "value": "snyk[_-]?api[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "snyk_token",
+        "value": "snyk[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "socrata_app_token",
+        "value": "socrata[_-]?app[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "socrata_password",
+        "value": "socrata[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "sonar_organization_key",
+        "value": "sonar[_-]?organization[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "sonar_project_key",
+        "value": "sonar[_-]?project[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "sonar_token",
+        "value": "sonar[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "sonarqube_docs_api_key",
+        "value": "(sonar.{0,50}(\"|')?[0-9a-f]{40}(\"|')?)"
+    },
+    {
+        "name": "sonatype_gpg_key_name",
+        "value": "sonatype[_-]?gpg[_-]?key[_-]?name(=| =|:| :)"
+    },
+    {
+        "name": "sonatype_gpg_passphrase",
+        "value": "sonatype[_-]?gpg[_-]?passphrase(=| =|:| :)"
+    },
+    {
+        "name": "sonatype_nexus_password",
+        "value": "sonatype[_-]?nexus[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "sonatype_pass",
+        "value": "sonatype[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "sonatype_password",
+        "value": "sonatype[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "sonatype_token_password",
+        "value": "sonatype[_-]?token[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "sonatype_token_user",
+        "value": "sonatype[_-]?token[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "sonatypepassword",
+        "value": "sonatypepassword(=| =|:| :)"
+    },
+    {
+        "name": "soundcloud_client_secret",
+        "value": "soundcloud[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "soundcloud_password",
+        "value": "soundcloud[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "spaces_access_key_id",
+        "value": "spaces[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "spaces_secret_access_key",
+        "value": "spaces[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "spotify_api_access_token",
+        "value": "spotify[_-]?api[_-]?access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "spotify_api_client_secret",
+        "value": "spotify[_-]?api[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "spring_mail_password",
+        "value": "spring[_-]?mail[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "sqsaccesskey",
+        "value": "sqsaccesskey(=| =|:| :)"
+    },
+    {
+        "name": "sqssecretkey",
+        "value": "sqssecretkey(=| =|:| :)"
+    },
+    {
+        "name": "square_app_secret",
+        "value": "(sq0[a-z]{3}-[0-9A-Za-z-_]{20,50})"
+    },
+    {
+        "name": "square_reader_sdk_repository_password",
+        "value": "square[_-]?reader[_-]?sdk[_-]?repository[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "srcclr_api_token",
+        "value": "srcclr[_-]?api[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "ssh_password",
+        "value": "(sshpass -p.*['|\"])"
+    },
+    {
+        "name": "sshpass",
+        "value": "sshpass(=| =|:| :)"
+    },
+    {
+        "name": "ssmtp_config",
+        "value": "ssmtp[_-]?config(=| =|:| :)"
+    },
+    {
+        "name": "staging_base_url_runscope",
+        "value": "staging[_-]?base[_-]?url[_-]?runscope(=| =|:| :)"
+    },
+    {
+        "name": "star_test_aws_access_key_id",
+        "value": "star[_-]?test[_-]?aws[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "star_test_bucket",
+        "value": "star[_-]?test[_-]?bucket(=| =|:| :)"
+    },
+    {
+        "name": "star_test_location",
+        "value": "star[_-]?test[_-]?location(=| =|:| :)"
+    },
+    {
+        "name": "star_test_secret_access_key",
+        "value": "star[_-]?test[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "starship_account_sid",
+        "value": "starship[_-]?account[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "starship_auth_token",
+        "value": "starship[_-]?auth[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "stormpath_api_key_id",
+        "value": "stormpath[_-]?api[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "stormpath_api_key_secret",
+        "value": "stormpath[_-]?api[_-]?key[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "strip_publishable_key",
+        "value": "strip[_-]?publishable[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "strip_secret_key",
+        "value": "strip[_-]?secret[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "stripe_private",
+        "value": "stripe[_-]?private(=| =|:| :)"
+    },
+    {
+        "name": "stripe_public",
+        "value": "stripe[_-]?public(=| =|:| :)"
+    },
+    {
+        "name": "stripe_restricted_api",
+        "value": "(rk_live_[0-9a-zA-Z]{24,34})"
+    },
+    {
+        "name": "stripe_standard_api",
+        "value": "(sk_live_[0-9a-zA-Z]{24,34})"
+    },
+    {
+        "name": "surge_login",
+        "value": "surge[_-]?login(=| =|:| :)"
+    },
+    {
+        "name": "surge_token",
+        "value": "surge[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "svn_pass",
+        "value": "svn[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "tesco_api_key",
+        "value": "tesco[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "test",
+        "value": "test"
+    },
+    {
+        "name": "test_github_token",
+        "value": "test[_-]?github[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "test_test",
+        "value": "test[_-]?test(=| =|:| :)"
+    },
+    {
+        "name": "tester_keys_password",
+        "value": "tester[_-]?keys[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "thera_oss_access_key",
+        "value": "thera[_-]?oss[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "token_core_java",
+        "value": "token[_-]?core[_-]?java(=| =|:| :)"
+    },
+    {
+        "name": "travis_access_token",
+        "value": "travis[_-]?access[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "travis_api_token",
+        "value": "travis[_-]?api[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "travis_branch",
+        "value": "travis[_-]?branch(=| =|:| :)"
+    },
+    {
+        "name": "travis_com_token",
+        "value": "travis[_-]?com[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "travis_e2e_token",
+        "value": "travis[_-]?e2e[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "travis_gh_token",
+        "value": "travis[_-]?gh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "travis_pull_request",
+        "value": "travis[_-]?pull[_-]?request(=| =|:| :)"
+    },
+    {
+        "name": "travis_secure_env_vars",
+        "value": "travis[_-]?secure[_-]?env[_-]?vars(=| =|:| :)"
+    },
+    {
+        "name": "travis_token",
+        "value": "travis[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "trex_client_token",
+        "value": "trex[_-]?client[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "trex_okta_client_token",
+        "value": "trex[_-]?okta[_-]?client[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "twilio_api_key",
+        "value": "twilio[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "twilio_api_secret",
+        "value": "twilio[_-]?api[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "twilio_chat_account_api_service",
+        "value": "twilio[_-]?chat[_-]?account[_-]?api[_-]?service(=| =|:| :)"
+    },
+    {
+        "name": "twilio_configuration_sid",
+        "value": "twilio[_-]?configuration[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "twilio_sid",
+        "value": "twilio[_-]?sid(=| =|:| :)"
+    },
+    {
+        "name": "twilio_token",
+        "value": "twilio[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "twine_password",
+        "value": "twine[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "twitter_consumer_key",
+        "value": "twitter[_-]?consumer[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "twitter_consumer_secret",
+        "value": "twitter[_-]?consumer[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "twitteroauthaccesssecret",
+        "value": "twitteroauthaccesssecret(=| =|:| :)"
+    },
+    {
+        "name": "twitteroauthaccesstoken",
+        "value": "twitteroauthaccesstoken(=| =|:| :)"
+    },
+    {
+        "name": "unity_password",
+        "value": "unity[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "unity_serial",
+        "value": "unity[_-]?serial(=| =|:| :)"
+    },
+    {
+        "name": "urban_key",
+        "value": "urban[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "urban_master_secret",
+        "value": "urban[_-]?master[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "urban_secret",
+        "value": "urban[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "us_east_1_elb_amazonaws_com",
+        "value": "us[_-]?east[_-]?1[_-]?elb[_-]?amazonaws[_-]?com(=| =|:| :)"
+    },
+    {
+        "name": "use_ssh",
+        "value": "use[_-]?ssh(=| =|:| :)"
+    },
+    {
+        "name": "user_assets_access_key_id",
+        "value": "user[_-]?assets[_-]?access[_-]?key[_-]?id(=| =|:| :)"
+    },
+    {
+        "name": "user_assets_secret_access_key",
+        "value": "user[_-]?assets[_-]?secret[_-]?access[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "usertravis",
+        "value": "usertravis(=| =|:| :)"
+    },
+    {
+        "name": "v_sfdc_client_secret",
+        "value": "v[_-]?sfdc[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "v_sfdc_password",
+        "value": "v[_-]?sfdc[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "vip_github_build_repo_deploy_key",
+        "value": "vip[_-]?github[_-]?build[_-]?repo[_-]?deploy[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "vip_github_deploy_key",
+        "value": "vip[_-]?github[_-]?deploy[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "vip_github_deploy_key_pass",
+        "value": "vip[_-]?github[_-]?deploy[_-]?key[_-]?pass(=| =|:| :)"
+    },
+    {
+        "name": "virustotal_apikey",
+        "value": "virustotal[_-]?apikey(=| =|:| :)"
+    },
+    {
+        "name": "visual_recognition_api_key",
+        "value": "visual[_-]?recognition[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "vscetoken",
+        "value": "vscetoken(=| =|:| :)"
+    },
+    {
+        "name": "wakatime_api_key",
+        "value": "wakatime[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "watson_conversation_password",
+        "value": "watson[_-]?conversation[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "watson_device_password",
+        "value": "watson[_-]?device[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "watson_password",
+        "value": "watson[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "widget_basic_password",
+        "value": "widget[_-]?basic[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "widget_basic_password_2",
+        "value": "widget[_-]?basic[_-]?password[_-]?2(=| =|:| :)"
+    },
+    {
+        "name": "widget_basic_password_3",
+        "value": "widget[_-]?basic[_-]?password[_-]?3(=| =|:| :)"
+    },
+    {
+        "name": "widget_basic_password_4",
+        "value": "widget[_-]?basic[_-]?password[_-]?4(=| =|:| :)"
+    },
+    {
+        "name": "widget_basic_password_5",
+        "value": "widget[_-]?basic[_-]?password[_-]?5(=| =|:| :)"
+    },
+    {
+        "name": "widget_fb_password",
+        "value": "widget[_-]?fb[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "widget_fb_password_2",
+        "value": "widget[_-]?fb[_-]?password[_-]?2(=| =|:| :)"
+    },
+    {
+        "name": "widget_fb_password_3",
+        "value": "widget[_-]?fb[_-]?password[_-]?3(=| =|:| :)"
+    },
+    {
+        "name": "widget_test_server",
+        "value": "widget[_-]?test[_-]?server(=| =|:| :)"
+    },
+    {
+        "name": "wincert_password",
+        "value": "wincert[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "wordpress_db_password",
+        "value": "wordpress[_-]?db[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "wordpress_db_user",
+        "value": "wordpress[_-]?db[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "wpjm_phpunit_google_geocode_api_key",
+        "value": "wpjm[_-]?phpunit[_-]?google[_-]?geocode[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "wporg_password",
+        "value": "wporg[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "wpt_db_password",
+        "value": "wpt[_-]?db[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "wpt_db_user",
+        "value": "wpt[_-]?db[_-]?user(=| =|:| :)"
+    },
+    {
+        "name": "wpt_prepare_dir",
+        "value": "wpt[_-]?prepare[_-]?dir(=| =|:| :)"
+    },
+    {
+        "name": "wpt_report_api_key",
+        "value": "wpt[_-]?report[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "wpt_ssh_connect",
+        "value": "wpt[_-]?ssh[_-]?connect(=| =|:| :)"
+    },
+    {
+        "name": "wpt_ssh_private_key_base64",
+        "value": "wpt[_-]?ssh[_-]?private[_-]?key[_-]?base64(=| =|:| :)"
+    },
+    {
+        "name": "www_googleapis_com",
+        "value": "www[_-]?googleapis[_-]?com(=| =|:| :)"
+    },
+    {
+        "name": "yangshun_gh_password",
+        "value": "yangshun[_-]?gh[_-]?password(=| =|:| :)"
+    },
+    {
+        "name": "yangshun_gh_token",
+        "value": "yangshun[_-]?gh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "yt_account_client_secret",
+        "value": "yt[_-]?account[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "yt_account_refresh_token",
+        "value": "yt[_-]?account[_-]?refresh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "yt_api_key",
+        "value": "yt[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "yt_client_secret",
+        "value": "yt[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "yt_partner_client_secret",
+        "value": "yt[_-]?partner[_-]?client[_-]?secret(=| =|:| :)"
+    },
+    {
+        "name": "yt_partner_refresh_token",
+        "value": "yt[_-]?partner[_-]?refresh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "yt_server_api_key",
+        "value": "yt[_-]?server[_-]?api[_-]?key(=| =|:| :)"
+    },
+    {
+        "name": "zendesk_travis_github",
+        "value": "zendesk[_-]?travis[_-]?github(=| =|:| :)"
+    },
+    {
+        "name": "zensonatypepassword",
+        "value": "zensonatypepassword(=| =|:| :)"
+    },
+    {
+        "name": "zhuliang_gh_token",
+        "value": "zhuliang[_-]?gh[_-]?token(=| =|:| :)"
+    },
+    {
+        "name": "zopim_account_key",
+        "value": "zopim[_-]?account[_-]?key(=| =|:| :)"
+    }
+]
