@@ -1,8 +1,0 @@
-{{ if eq .chezmoi.os "linux" -}}
-#!/bin/sh
-sudo apt get update
-sudo apt install ripgrep fzf exa tldr dust bat atuin nmap
-{{ else if eq .chezmoi.os "darwin" -}}
-#!/bin/sh
-brew install ripgrep fzf exa tlrc dust bat atuin
-{{ end -}}
