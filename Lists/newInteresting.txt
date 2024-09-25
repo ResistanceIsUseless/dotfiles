@@ -1,0 +1,11 @@
+/opencms/cmisatom/cmis-online/query
+/owncloud/apps/graphapi/vendor/microsoft/microsoft-graph/tests/GetPhpInfo.php
+/json/setup-restore.action
+/json/setup-restore-local.action
+/json/setup-restore-progress.action
+/NON_EXISTING_PATH/
+/CFIDE/administrator/
+/LDSM
+/auth/jwt/register
+/auth-demo/register/classic
+/auth-demo/register/modern
