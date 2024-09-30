@@ -1,6 +1,5 @@
 # aliases
 
-
 export BAT_THEME=tokyonight_night
 
 # ls alias
@@ -8,8 +7,6 @@ alias ls="eza --icons=always"
 
 #cd alias
 alias cd="z"
-
-
 
 alias reload-zsh="source ~/.zshrc"
 alias edit-zsh="nvim ~/.zshrc"
@@ -28,15 +25,15 @@ alias grep="grep --color=auto"
 alias diff="colordiff"
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 
-{{ if eq .chezmoi.os "linux" -}}
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-{{ end }}
-{{ else if eq .chezmoi.os "darwin" }}
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-{{ end }}
-alias sshproxy="ssh -o ProxyCommand='ssh -W %h:%p user@jump_host'"
+
+# external aliases
+source ~/.config/zsh/aliases.sh
+
+# external functions
+source ~/.config/zsh/functions.sh
+
+
+
 
 # --- setup fzf theme ---
 fg="#CBE0F0"
@@ -47,8 +44,8 @@ blue="#06BCE4"
 cyan="#2CF9ED"
 
 export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
-# -- Use fd instead of fzf --
 
+# -- Use fd instead of fzf --
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
@@ -82,11 +79,22 @@ _fzf_comprun() {
   esac
 }
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat)
+
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat supercharge web-search zsh-fzf-tab git-alias zsh-starship distro-prompt)
+
+# plug "wintermi/zsh-brew"
+# plug "zap-zsh/supercharge"
+# plug "zsh-users/zsh-autosuggestions"
+# plug "zsh-users/zsh-syntax-highlighting" "122dc46"
+# plug "zap-zsh/web-search"
+# plug "zap-zsh/zsh-fzf-tab"
+# plug "chivalryq/git-alias"
+# plug "wintermi/zsh-starship"
+# plug "MAHcodes/distro-prompt"
 
 export BAT_THEME=tokyonight_night
 # Load completions
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -d "${ZDOTDIR:-$HOME}/.zcompdump"
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

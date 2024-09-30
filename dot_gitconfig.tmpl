@@ -1,12 +1,13 @@
 [credential "https://github.com"]
 	helper = 
-{{ if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" }}
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
 {{ end }}
-{{ if eq .chezmoid.os "Linux" -}}
+
+{{ if eq .chezmoi.os "Linux" }}
 [credential "https://github.com"]
 	helper =
 	helper = !/usr/bin/gh auth git-credential
@@ -20,12 +21,12 @@
 	process = git-lfs filter-process
 	required = true
 
-{{- if eq .chezmoi.hostname "TC-WK2VJ4X70Y-2.local" }}
+{{ if eq .chezmoi.hostname "TC-WK2VJ4X70Y-2.local" }}
 [user]
 	name = Matthew Griffiths
 	email = 84738022+tc-mgriff@users.noreply.github.com
 {{ end }}
-{{- if ne .chezmoi.hostname "TC-WK2VJ4X70Y-2.local" }}
+{{ if ne .chezmoi.hostname "TC-WK2VJ4X70Y-2.local" }}
 [user]
 	name = Matthew Griffiths
 	email = matt.griffiths@gmail.com
