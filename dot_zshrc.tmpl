@@ -1,0 +1,115 @@
+# aliases
+
+
+export BAT_THEME=tokyonight_night
+
+# ls alias
+alias ls="eza --icons=always"
+
+#cd alias
+alias cd="z"
+
+
+
+alias reload-zsh="source ~/.zshrc"
+alias edit-zsh="nvim ~/.zshrc"
+
+alias vim='nvim'
+alias c='clear'
+alias top="htop"
+alias cls="clear"
+alias df="df -h"
+alias du="du -h"
+alias free="free -m"
+alias usage="df -h | grep '^/dev'"
+alias ports="netstat -tulanp"
+alias myip="curl http://ipecho.net/plain; echo"
+alias grep="grep --color=auto"
+alias diff="colordiff"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+{{ if eq .chezmoi.os "linux" -}}
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{ end }}
+{{ else if eq .chezmoi.os "darwin" }}
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{ end }}
+alias sshproxy="ssh -o ProxyCommand='ssh -W %h:%p user@jump_host'"
+
+# --- setup fzf theme ---
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
+
+export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+# -- Use fd instead of fzf --
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \${}'"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+  esac
+}
+
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat)
+
+export BAT_THEME=tokyonight_night
+# Load completions
+autoload -Uz compinit && compinit
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# shell integrations
+eval "$(starship init zsh)"
+eval $(thefuck --alias fuck)
+eval $(thefuck --alias fk)
+eval "$(fzf --zsh)"
+eval "$(atuin init zsh)"
+
+
+
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+# Generated for pdtm. Do not edit.
+export PATH=$PATH:$HOME/.pdtm/go/bin
+
+
+
+
+
