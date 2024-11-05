@@ -1,45 +1,7 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/sh
-sudo apt get update
-sudo apt install build-essential libpam-u2f libfido2-dev libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev ripgrep fzf exa tldr dust bat atuin thefuck lazygit parallel unzip nmap ca-certificates tor fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 lsb-release wget xdg-utils zmap curl jq git xsltproc python3 python3-pip gcc make musl-dev knockd proxychains4 -y -qq
-echo "Checking go is installed"
-if command -v go >/dev/null 2>&1; then
-    echo "go is installed."
-    export PATH=${PATH}:/usr/local/go/bin
-    go env -w GOPROXY=https://proxy.golang.org,direct
-    go env -w GOSUMDB=sum.golang.org
-    export GOROOT="/usr/local/go"
-    export GOPATH="${HOME}/go"
-    export PATH=$PATH:${GOPATH}/bin
-    echo 'export GOROOT="/usr/local/go"' >> ${CONFIG}
-    echo 'export GOPATH="${HOME}/go"' >> ${CONFIG}
-    echo 'export PATH="${PATH}:/usr/local/go/bin"' >> ${CONFIG}
-else
-    echo "go is not installed. Installing go"
-    if [ "$ARCH" = "x86_64" ]; then
-        curl -o go1.23.1.linux-amd64.tar.gz -L https://go.dev/dl/go1.23.1.linux-amd64.tar.gz
-        sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.1.linux-amd64.tar.gz
-    elif [ "$ARCH" = "aarch64" ]; then
-        curl -o go1.23.1.linux-arm64.tar.gz -L https://go.dev/dl/go1.23.1.linux-arm64.tar.gz
-        sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.1.linux-arm64.tar.gz
-    else
-        echo "The system architecture is not recognized."
-    fi
-    export PATH=${PATH}:/usr/local/go/bin
-    go env -w GOPROXY=https://proxy.golang.org,direct
-    go env -w GOSUMDB=sum.golang.org
-    export GOROOT="/usr/local/go"
-    export GOPATH="${HOME}/go"
-    export PATH=$PATH:${GOPATH}/bin
-    echo 'export GOROOT="/usr/local/go"' >> ${CONFIG}
-    echo 'export GOPATH="${HOME}/go"' >> ${CONFIG}
-    echo 'export PATH="${PATH}:/usr/local/go/bin"' >> ${CONFIG}
-    source ${CONFIG}
-fi
-
-wget https://github.com/evilsocket/opensnitch/releases/download/v1.6.6/opensnitch_1.6.6-1_arm64.deb
-wget https://github.com/evilsocket/opensnitch/releases/download/v1.6.6/python3-opensnitch-ui_1.6.6-1_all.deb
-sudo apt install ./opensnitch*.deb ./python3-opensnitch-ui*.deb
+# sudo apt get update
+# sudo apt install build-essential libpam-u2f libfido2-dev libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev ripgrep fzf exa tldr dust bat atuin thefuck lazygit parallel unzip nmap ca-certificates tor fonts-liberation libappindicator3-1 libasound2 libatk-bridge2.0-0 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgbm1 libgcc1 libglib2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 lsb-release wget xdg-utils zmap curl jq git xsltproc python3 python3-pip gcc make musl-dev knockd proxychains4 -y -qq
 
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
