@@ -1,0 +1,170 @@
+# CYBERPUNK POWERLINE PROMPT
+format = """
+[](fg:#00f5ff)\
+$username\
+[](bg:#0f3460 fg:#00f5ff)\
+$directory\
+[](fg:#0f3460 bg:#00ff41)\
+$git_branch\
+$git_status\
+[](fg:#00ff41 bg:#8000ff)\
+$c\
+$python\
+$nodejs\
+$rust\
+$golang\
+$java\
+[](fg:#8000ff bg:#ff0040)\
+$docker_context\
+$kubernetes\
+[](fg:#ff0040 bg:#1a1a2e)\
+$time\
+[](fg:#1a1a2e)\
+$line_break\
+$character\
+"""
+
+# Enable new line at start for that hacker terminal feel
+add_newline = true
+
+# Powerline character for prompt ending
+[character]
+success_symbol = "[](bold #00ff41)"
+error_symbol = "[](bold #ff0040)"
+vimcmd_symbol = "[](bold #00f5ff)"
+
+# Username - The Operator
+[username]
+show_always = true
+style_user = "bg:#00f5ff fg:#0a0a0a bold"
+style_root = "bg:#ff0040 fg:#ffffff bold"
+format = '[  $user ]($style)'
+disabled = false
+
+# Hostname - The Node (disabled for cleaner look)
+[hostname]
+ssh_only = true
+style = "bg:#ff00ff fg:#0a0a0a bold"
+format = '[ 󰌘 $hostname ]($style)'
+disabled = true
+
+# Directory - Current Location in the Matrix
+[directory]
+style = "bg:#0f3460 fg:#00f5ff bold"
+format = "[ 󰉋 $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Directory substitutions with cyber icons
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Desktop" = " "
+"Code" = " "
+"Projects" = " "
+"~" = " "
+
+# Git - Version Control in the Mainframe
+[git_branch]
+symbol = " "
+style = "bg:#00ff41 fg:#0a0a0a bold"
+format = '[ $symbol$branch ]($style)'
+
+[git_status]
+style = "bg:#00ff41 fg:#0a0a0a bold"
+format = '[$all_status$ahead_behind ]($style)'
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+deleted = "✘"
+renamed = "»"
+modified = "!"
+staged = "+"
+untracked = "?"
+
+# Programming Languages - Tools of the Trade
+[c]
+symbol = " "
+style = "bg:#8000ff fg:#ffffff bold"
+format = '[ $symbol($version) ]($style)'
+
+[python]
+symbol = " "
+style = "bg:#8000ff fg:#ffffff bold"
+format = '[ $symbol($version) ]($style)'
+
+[nodejs]
+symbol = " "
+style = "bg:#8000ff fg:#ffffff bold"
+format = '[ $symbol($version) ]($style)'
+
+[rust]
+symbol = " "
+style = "bg:#8000ff fg:#ffffff bold"
+format = '[ $symbol($version) ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:#8000ff fg:#ffffff bold"
+format = '[ $symbol($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:#8000ff fg:#ffffff bold"
+format = '[ $symbol($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:#ff0040 fg:#ffffff bold"
+format = '[ $symbol$context ]($style)'
+
+[kubernetes]
+symbol = "󱃾 "
+style = "bg:#ff0040 fg:#ffffff bold"
+format = '[ $symbol$context( ($namespace)) ]($style)'
+disabled = false
+
+# Time - System Clock
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+style = "bg:#1a1a2e fg:#00f5ff bold"
+format = '[ 󰥔 $time ]($style)'
+
+# Additional cyber modules
+[aws]
+symbol = " "
+style = "bg:#ff8800 fg:#0a0a0a bold"
+format = '[ $symbol($profile )($region) ]($style)'
+
+[terraform]
+symbol = "󱁢 "
+style = "bg:#8000ff fg:#ffffff bold"
+format = '[ $symbol$workspace ]($style)'
+
+# Status and command duration
+[status]
+style = "bg:#ff0040 fg:#ffffff bold"
+symbol = "💀"
+success_symbol = ""
+format = '[ $symbol$status ]($style)'
+disabled = false
+
+[cmd_duration]
+min_time = 2000
+style = "bg:#ffff00 fg:#0a0a0a bold"
+format = "[ 󰔛 $duration ]($style)"
+
+# Line break for clean two-line prompt
+[line_break]
+disabled = false
+
+# Shell indicator
+[shell]
+fish_indicator = "󰈺"
+powershell_indicator = "_"
+unknown_indicator = "mystery shell"
+style = "bg:#00f5ff fg:#0a0a0a bold"
+disabled = false

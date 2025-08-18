@@ -1,0 +1,353 @@
+# aliases
+
+export BAT_THEME="Monokai Extended"
+
+# ls alias
+alias ls="eza --icons=always"
+
+#cd alias
+alias cd="z"
+
+alias reload-zsh="source ~/.zshrc"
+alias edit-zsh="nvim ~/.zshrc"
+
+alias vim='nvim'
+alias c='clear'
+alias top="htop"
+alias cls="clear"
+alias df="df -h"
+alias du="du -h"
+alias free="free -m"
+alias usage="df -h | grep '^/dev'"
+alias ports="netstat -tulanp"
+alias myip="curl http://ipecho.net/plain; echo"
+alias grep="grep --color=auto"
+alias diff="colordiff"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+
+# external aliases
+source ~/.config/zsh/aliases.sh
+
+# external functions
+source ~/.config/zsh/functions.sh
+autoload -Uz compinit && compinit -d "${ZDOTDIR:-$HOME}/.zcompdump"
+
+# === CYBERPUNK HACKER ALIASES ===
+alias hack="echo 'ACCESSING MAINFRAME...' && sleep 1 && echo 'CONNECTION ESTABLISHED' && ssh"
+alias scan="nmap"
+alias decrypt="echo 'DECRYPTION INITIATED...' && "
+alias matrix="cmatrix"
+alias neo="whoami"
+alias trace="traceroute"
+alias infiltrate="ssh"
+alias breach="sudo"
+alias ghost="history -c"
+alias neural="python3"
+alias cyber="curl -s https://httpbin.org/ip | jq '.origin' | figlet"
+
+# SSH Manager
+alias sshm="~/.ssh/ssh-manager.sh"
+
+# Command completion for sshm
+_ssh_manager_completion() {
+    local -a commands
+    commands=(
+        'add:Add a new host'
+        'manage:Manage existing hosts'
+        'import:Import hosts from SSH config'
+        'history:Show connection history'
+    )
+    
+    # Add existing hosts from the JSON file
+    if [[ -f ~/.ssh/ssh_hosts.json ]]; then
+        local hosts=($(jq -r '.hosts[].alias' ~/.ssh/ssh_hosts.json))
+        for host in $hosts; do
+            commands+=("$host:Connect to $host")
+        done
+    fi
+
+    _describe 'command' commands
+}
+
+compdef _ssh_manager_completion sshm
+
+# === CYBERPUNK HACKER FUNCTIONS ===
+neural_net() {
+    echo "🔴 NEURAL NETWORK INITIALIZING..."
+    local env_name="${1:-$(basename $(pwd))}"
+    local python_version="${2:-3.11.0}"
+    
+    if ! command -v pyenv &> /dev/null; then
+        echo "❌ NEURAL INTERFACE NOT FOUND - pyenv required"
+        return 1
+    fi
+    
+    if ! pyenv versions --bare | grep -q "^${python_version}$"; then
+        echo "❌ PYTHON VERSION ${python_version} NOT IN SYSTEM DATABASE"
+        echo "📊 AVAILABLE NEURAL NETWORKS:"
+        pyenv versions --bare
+        return 1
+    fi
+    
+    echo "🔵 CREATING NEURAL ENVIRONMENT: ${env_name} [Python ${python_version}]"
+    pyenv virtualenv "${python_version}" "${env_name}"
+    
+    if [ $? -eq 0 ]; then
+        echo "${env_name}" > .python-version
+        echo "✅ NEURAL NETWORK '${env_name}' ONLINE"
+        echo "🐍 Python: $(python --version)"
+        echo "📍 Location: $(pyenv which python)"
+    else
+        echo "❌ NEURAL NETWORK CREATION FAILED"
+        return 1
+    fi
+}
+
+hack_banner() {
+    echo "
+██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗ 
+██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗
+███████║███████║██║     █████╔╝ █████╗  ██████╔╝
+██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗
+██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║
+╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+                                                  
+    🔴 SYSTEM BREACHED - NEURAL INTERFACE ACTIVE 🔴
+    User: $(whoami) | Node: $(hostname) | IP: $(curl -s ifconfig.me 2>/dev/null || echo "OFFLINE")
+    "
+}
+
+matrix_rain() {
+    if command -v cmatrix &> /dev/null; then
+        cmatrix -b -u 9 -C cyan
+    else
+        echo "❌ MATRIX MODULE NOT FOUND - Install with: brew install cmatrix"
+    fi
+}
+
+stealth_mode() {
+    echo "👻 ENTERING STEALTH MODE..."
+    export HISTFILE=/dev/null
+    unset HISTFILE
+    echo "🔒 HISTORY DISABLED - OPERATING IN GHOST MODE"
+}
+
+exit_stealth() {
+    echo "🔍 EXITING STEALTH MODE..."
+    export HISTFILE=~/.zsh_history
+    echo "📝 HISTORY LOGGING RESTORED"
+}
+
+port_scan() {
+    if [ -z "$1" ]; then
+        echo "❌ TARGET REQUIRED - Usage: port_scan <target>"
+        return 1
+    fi
+    echo "🔍 SCANNING TARGET: $1"
+    if command -v nmap &> /dev/null; then
+        nmap -sS -O "$1"
+    else
+        echo "❌ NMAP NOT FOUND - Install scanning tools first"
+    fi
+}
+
+crypto_gen() {
+    echo "🔐 GENERATING CRYPTOGRAPHIC HASH..."
+    if [ -n "$1" ]; then
+        echo -n "$1" | openssl dgst -sha256 | awk '{print $2}' | tr '[:lower:]' '[:upper:]'
+    else
+        openssl rand -hex 32 | tr '[:lower:]' '[:upper:]'
+    fi
+}
+
+# Legacy function kept for compatibility
+create_pyenv() { neural_net "$@"; }
+
+# --- CYBERPUNK NEON THEME ---
+cyber_black="#0a0a0a"
+cyber_dark="#1a1a2e"
+cyber_bg="#16213e"
+cyber_surface="#0f3460"
+cyber_cyan="#00f5ff"
+cyber_pink="#ff00ff"
+cyber_green="#00ff00"
+cyber_yellow="#ffff00"
+cyber_orange="#ff8800"
+cyber_red="#ff0040"
+cyber_purple="#8000ff"
+cyber_blue="#0080ff"
+cyber_matrix="#00ff41"
+cyber_white="#ffffff"
+cyber_gray="#808080"
+
+export FZF_DEFAULT_OPTS="--color=bg+:${cyber_surface},bg:${cyber_dark},spinner:${cyber_cyan},hl:${cyber_pink},fg:${cyber_white},header:${cyber_green},info:${cyber_cyan},pointer:${cyber_pink},marker:${cyber_green},fg+:${cyber_cyan},prompt:${cyber_pink},hl+:${cyber_matrix}"
+
+# -- Use fd instead of fzf --
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \${}'"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+  esac
+}
+
+
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat supercharge web-search zsh-fzf-tab git-alias zsh-starship distro-prompt)
+
+export BAT_THEME="Monokai Extended"
+# Load completions
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# === NEURAL INTERFACE INITIALIZATION ===
+echo "🔴 LOADING NEURAL INTERFACE..."
+
+# shell integrations
+eval "$(starship init zsh)"
+#eval $(thefuck --alias fuck)
+#eval $(thefuck --alias fk)
+eval "$(fzf --zsh)"
+eval "$(atuin init zsh)"
+
+# Auto-display hack banner on new terminal
+if [[ -z "$TMUX" ]] && [[ -z "$INSIDE_EMACS" ]]; then
+    hack_banner
+fi
+
+
+
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+# Generated for pdtm. Do not edit.
+export PATH=$PATH:$HOME/.pdtm/go/bin
+
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+export PATH="$HOME/bin:$PATH"
+
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/mgriffiths/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/mgriffiths/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+source /Users/mgriffiths/.jfrog/jfrog_zsh_completion
+eval #compdef censys
+# Run something, muting output or redirecting it to the debug stream
+# depending on the value of _ARC_DEBUG.
+# If ARGCOMPLETE_USE_TEMPFILES is set, use tempfiles for IPC.
+__python_argcomplete_run() {
+    if [[ -z "${ARGCOMPLETE_USE_TEMPFILES-}" ]]; then
+        __python_argcomplete_run_inner "$@"
+        return
+    fi
+    local tmpfile="$(mktemp)"
+    _ARGCOMPLETE_STDOUT_FILENAME="$tmpfile" __python_argcomplete_run_inner "$@"
+    local code=$?
+    cat "$tmpfile"
+    rm "$tmpfile"
+    return $code
+}
+
+__python_argcomplete_run_inner() {
+    if [[ -z "${_ARC_DEBUG-}" ]]; then
+        "$@" 8>&1 9>&2 1>/dev/null 2>&1 </dev/null
+    else
+        "$@" 8>&1 9>&2 1>&9 2>&1 </dev/null
+    fi
+}
+
+_python_argcomplete() {
+    local IFS=$''
+    local script=""
+    if [[ -n "${ZSH_VERSION-}" ]]; then
+        local completions
+        completions=($(IFS="$IFS" \
+            COMP_LINE="$BUFFER" \
+            COMP_POINT="$CURSOR" \
+            _ARGCOMPLETE=1 \
+            _ARGCOMPLETE_SHELL="zsh" \
+            _ARGCOMPLETE_SUPPRESS_SPACE=1 \
+            __python_argcomplete_run ${script:-${words[1]}}))
+        local nosort=()
+        local nospace=()
+        if is-at-least 5.8; then
+            nosort=(-o nosort)
+        fi
+        if [[ "${completions-}" =~ ([^\]): && "${match[1]}" =~ [=/:] ]]; then
+            nospace=(-S '')
+        fi
+        _describe "${words[1]}" completions "${nosort[@]}" "${nospace[@]}"
+    else
+        local SUPPRESS_SPACE=0
+        if compopt +o nospace 2> /dev/null; then
+            SUPPRESS_SPACE=1
+        fi
+        COMPREPLY=($(IFS="$IFS" \
+            COMP_LINE="$COMP_LINE" \
+            COMP_POINT="$COMP_POINT" \
+            COMP_TYPE="$COMP_TYPE" \
+            _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+            _ARGCOMPLETE=1 \
+            _ARGCOMPLETE_SHELL="bash" \
+            _ARGCOMPLETE_SUPPRESS_SPACE=$SUPPRESS_SPACE \
+            __python_argcomplete_run ${script:-$1}))
+        if [[ $? != 0 ]]; then
+            unset COMPREPLY
+        elif [[ $SUPPRESS_SPACE == 1 ]] && [[ "${COMPREPLY-}" =~ [=/:]$ ]]; then
+            compopt -o nospace
+        fi
+    fi
+}
+if [[ -z "${ZSH_VERSION-}" ]]; then
+    complete -o nospace -o default -o bashdefault -F _python_argcomplete censys
+else
+    # When called by the Zsh completion system, this will end with
+    # "loadautofunc" when initially autoloaded and "shfunc" later on, otherwise,
+    # the script was "eval"-ed so use "compdef" to register it with the
+    # completion system
+    autoload is-at-least
+    if [[ $zsh_eval_context == *func ]]; then
+        _python_argcomplete "$@"
+    else
+        compdef _python_argcomplete censys
+    fi
+fi
