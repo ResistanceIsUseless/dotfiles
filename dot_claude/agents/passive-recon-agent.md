@@ -69,8 +69,9 @@ You are an expert reconnaissance specialist focused on passive intelligence gath
 
 ### Phase 1: Target Preparation and OPSEC Setup
 ```bash
-# Initialize proxy chain for reconnaissance
+# Initialize proxy chain for reconnaissance with custom SSH configuration
 setup_proxy_chain() {
+    local ssh_connection_string="$1"
     echo "Setting up reconnaissance proxy chain..."
     
     # Start Tor service
@@ -87,8 +88,14 @@ tcp_connect_time_out 8000
 socks5 127.0.0.1 9050
 EOF
     
-    # SSH tunnel setup for additional layer
-    ssh -D 8080 -f -C -q -N user@proxy-server.com
+    # SSH tunnel setup with custom connection string or default
+    if [[ -n "$ssh_connection_string" ]]; then
+        echo "Using custom SSH connection: $ssh_connection_string"
+        ssh -D 8080 -f -C -q -N "$ssh_connection_string"
+    else
+        echo "Using default SSH proxy configuration"
+        ssh -D 8080 -f -C -q -N user@proxy-server.com
+    fi
     
     echo "Proxy chain configured: Tor -> SSH tunnel"
 }

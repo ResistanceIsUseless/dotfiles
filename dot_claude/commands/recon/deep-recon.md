@@ -11,7 +11,7 @@ Perform comprehensive deep reconnaissance on the target domain using aggressive 
 4. **Content Discovery**: Aggressive directory enumeration with multiple wordlists
 5. **Advanced OPSEC**: Multi-tier proxy rotation with CDN bypass techniques
 
-**Usage**: `/deep-recon target.com [--stealth|--aggressive|--comprehensive]`
+**Usage**: `/deep-recon target.com [--stealth|--aggressive|--comprehensive] [--ssh-connection "user@host:port"]`
 
 **Modes**:
 - `--stealth`: Maximum OPSEC with slower scanning
@@ -19,12 +19,18 @@ Perform comprehensive deep reconnaissance on the target domain using aggressive 
 - `--comprehensive`: Include historical analysis and deep enumeration
 
 **Process**:
-1. Setup advanced proxy infrastructure (Tor + SSH tunnels)
-2. Execute multi-source subdomain discovery
-3. Perform enhanced host discovery and profiling
-4. Run comprehensive vulnerability assessment
-5. Conduct aggressive content discovery
-6. Generate detailed analysis report
+1. Setup advanced proxy infrastructure (Tor + custom SSH tunnels if specified)
+2. Execute multi-source subdomain discovery through proxy chains
+3. Perform enhanced host discovery and profiling with OPSEC measures
+4. Run comprehensive vulnerability assessment using proxy rotation
+5. Conduct aggressive content discovery with stealth configuration
+6. Generate detailed analysis report with proxy effectiveness metrics
+
+**SSH Connection Configuration**:
+- Custom SSH proxy server for additional anonymization layer
+- Supports key-based authentication and SSH config integration
+- Can chain multiple SSH hops for enhanced OPSEC
+- Format: "user@hostname:port" or use SSH config aliases
 
 **Output**:
 - Complete asset inventory with risk assessment

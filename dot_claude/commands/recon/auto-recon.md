@@ -11,7 +11,7 @@ Launch the automated reconnaissance orchestrator for comprehensive assessment wi
 4. **Parallel Execution Coordination**: Multi-agent testing with progress monitoring
 5. **Results Aggregation**: Consolidated analysis with business impact assessment
 
-**Usage**: `/auto-recon target.com [--continuous|--one-shot|--monitoring]`
+**Usage**: `/auto-recon target.com [--continuous|--one-shot|--monitoring] [--ssh-connection "user@host:port"]`
 
 **Modes**:
 - `--one-shot`: Single comprehensive assessment (default)
@@ -26,13 +26,20 @@ Launch the automated reconnaissance orchestrator for comprehensive assessment wi
 - **Authentication Weaknesses** → penetration-tester (auth-focused)
 
 **Process**:
-1. Execute comprehensive reconnaissance (aggressive-recon-agent)
-2. Analyze findings for vulnerability classification
-3. Generate agent handoff contexts based on discovery
-4. Launch specialized agents in parallel
-5. Monitor agent progress and collect results
-6. Aggregate findings and calculate business impact
-7. Generate master assessment report
+1. Initialize advanced OPSEC configuration with custom SSH proxy if specified
+2. Execute comprehensive reconnaissance (aggressive-recon-agent) through proxy chains
+3. Analyze findings for vulnerability classification and impact assessment
+4. Generate agent handoff contexts based on discovery patterns
+5. Launch specialized agents in parallel with shared OPSEC configuration
+6. Monitor agent progress and collect results with real-time coordination
+7. Aggregate findings and calculate business impact with risk prioritization
+8. Generate master assessment report with consolidated recommendations
+
+**OPSEC Configuration Sharing**:
+- SSH connection settings propagated to all delegated agents
+- Shared proxy configuration ensures consistent anonymization
+- Coordinated traffic distribution prevents detection correlation
+- Master OPSEC dashboard monitors all agent activities
 
 **Output**:
 - Executive summary with overall risk assessment

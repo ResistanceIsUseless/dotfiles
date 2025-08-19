@@ -11,7 +11,7 @@ Configure advanced proxy chains combining Tor, SSH tunnels, and VPN rotation for
 4. **Traffic Distribution**: Load balancing across multiple exit points
 5. **Detection Avoidance**: Advanced techniques to avoid CDN and WAF detection
 
-**Usage**: `/setup-proxy-chain [--layers tor,ssh,vpn] [--rotation auto|manual] [--health-check enabled|disabled]`
+**Usage**: `/setup-proxy-chain [--layers tor,ssh,vpn] [--rotation auto|manual] [--health-check enabled|disabled] [--ssh-connection "user@host:port"]`
 
 **Proxy Layers**:
 - `tor`: Multiple Tor circuits with different exit nodes
@@ -25,6 +25,7 @@ Configure advanced proxy chains combining Tor, SSH tunnels, and VPN rotation for
 - `--health-check`: Enable continuous health monitoring
 - `--geographic`: Geographic distribution of exit points
 - `--rate-limit`: Request rate limiting per proxy
+- `--ssh-connection`: Custom SSH connection string (format: "user@host:port" or "user@host")
 
 **Advanced Features**:
 - **Circuit Isolation**: Separate Tor circuits for different scan phases
@@ -50,9 +51,11 @@ Configure advanced proxy chains combining Tor, SSH tunnels, and VPN rotation for
 
 **SSH Tunnel Management**:
 - Dynamic port forwarding through multiple servers
+- Custom SSH connection string support with flexible host/port specification
 - Key-based authentication with automated connection
 - Connection health monitoring and automatic reconnection
 - Load balancing across available tunnel endpoints
+- Support for SSH configuration files and jump hosts
 
 **Health Monitoring**:
 - Continuous connectivity testing to external services
