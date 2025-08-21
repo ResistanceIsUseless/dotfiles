@@ -10,7 +10,7 @@ This is a comprehensive collection of specialized AI agents designed for rapid d
 
 ### Agent Organization
 Agents are organized into departments based on their expertise:
-- `engineering/` - Development, architecture, DevOps, testing agents (14 agents)
+- `engineering/` - Development, architecture, DevOps, testing agents (16 agents)
 - `design/` - UI/UX, branding, visual storytelling agents (6 agents)
 - `marketing/` - Growth, social media, app store optimization agents (7 agents)
 - `product/` - Strategy, feedback analysis, trend research agents (5 agents)

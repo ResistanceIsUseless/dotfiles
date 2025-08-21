@@ -35,3 +35,4 @@ Perform quick passive reconnaissance on the specified target domain. This comman
 **Time**: ~10-15 minutes depending on target size
 **Stealth Level**: High (passive techniques only)
 **Tools Used**: subscope, webscope, nuclei, proxychains
+**Tool Selection**: Follows **PASSIVE (Level 1)** guidelines from `~/.claude/security-tools-reference.md` for minimal footprint and maximum stealth

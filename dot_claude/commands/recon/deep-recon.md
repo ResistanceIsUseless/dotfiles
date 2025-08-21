@@ -42,3 +42,4 @@ Perform comprehensive deep reconnaissance on the target domain using aggressive 
 **Time**: 1-3 hours depending on target size and mode
 **Stealth Level**: Configurable (high to medium)
 **Tools Used**: subscope, webscope, nuclei, feroxbuster, nmap, amass, proxychains
+**Tool Selection**: Follows **AGGRESSIVE (Level 3)** guidelines from `~/.claude/security-tools-reference.md` for comprehensive coverage with configurable stealth modes

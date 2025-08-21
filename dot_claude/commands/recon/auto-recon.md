@@ -51,3 +51,4 @@ Launch the automated reconnaissance orchestrator for comprehensive assessment wi
 **Time**: 2-6 hours depending on findings and agent handoffs
 **Automation Level**: Fully automated
 **Agent Coordination**: Intelligent parallel execution
+**Tool Selection**: Uses dynamic tool selection matrix from `~/.claude/security-tools-reference.md` to automatically escalate from **PASSIVE → AGGRESSIVE → MAXIMUM** based on findings and target authorization scope
