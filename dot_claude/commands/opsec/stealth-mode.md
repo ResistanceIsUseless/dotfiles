@@ -1,6 +1,8 @@
 ---
 name: stealth-mode
 description: Configure maximum stealth operational parameters for sensitive security assessments
+allowed-tools: Bash, Read, Write
+argument-hint: "[--intensity maximum|high|moderate] [--target-type general|cdn|waf] [--duration hours]"
 ---
 
 Configure maximum stealth operational parameters for sensitive security assessments with advanced detection avoidance. This command:

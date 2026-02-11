@@ -1,6 +1,8 @@
 ---
 name: generate-report
 description: Generate comprehensive security assessment reports with multiple output formats
+allowed-tools: Read, Write, Grep, Glob
+argument-hint: "assessment-data [--format executive|technical|bug-bounty|compliance] [--audience client|internal|bug-bounty]"
 ---
 
 Generate comprehensive security assessment reports from agent findings with customizable formats and executive summaries. This command:

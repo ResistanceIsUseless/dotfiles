@@ -1,6 +1,8 @@
 ---
 name: ssh-config-examples
 description: Examples and templates for SSH connection string configurations in reconnaissance workflows
+allowed-tools: Read
+argument-hint: ""
 ---
 
 # SSH Connection String Examples for Security Assessment Commands

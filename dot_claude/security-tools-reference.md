@@ -1,5 +1,10 @@
 # Security Tools Reference Guide
 
+## CRITICAL EXECUTION REQUIREMENTS
+*** ALL BASH COMMANDS MUST USE run_in_background: true TO AVOID TIMEOUTS ***
+*** USE BashOutput tool to monitor command progress and wait for completion ***
+*** Commands must run to completion - no 2-minute timeout limits ***
+
 ## Aggression Level Definitions
 
 ### 🟢 PASSIVE (Level 1) - Minimal Footprint

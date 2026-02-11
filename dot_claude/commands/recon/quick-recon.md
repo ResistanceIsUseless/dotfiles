@@ -1,6 +1,8 @@
 ---
 name: quick-recon
 description: Execute quick reconnaissance on a target domain using passive techniques
+allowed-tools: Bash, Read, Write, Grep, Glob, Task
+argument-hint: "target.com [--scope wide|focused] [--proxy-chain enabled|disabled] [--ssh-connection \"user@host:port\"]"
 ---
 
 Perform quick passive reconnaissance on the specified target domain. This command:
@@ -32,7 +34,8 @@ Perform quick passive reconnaissance on the specified target domain. This comman
 - Initial vulnerability findings
 - Recommendations for deeper testing
 
-**Time**: ~10-15 minutes depending on target size
+**Time**: Variable duration based on target complexity (typically 10-30 minutes)
 **Stealth Level**: High (passive techniques only)
 **Tools Used**: subscope, webscope, nuclei, proxychains
 **Tool Selection**: Follows **PASSIVE (Level 1)** guidelines from `~/.claude/security-tools-reference.md` for minimal footprint and maximum stealth
+**Timeout Policy**: Operations continue until comprehensive passive reconnaissance is complete, regardless of execution time

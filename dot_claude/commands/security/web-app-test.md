@@ -1,6 +1,8 @@
 ---
 name: web-app-test
 description: Execute comprehensive web application security testing with automated exploitation and reporting
+allowed-tools: Bash, Read, Write, Grep, Glob, Task, WebFetch
+argument-hint: "target-url [--scope wide|focused|api] [--intensity normal|aggressive] [--output bug-bounty|pentest|internal]"
 ---
 
 Perform comprehensive web application security testing using the web-app-penetration-tester agent with automated exploitation techniques. This command:

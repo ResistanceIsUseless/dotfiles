@@ -1,6 +1,8 @@
 ---
 name: finding-analysis
 description: Analyze security findings for correlation, impact assessment, and exploitation chain identification
+allowed-tools: Read, Write, Grep, Glob
+argument-hint: "findings-data [--correlation auto|manual] [--chains simple|complex] [--validation strict|normal|permissive]"
 ---
 
 Analyze security findings for vulnerability correlation, impact assessment, and exploitation chain identification. This command:

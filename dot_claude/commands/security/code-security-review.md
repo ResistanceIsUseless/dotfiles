@@ -1,6 +1,8 @@
 ---
 name: code-security-review
 description: Execute comprehensive security code review with static analysis and vulnerability detection
+allowed-tools: Bash, Read, Write, Grep, Glob
+argument-hint: "[repository-path|git-url] [--languages js,python,java,go] [--scope full|incremental|pull-request]"
 ---
 
 Perform comprehensive security code review using the security-code-reviewer agent with static analysis tools and vulnerability detection. This command:

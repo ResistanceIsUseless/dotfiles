@@ -1,6 +1,8 @@
 ---
 name: setup-proxy-chain
 description: Configure advanced proxy chains with Tor, SSH tunnels, and VPN rotation for operational security
+allowed-tools: Bash, Read, Write
+argument-hint: "[--layers tor,ssh,vpn] [--rotation auto|manual] [--health-check enabled|disabled] [--ssh-connection \"user@host:port\"]"
 ---
 
 Configure advanced proxy chains combining Tor, SSH tunnels, and VPN rotation for maximum operational security during security assessments. This command:

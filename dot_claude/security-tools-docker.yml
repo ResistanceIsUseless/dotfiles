@@ -1,0 +1,169 @@
+# Docker Compose configuration for Security Tools
+# This provides containerized versions of security tools for consistent environments
+
+version: '3.8'
+
+services:
+  # Kali Linux with all tools
+  kali:
+    image: kalilinux/kali-rolling:latest
+    container_name: kali-tools
+    stdin_open: true
+    tty: true
+    network_mode: host
+    volumes:
+      - ./workspace:/workspace
+      - ./wordlists:/wordlists
+      - ~/.ssh:/root/.ssh:ro
+    command: /bin/bash
+    environment:
+      - HTTP_PROXY=${HTTP_PROXY}
+      - HTTPS_PROXY=${HTTPS_PROXY}
+    entrypoint: |
+      bash -c "
+      apt-get update && 
+      apt-get install -y \
+        nmap masscan rustscan \
+        nuclei subfinder httpx \
+        ffuf gobuster dirsearch \
+        sqlmap nikto wpscan \
+        metasploit-framework \
+        proxychains4 tor \
+        amass fierce dnsrecon \
+        python3-pip golang git \
+        curl wget jq && 
+      /bin/bash"
+
+  # Nuclei Scanner
+  nuclei:
+    image: projectdiscovery/nuclei:latest
+    container_name: nuclei
+    volumes:
+      - ./targets:/targets
+      - ./results:/results
+      - ~/.config/nuclei:/root/.config/nuclei
+    command: -update-templates
+
+  # Subfinder
+  subfinder:
+    image: projectdiscovery/subfinder:latest
+    container_name: subfinder
+    volumes:
+      - ./results:/results
+      - ~/.config/subfinder:/root/.config/subfinder
+    command: -version
+
+  # HTTPX
+  httpx:
+    image: projectdiscovery/httpx:latest
+    container_name: httpx
+    volumes:
+      - ./targets:/targets
+      - ./results:/results
+    command: -version
+
+  # Amass
+  amass:
+    image: caffix/amass:latest
+    container_name: amass
+    volumes:
+      - ./results:/results
+      - ~/.config/amass:/root/.config/amass
+    command: enum -version
+
+  # FFUF
+  ffuf:
+    image: ghcr.io/ffuf/ffuf:latest
+    container_name: ffuf
+    volumes:
+      - ./wordlists:/wordlists
+      - ./results:/results
+    command: -V
+
+  # SQLMap
+  sqlmap:
+    image: paoloo/sqlmap:latest
+    container_name: sqlmap
+    volumes:
+      - ./targets:/targets
+      - ./results:/results
+    command: --version
+
+  # Nmap
+  nmap:
+    image: instrumentisto/nmap:latest
+    container_name: nmap
+    network_mode: host
+    volumes:
+      - ./results:/results
+    command: --version
+
+  # Metasploit
+  metasploit:
+    image: metasploitframework/metasploit-framework:latest
+    container_name: metasploit
+    stdin_open: true
+    tty: true
+    network_mode: host
+    volumes:
+      - ./workspace:/workspace
+      - ./loot:/root/.msf4/loot
+    environment:
+      - DATABASE_URL=postgresql://msf:msf@postgres:5432/msf
+
+  # PostgreSQL for Metasploit
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres-msf
+    environment:
+      - POSTGRES_DB=msf
+      - POSTGRES_USER=msf
+      - POSTGRES_PASSWORD=msf
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # OWASP ZAP
+  zap:
+    image: owasp/zap2docker-stable:latest
+    container_name: zap
+    user: zap
+    network_mode: host
+    volumes:
+      - ./zap:/zap/wrk
+    command: zap.sh -daemon -host 0.0.0.0 -port 8090
+
+  # Tor Proxy
+  tor:
+    image: dperson/torproxy:latest
+    container_name: tor-proxy
+    ports:
+      - "9050:9050"
+      - "9051:9051"
+      - "8118:8118"
+    environment:
+      - PASSWORD=secretpassword
+      - LOCATION=US
+
+  # Custom reconnaissance tool
+  recon:
+    build:
+      context: .
+      dockerfile: Dockerfile.recon
+    container_name: recon-tools
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./targets:/targets
+      - ./results:/results
+      - ./wordlists:/wordlists
+      - ~/.ssh:/root/.ssh:ro
+    network_mode: host
+    command: /bin/bash
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    name: security-tools
+    driver: bridge

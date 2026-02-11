@@ -1,6 +1,8 @@
 ---
 name: config-review
-description: Review
+description: Review GPOs, shell scripts, PowerShell scripts and generate a readable matrix of security settings
+allowed-tools: Read, Write, Grep, Glob
+argument-hint: "config-file"
 ---
 
 Perform comprehensive review of GPO's, Shell Scripts, PowerShell scripts and give a readable matrix of the settings in the config file.

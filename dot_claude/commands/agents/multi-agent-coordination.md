@@ -1,6 +1,8 @@
 ---
 name: multi-agent-coordination
 description: Coordinate multiple security agents for comprehensive parallel assessment
+allowed-tools: Bash, Read, Write, Grep, Glob, Task, TodoWrite
+argument-hint: "target-scope [--agents list|auto] [--max-parallel N] [--strategy comprehensive|focused|rapid]"
 ---
 
 Coordinate multiple security agents for comprehensive parallel assessment with resource management and result aggregation. This command:

@@ -1,6 +1,8 @@
 ---
 name: deep-recon
 description: Execute comprehensive deep reconnaissance with aggressive techniques and multi-source enumeration
+allowed-tools: Bash, Read, Write, Grep, Glob, Task
+argument-hint: "target.com [--stealth|--aggressive|--comprehensive] [--ssh-connection \"user@host:port\"]"
 ---
 
 Perform comprehensive deep reconnaissance on the target domain using aggressive scanning techniques. This command:
@@ -39,7 +41,8 @@ Perform comprehensive deep reconnaissance on the target domain using aggressive 
 - Content discovery results with sensitive file identification
 - OPSEC summary with detection avoidance measures
 
-**Time**: 1-3 hours depending on target size and mode
+**Time**: Extended duration based on target complexity (typically 1-6 hours, potentially longer for large infrastructures)
 **Stealth Level**: Configurable (high to medium)
 **Tools Used**: subscope, webscope, nuclei, feroxbuster, nmap, amass, proxychains
 **Tool Selection**: Follows **AGGRESSIVE (Level 3)** guidelines from `~/.claude/security-tools-reference.md` for comprehensive coverage with configurable stealth modes
+**Timeout Policy**: Deep reconnaissance continues until exhaustive enumeration and vulnerability discovery is complete, with progress checkpoints throughout extended operations

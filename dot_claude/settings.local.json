@@ -2,7 +2,25 @@
   "permissions": {
     "allow": [
       "Bash(defaults read:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(subfinder:*)",
+      "Bash(proxychains4:*)",
+      "Bash(timeout:*)",
+      "Bash(if [ -f reconnaissance/vulnerabilities/nuclei_priority.txt ])",
+      "Bash(else echo \"Scan still running, creating manual findings...\")",
+      "Bash(fi)",
+      "Bash(curl:*)",
+      "Bash(for subdomain in \"webui.campuscloud.io\" \"auth-dev.campuscloud.io\" \"buildnumbers.campuscloud.io\" \"atlantis.dev.campuscloud.io\" \"exchange-dev.campuscloud.io\")",
+      "Bash(do echo \"=== Testing $subdomain ===\")",
+      "Bash(done)",
+      "Bash(dig:*)",
+      "Bash(httpx:*)",
+      "Bash(dnsx:*)",
+      "Bash(grep:*)",
+      "Bash(katana:*)",
+      "Bash(feroxbuster:*)",
+      "Bash(cat:*)",
+      "Bash(nuclei:*)"
     ],
     "deny": [],
     "ask": []

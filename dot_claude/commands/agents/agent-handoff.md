@@ -1,6 +1,8 @@
 ---
 name: agent-handoff
 description: Execute intelligent agent handoff based on findings and target characteristics
+allowed-tools: Bash, Read, Write, Grep, Glob, Task
+argument-hint: "[findings-file|assessment-directory] [--agents auto|manual] [--parallel true|false]"
 ---
 
 Intelligently hand off security testing to specialized agents based on current findings, target characteristics, and vulnerability types. This command:

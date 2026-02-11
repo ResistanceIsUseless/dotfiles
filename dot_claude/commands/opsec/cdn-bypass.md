@@ -1,6 +1,8 @@
 ---
 name: cdn-bypass
 description: Execute advanced CDN bypass techniques for direct origin access and detection avoidance
+allowed-tools: Bash, Read, Write, WebFetch
+argument-hint: "target-domain [--methods all|passive|active] [--verify strict|normal] [--output json|text]"
 ---
 
 Execute advanced CDN bypass techniques to access origin servers directly and avoid detection by Cloudflare, Akamai, and other CDN providers. This command:

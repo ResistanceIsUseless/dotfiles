@@ -44,6 +44,33 @@ tools: Available tools (Write, Read, MultiEdit, Bash, etc.)
 - **Proactive Triggering**: Some agents (studio-coach, test-writer-fixer, whimsy-injector) activate automatically
 - **Multi-Agent Collaboration**: Agents are designed to work together on complex tasks
 - **Trend-Aware Development**: Focus on viral potential and rapid market validation
+- **Extended Operations**: Security agents run as long as necessary without timeout constraints
+
+## Extended Operation Guidelines
+
+### Security Assessment Duration Policy
+Security assessments and reconnaissance operations require extended execution time to ensure comprehensive coverage. All security agents are designed to run without artificial time constraints:
+
+**Timeout Prevention for Security Operations**:
+- Security agents must complete their full assessment cycle regardless of execution time
+- Reconnaissance operations should run until comprehensive asset discovery is complete
+- Vulnerability assessments must scan all discovered assets thoroughly
+- Manual testing phases should not be rushed due to time constraints
+- Report generation should include all findings regardless of assessment duration
+
+**Long-Running Operation Management**:
+- Security agents provide regular progress updates during extended operations
+- Operations are broken into logical phases with checkpoint reporting
+- Users are informed about estimated completion times for each phase
+- Critical findings are reported immediately even during ongoing operations
+- Background operations continue while providing status updates
+
+**Quality Over Speed for Security**:
+- Comprehensive security coverage takes precedence over rapid completion
+- Thoroughness is prioritized over speed in all security assessments
+- Deep analysis requires appropriate time allocation
+- Security findings must be properly validated and documented
+- No security shortcuts are taken due to time pressure
 
 ## Agent Usage Patterns
 
